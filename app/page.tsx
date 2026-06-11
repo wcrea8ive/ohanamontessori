@@ -233,7 +233,7 @@ export default function Home() {
       <section className="px-6" style={{ paddingTop: '50px', paddingBottom: '40px' }}>
         <div className="relative max-w-[1100px] mx-auto text-center">
           <Image
-            src="/%E2%80%98.webp"
+            src="/quote.webp"
             alt=""
             width={55}
             height={104}
@@ -242,7 +242,7 @@ export default function Home() {
             style={{ left: '-70px', top: '-20px', width: '55px', height: '104px', objectFit: 'cover' }}
           />
           <Image
-            src="/%E2%80%98.webp"
+            src="/quote.webp"
             alt=""
             width={55}
             height={104}

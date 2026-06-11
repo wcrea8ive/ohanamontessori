@@ -21,8 +21,11 @@ Nature-inspired Montessori school website in Santa Ana, CA. Next.js 16 App Route
 
 | Service | URL / Location |
 |---|---|
-| Live site | https://ohanamontessori.com |
-| Vercel project | Auto-deploys from GitHub `main` branch |
+| Live site | https://ohanamontessori.com (still on WordPress — domain NOT yet pointed at Vercel) |
+| GitHub repo | https://github.com/wcrea8ive/ohanamontessori (private) |
+| Vercel project | `ohanamontessori-com` under `info-23661568s-projects` — auto-deploys from GitHub `main` |
+
+The Vercel project is intentionally separate from the other W Creative projects (`wcreativestudio-nextjs`, `wcreativestudio.com`, `wcreative-dashboard`). Cutting over the real domain to Vercel is a separate, explicit step — do not attach it without being asked.
 
 ---
 
@@ -47,6 +50,8 @@ git push origin main
 ```
 RESEND_API_KEY=your_key_here
 ```
+
+`RESEND_API_KEY` is NOT yet set in the Vercel project's environment variables (deliberately deferred) — the contact form will fail on deployed builds until it's added in Vercel → Settings → Environment Variables.
 
 ---
 

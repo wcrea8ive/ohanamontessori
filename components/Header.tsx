@@ -1,8 +1,30 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useRef } from 'react'
-import { Menu, X, ChevronDown, Plus, Minus } from 'lucide-react'
+import { Menu, X, ChevronDown, Plus, Minus, MapPin, Phone, MessageCircleMore } from 'lucide-react'
+
+// lucide-react dropped brand icons; inline SVGs instead
+const InstagramIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+)
+
+const FacebookIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path fillRule="evenodd" clipRule="evenodd" d="M3 0h18a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3h-7.4v-9.1h2.5l.5-3.2h-3V9.6c0-.9.3-1.6 1.6-1.6h1.6V5.2c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4v2.6H7.4v3.2H10V24H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3z" />
+  </svg>
+)
+
+const LinkedinIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+  </svg>
+)
 
 const ABOUT_ITEMS = [
   { label: 'Welcome', href: '/welcome' },
@@ -49,6 +71,15 @@ const dropdownMap: Record<Exclude<DropdownKey, null>, { items: { label: string; 
   Contact:  { items: CONTACT_ITEMS },
 }
 
+const navLinkStyle: React.CSSProperties = {
+  color: 'var(--text)',
+  fontWeight: 600,
+  letterSpacing: '0.02em',
+  textTransform: 'uppercase',
+}
+
+const navLinkClass = 'whitespace-nowrap text-[13px] 2xl:text-sm'
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<DropdownKey>(null)
@@ -68,117 +99,126 @@ export default function Header() {
     if (closeTimer.current) clearTimeout(closeTimer.current)
   }
 
+  const Dropdown = ({ label }: { label: Exclude<DropdownKey, null> }) => (
+    <div className="relative" onMouseEnter={() => open(label)} onMouseLeave={close}>
+      <button
+        className={`flex items-center gap-1 py-2 transition-opacity hover:opacity-70 ${navLinkClass}`}
+        style={navLinkStyle}
+        aria-expanded={openDropdown === label}
+        onClick={() => setOpenDropdown(openDropdown === label ? null : label)}
+      >
+        {label === 'Info' ? 'Info' : label}
+        <ChevronDown size={14} className={`transition-transform duration-200 ${openDropdown === label ? 'rotate-180' : ''}`} />
+      </button>
+      {openDropdown === label && (
+        <div
+          className="absolute top-full left-1/2 -translate-x-1/2 w-60 rounded-lg shadow-xl py-2 z-50"
+          style={{ background: '#fff', border: '1px solid var(--border)', marginTop: '4px' }}
+          onMouseEnter={cancelClose}
+          onMouseLeave={close}
+        >
+          {dropdownMap[label].items.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setOpenDropdown(null)}
+              className="block px-4 py-2.5 text-sm transition-colors hover:bg-[var(--cream-dark)]"
+              style={{ color: 'var(--text)' }}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+
   return (
-    <header className="sticky top-0 z-50 shadow-sm" style={{ background: 'var(--cream)', borderBottom: '1px solid var(--border)' }}>
+    <header className="relative z-50" style={{ background: '#fff' }}>
 
       {/* Top bar */}
-      <div className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-6 py-2 text-xs" style={{ color: 'var(--text-muted)', borderBottom: '1px solid var(--border)' }}>
-        <span>License # 304371739 &nbsp;·&nbsp; 2102 N. Tustin Ave, Santa Ana, CA 92705</span>
-        <div className="flex items-center gap-5">
-          <a href="tel:+17149427135" className="hover:text-[var(--sage)] transition-colors">(714) 942-7135</a>
-          <a href="mailto:info@ohanamontessori.com" className="hover:text-[var(--sage)] transition-colors">info@ohanamontessori.com</a>
+      <div className="hidden md:block" style={{ background: 'var(--topbar)' }}>
+        <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="flex items-center gap-1.5 text-[15px] mr-1.5" style={{ color: '#000' }}>
+              <MapPin size={16} />
+              2102 N. Tustin Avenue, Santa Ana, CA 92705
+            </span>
+            <a
+              href="tel:+17149427135"
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] text-[15px] text-white transition-opacity hover:opacity-90"
+              style={{ background: 'var(--brown)' }}
+            >
+              <Phone size={15} fill="currentColor" strokeWidth={0} />
+              Call Us
+            </a>
+            <Link
+              href="/contact"
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] text-[15px] text-white transition-opacity hover:opacity-90"
+              style={{ background: 'var(--brown)' }}
+            >
+              <MessageCircleMore size={15} />
+              Send Us a Message
+            </Link>
+          </div>
+          <div className="flex items-center gap-4">
+            <span className="text-[15px]" style={{ color: '#000' }}>License # 304371739</span>
+            <div className="flex items-center gap-3" style={{ color: '#000' }}>
+              <a href="https://www.instagram.com/ohana.montessori" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-opacity hover:opacity-70">
+                <InstagramIcon />
+              </a>
+              <a href="https://www.facebook.com/ohana.montessori" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition-opacity hover:opacity-70">
+                <FacebookIcon />
+              </a>
+              <a href="https://www.linkedin.com/company/ohana-montessori" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-opacity hover:opacity-70">
+                <LinkedinIcon />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Main nav */}
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-18" style={{ height: '72px' }}>
+      <div className="max-w-[1340px] mx-auto px-6 flex items-center justify-between xl:justify-center py-3 xl:py-5">
+
+        {/* Left links */}
+        <nav className="hidden xl:flex items-center gap-5 2xl:gap-6">
+          <Link href="/" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Home</Link>
+          <Dropdown label="About" />
+          <Dropdown label="Info" />
+          <Dropdown label="Programs" />
+          <Link href="/enrollment" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Enrollment</Link>
+        </nav>
 
         {/* Logo */}
-        <Link href="/" className="shrink-0 flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold" style={{ background: 'var(--sage)' }}>O</div>
-          <div>
-            <div className="font-semibold leading-none" style={{ fontFamily: 'var(--font-cormorant)', fontSize: '20px', color: 'var(--text)' }}>Ohana Montessori</div>
-            <div className="text-[10px] uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Where Nature Meets Nurture</div>
-          </div>
+        <Link href="/" className="shrink-0 xl:mx-7 2xl:mx-9">
+          <Image
+            src="/montessori-logo-1000px.png"
+            alt="Ohana Montessori"
+            width={1000}
+            height={963}
+            priority
+            className="w-auto h-16 xl:h-[104px]"
+          />
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {(['About', 'Info', 'Programs'] as const).map((key) => (
-            <div key={key} className="relative" onMouseEnter={() => open(key)} onMouseLeave={close}>
-              <button
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-md hover:bg-black/5"
-                style={{ color: 'var(--text)' }}
-                aria-expanded={openDropdown === key}
-                onClick={() => setOpenDropdown(openDropdown === key ? null : key)}
-              >
-                {key}
-                <ChevronDown size={13} className={`transition-transform duration-200 ${openDropdown === key ? 'rotate-180' : ''}`} style={{ color: 'var(--sage)' }} />
-              </button>
-              {openDropdown === key && (
-                <div
-                  className="absolute top-full left-0 w-56 rounded-lg shadow-xl py-2 z-50"
-                  style={{ background: '#fff', border: '1px solid var(--border)', marginTop: '4px' }}
-                  onMouseEnter={cancelClose}
-                  onMouseLeave={close}
-                >
-                  {dropdownMap[key].items.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setOpenDropdown(null)}
-                      className="block px-4 py-2.5 text-sm transition-colors hover:bg-[var(--cream-dark)]"
-                      style={{ color: 'var(--text)' }}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-
-          <Link href="/enrollment" className="px-3 py-2 text-sm font-medium transition-colors rounded-md hover:bg-black/5" style={{ color: 'var(--text)' }}>
-            Enrollment
-          </Link>
-          <Link href="/tuition" className="px-3 py-2 text-sm font-medium transition-colors rounded-md hover:bg-black/5" style={{ color: 'var(--text)' }}>
-            Tuition & Hours
-          </Link>
-
-          <div className="relative" onMouseEnter={() => open('Contact')} onMouseLeave={close}>
-            <button
-              className="flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-md hover:bg-black/5"
-              style={{ color: 'var(--text)' }}
-              aria-expanded={openDropdown === 'Contact'}
-              onClick={() => setOpenDropdown(openDropdown === 'Contact' ? null : 'Contact')}
-            >
-              Contact
-              <ChevronDown size={13} className={`transition-transform duration-200 ${openDropdown === 'Contact' ? 'rotate-180' : ''}`} style={{ color: 'var(--sage)' }} />
-            </button>
-            {openDropdown === 'Contact' && (
-              <div
-                className="absolute top-full left-0 w-56 rounded-lg shadow-xl py-2 z-50"
-                style={{ background: '#fff', border: '1px solid var(--border)', marginTop: '4px' }}
-                onMouseEnter={cancelClose}
-                onMouseLeave={close}
-              >
-                {CONTACT_ITEMS.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpenDropdown(null)}
-                    className="block px-4 py-2.5 text-sm transition-colors hover:bg-[var(--cream-dark)]"
-                    style={{ color: 'var(--text)' }}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
+        {/* Right links */}
+        <nav className="hidden xl:flex items-center gap-5 2xl:gap-6">
+          <Link href="/tuition" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Tuition &amp; Hours</Link>
+          <Link href="/schedule-a-tour" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Schedule a Tour</Link>
+          <Dropdown label="Contact" />
           <Link
-            href="/schedule-a-tour"
-            className="ml-2 px-5 py-2.5 text-sm font-semibold text-white rounded-full transition-all hover:opacity-90"
-            style={{ background: 'var(--sage)' }}
+            href="/contact"
+            className={`px-6 py-3.5 text-white rounded-full transition-opacity hover:opacity-90 ${navLinkClass}`}
+            style={{ background: 'var(--brown)', fontWeight: 600, letterSpacing: '0.02em', textTransform: 'uppercase' }}
           >
-            Schedule a Tour
+            Request Information
           </Link>
         </nav>
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden p-2 rounded-md"
+          className="xl:hidden p-2 rounded-md"
           style={{ color: 'var(--text)' }}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
@@ -189,13 +229,18 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`fixed inset-0 z-[100] lg:hidden flex flex-col transition-transform duration-300 ease-in-out ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`}
-        style={{ background: 'var(--cream)' }}
+        className={`fixed inset-0 z-[100] xl:hidden flex flex-col transition-transform duration-300 ease-in-out ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        style={{ background: '#fff' }}
       >
-        <div className="flex items-center justify-between px-6 h-[72px] shrink-0" style={{ borderBottom: '1px solid var(--border)' }}>
-          <Link href="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold" style={{ background: 'var(--sage)' }}>O</div>
-            <span className="font-semibold" style={{ fontFamily: 'var(--font-cormorant)', fontSize: '18px', color: 'var(--text)' }}>Ohana Montessori</span>
+        <div className="flex items-center justify-between px-6 py-3 shrink-0" style={{ borderBottom: '1px solid var(--border)' }}>
+          <Link href="/" onClick={() => setMobileOpen(false)}>
+            <Image
+              src="/montessori-logo-1000px.png"
+              alt="Ohana Montessori"
+              width={1000}
+              height={963}
+              className="w-auto h-14"
+            />
           </Link>
           <button onClick={() => setMobileOpen(false)} style={{ color: 'var(--text)' }} aria-label="Close menu">
             <X size={26} />
@@ -248,12 +293,12 @@ export default function Header() {
         <div className="px-6 py-6 shrink-0 flex flex-col gap-3" style={{ borderTop: '1px solid var(--border)' }}>
           <a href="tel:+17149427135" className="text-sm text-center" style={{ color: 'var(--text-muted)' }}>(714) 942-7135</a>
           <Link
-            href="/schedule-a-tour"
+            href="/contact"
             onClick={() => setMobileOpen(false)}
-            className="w-full py-3.5 text-white font-semibold text-sm text-center rounded-full transition-opacity hover:opacity-90"
-            style={{ background: 'var(--sage)' }}
+            className="w-full py-3.5 text-white font-semibold text-sm text-center rounded-full uppercase tracking-wide transition-opacity hover:opacity-90"
+            style={{ background: 'var(--brown)' }}
           >
-            Schedule a Tour →
+            Request Information
           </Link>
         </div>
       </div>

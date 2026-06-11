@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Nunito } from 'next/font/google'
+import { Cormorant_Garamond, Nunito, Baskervville, Work_Sans } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -15,6 +15,20 @@ const nunito = Nunito({
   variable: '--font-nunito',
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+})
+
+const baskervville = Baskervville({
+  variable: '--font-baskervville',
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+})
+
+const workSans = Work_Sans({
+  variable: '--font-work-sans',
+  subsets: ['latin'],
+  weight: ['500'],
   display: 'swap',
 })
 
@@ -55,7 +69,7 @@ const localBusinessSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${nunito.variable} h-full antialiased`}>
+    <html lang="en" className={`${cormorant.variable} ${nunito.variable} ${baskervville.variable} ${workSans.variable} h-full antialiased`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       </head>

@@ -17,13 +17,15 @@ html, body {
   --text: #1C1C18;
   --text-muted: #6B6B5E;
   --border: #E2D8C8;
+  --brown: #663D22;
+  --topbar: #C4D5D1;
 }
 
 body {
   font-family: var(--font-nunito), sans-serif;
   font-weight: 400;
   color: var(--text);
-  background: var(--cream);
+  background: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {

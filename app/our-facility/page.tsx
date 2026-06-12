@@ -90,11 +90,11 @@ export default function OurFacilityPage() {
           <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             {CLASSROOMS.map((c) => (
               <AnimateItem key={c.name}>
-                <div className="rounded-[10px] overflow-hidden h-full flex flex-col">
-                  <div className="relative w-full aspect-[500/599]">
-                    <Image src={c.img} alt={c.name} fill className="object-cover" />
+                <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                  <div style={{ borderRadius: '10px', overflow: 'hidden', lineHeight: 0 }}>
+                    <Image src={c.img} alt={c.name} width={500} height={599} style={{ width: '100%', height: 'auto', display: 'block' }} />
                   </div>
-                  <div className="flex-1" style={{ background: 'var(--brown)', padding: '24px' }}>
+                  <div style={{ flex: 1, background: 'var(--brown)', padding: '24px', borderRadius: '0 0 10px 10px', marginTop: '-12px', position: 'relative' }}>
                     <p className="text-sm leading-relaxed text-center" style={{ color: '#FEFAF4' }}>{c.body}</p>
                   </div>
                 </div>

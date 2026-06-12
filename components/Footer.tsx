@@ -3,24 +3,25 @@ import Link from 'next/link'
 import ScrollToTop from './ScrollToTop'
 
 const ABOUT_LINKS = [
-  { label: 'Welcome', href: '/welcome' },
-  { label: 'Our Approach', href: '/our-approach' },
-  { label: 'Our Philosophy', href: '/our-philosophy' },
+  { label: 'Welcome', href: '/welcome-to-montessori-preschool-childcare-santa-ana' },
+  { label: 'Our Approach', href: '/daycare-santaana-tustin-irvine' },
+  { label: 'Our Philosophy', href: '/prechool-santa-ana-irvine-tustin-our-philosophy' },
 ]
 
 const PROGRAMS_LINKS = [
-  { label: 'Infant Program', href: '/programs/infant' },
-  { label: 'Toddler Program', href: '/programs/toddler' },
-  { label: 'Preschool Program', href: '/programs/preschool' },
+  { label: 'Programs Overview', href: '/daycare-toddler-preschool-programs-santa-ana-tustin-irvine' },
+  { label: 'Infant Program', href: '/daycare-infant-program-santa-ana-tustin-irvine' },
+  { label: 'Toddler Program', href: '/toddler-program-santa-ana-tustin-irvine' },
+  { label: 'Preschool Program', href: '/preschool-program-santa-ana-tustin-irvine' },
 ]
 
 const QUICK_LINKS = [
-  { label: 'Enrollment', href: '/enrollment' },
-  { label: 'Tuition & Hours', href: '/tuition' },
-  { label: 'FAQs', href: '/faqs' },
+  { label: 'Enrollment', href: '/daycare-preschool-enrollment' },
+  { label: 'Tuition & Hours', href: '/preschool-daycare-tuition-and-school-hours' },
+  { label: 'FAQs', href: '/daycare-santa-ana-faqs' },
   { label: 'Our Facility', href: '/our-facility' },
-  { label: 'Schedule a Tour', href: '/schedule-a-tour' },
-  { label: 'Request Information', href: '/contact' },
+  { label: 'Schedule a Tour', href: '/schedule-a-tour-santa-ana-daycare-preschool' },
+  { label: 'Request Information', href: '/contact-daycare-preschool-santa-ana-tustin' },
 ]
 
 export default function Footer() {
@@ -95,9 +96,9 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col items-center justify-center gap-2 text-sm text-center" style={{ color: '#fff' }}>
           <span>© Copyright {new Date().getFullYear()} Ohana Montessori – All Rights Reserved. Do not duplicate or redistribute the contents of this website for commercial use.</span>
           <div className="flex gap-2">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/privacy-policy-2" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span>|</span>
-            <Link href="/terms-of-use" className="hover:text-white transition-colors">Terms of Use</Link>
+            <Link href="/terms-of-use-2" className="hover:text-white transition-colors">Terms of Use</Link>
           </div>
         </div>
       </div>

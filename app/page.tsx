@@ -99,7 +99,7 @@ export default function Home() {
         >
           <p style={{ fontSize: '14px', lineHeight: 1.4 }}>
             <strong>Enrollment Now Open!</strong> Infant, Toddler, Preschool Programs |{' '}
-            <Link href="/enrollment" className="underline-offset-4 hover:underline">Enroll Now &gt;</Link>
+            <Link href="/daycare-preschool-enrollment" className="underline-offset-4 hover:underline">Enroll Now &gt;</Link>
           </p>
         </div>
         </div>
@@ -120,7 +120,7 @@ export default function Home() {
           </Animate>
           <Animate className="flex flex-wrap items-center justify-center gap-[10px] mt-10 pb-5">
             <Link
-              href="/programs/infant"
+              href="/daycare-infant-program-santa-ana-tustin-irvine"
               className="px-10 py-[15px] text-sm rounded-full transition-colors hover:opacity-90"
               style={{
                 fontFamily: 'var(--font-work-sans)',
@@ -134,7 +134,7 @@ export default function Home() {
               Explore Programs
             </Link>
             <Link
-              href="/schedule-a-tour"
+              href="/schedule-a-tour-santa-ana-daycare-preschool"
               className="px-[60px] py-[15px] text-sm rounded-full transition-colors hover:bg-[var(--brown)] hover:text-white"
               style={{
                 fontFamily: 'var(--font-work-sans)',
@@ -207,7 +207,7 @@ export default function Home() {
                 </p>
               </div>
               <Link
-                href="/our-philosophy#koa-story"
+                href="/prechool-santa-ana-irvine-tustin-our-philosophy#koa-story"
                 className="inline-block transition-colors hover:bg-transparent hover:text-white"
                 style={{
                   fontFamily: 'var(--font-work-sans)',
@@ -303,7 +303,7 @@ export default function Home() {
               Growth happens naturally when children are trusted to explore, create, and lead their own learning.
             </p>
             <Link
-              href="/our-philosophy"
+              href="/prechool-santa-ana-irvine-tustin-our-philosophy"
               className="inline-block mt-6 transition-colors hover:bg-transparent hover:text-[#355E54]"
               style={{
                 fontFamily: 'var(--font-work-sans)',
@@ -563,18 +563,18 @@ export default function Home() {
             <div style={{ color: '#000000A1', fontSize: '16px', lineHeight: 1.6 }}>
             <p>
               At Ohana Montessori, we provide nurturing{' '}
-              <Link href="/programs/infant" style={{ color: '#0000009E' }}><strong>infant care</strong></Link>,{' '}
+              <Link href="/daycare-infant-program-santa-ana-tustin-irvine" style={{ color: '#0000009E' }}><strong>infant care</strong></Link>,{' '}
               <strong>toddler programs</strong>, and <strong>Montessori preschool</strong> education designed to help children grow with confidence, curiosity, and independence. Families looking for a trusted <strong>Montessori school in Santa Ana</strong>,{' '}
-              <Link href="/programs/infant" style={{ color: '#0000009E' }}><strong>daycare near me</strong></Link>, or{' '}
-              <Link href="/programs/preschool" style={{ color: '#0000009E' }}><strong>preschool in Tustin and Irvine</strong></Link> will find that our clean, beautifully designed environment offers the perfect balance of learning, play, and nature-connected experiences. Our Montessori curriculum supports each child&apos;s unique development through hands-on activities, practical life learning, outdoor exploration, and individualized guidance. Are you looking for a{' '}
-              <strong><Link href="/programs/preschool" style={{ color: '#0000009E' }}>Montessori preschool in Irvine</Link>?</strong> Whether parents are searching for <strong>childcare</strong>, <strong>early childhood education</strong>, or a{' '}
-              <strong>Montessori <Link href="/programs/toddler" style={{ color: '#0000009E' }}>toddler program</Link></strong>, Ohana Montessori provides a warm, safe, and engaging place where children thrive every day.
+              <Link href="/daycare-infant-program-santa-ana-tustin-irvine" style={{ color: '#0000009E' }}><strong>daycare near me</strong></Link>, or{' '}
+              <Link href="/preschool-program-santa-ana-tustin-irvine" style={{ color: '#0000009E' }}><strong>preschool in Tustin and Irvine</strong></Link> will find that our clean, beautifully designed environment offers the perfect balance of learning, play, and nature-connected experiences. Our Montessori curriculum supports each child&apos;s unique development through hands-on activities, practical life learning, outdoor exploration, and individualized guidance. Are you looking for a{' '}
+              <strong><Link href="/preschool-program-santa-ana-tustin-irvine" style={{ color: '#0000009E' }}>Montessori preschool in Irvine</Link>?</strong> Whether parents are searching for <strong>childcare</strong>, <strong>early childhood education</strong>, or a{' '}
+              <strong>Montessori <Link href="/toddler-program-santa-ana-tustin-irvine" style={{ color: '#0000009E' }}>toddler program</Link></strong>, Ohana Montessori provides a warm, safe, and engaging place where children thrive every day.
             </p>
             <p className="mt-4">
               Our Montessori curriculum supports each child&apos;s unique development through hands-on learning, practical life activities, outdoor exploration, and individualized guidance. Whether parents are looking for a{' '}
-              <Link href="/programs/preschool" style={{ color: '#0000009E' }}><strong>Montessori preschool in Irvine</strong></Link>,{' '}
-              <Link href="/programs/toddler" style={{ color: '#0000009E' }}><strong>toddler programs in Tustin</strong></Link>, or quality{' '}
-              <Link href="/programs/preschool" style={{ color: '#0000009E' }}><strong>childcare in Santa Ana</strong></Link>
+              <Link href="/preschool-program-santa-ana-tustin-irvine" style={{ color: '#0000009E' }}><strong>Montessori preschool in Irvine</strong></Link>,{' '}
+              <Link href="/toddler-program-santa-ana-tustin-irvine" style={{ color: '#0000009E' }}><strong>toddler programs in Tustin</strong></Link>, or quality{' '}
+              <Link href="/preschool-program-santa-ana-tustin-irvine" style={{ color: '#0000009E' }}><strong>childcare in Santa Ana</strong></Link>
               <strong> and surrounding Orange County communities</strong>, Ohana Montessori provides a warm, safe, and engaging place where children thrive every day.
             </p>
             <p className="mt-4"><strong>Areas Served:</strong></p>
@@ -596,7 +596,7 @@ export default function Home() {
           </Animate>
           <Animate className="mt-6">
             <Link
-              href="/contact"
+              href="/contact-daycare-preschool-santa-ana-tustin"
               className="inline-block transition-colors hover:bg-[var(--brown)] hover:text-[#FEFAF4]"
               style={{
                 fontFamily: 'var(--font-work-sans)',

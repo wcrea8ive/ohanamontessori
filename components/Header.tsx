@@ -27,28 +27,28 @@ const LinkedinIcon = ({ size = 18 }: { size?: number }) => (
 )
 
 const ABOUT_ITEMS = [
-  { label: 'Welcome', href: '/welcome' },
-  { label: 'Our Approach', href: '/our-approach' },
-  { label: 'Our Philosophy', href: '/our-philosophy' },
+  { label: 'Welcome', href: '/welcome-to-montessori-preschool-childcare-santa-ana' },
+  { label: 'Our Approach', href: '/daycare-santaana-tustin-irvine' },
+  { label: 'Our Philosophy', href: '/prechool-santa-ana-irvine-tustin-our-philosophy' },
 ]
 
 const INFO_ITEMS = [
-  { label: 'FAQs', href: '/faqs' },
+  { label: 'FAQs', href: '/daycare-santa-ana-faqs' },
   { label: 'Our Facility', href: '/our-facility' },
-  { label: 'School Calendar & Hours', href: '/school-calendar' },
+  { label: 'School Calendar & Hours', href: '/school-calendar-and-hours' },
   { label: 'Safety and Care', href: '/safety-and-care' },
 ]
 
 const PROGRAMS_ITEMS = [
-  { label: 'Infant Program', href: '/programs/infant' },
-  { label: 'Toddler Program', href: '/programs/toddler' },
-  { label: 'Preschool Program', href: '/programs/preschool' },
+  { label: 'Infant Program', href: '/daycare-infant-program-santa-ana-tustin-irvine' },
+  { label: 'Toddler Program', href: '/toddler-program-santa-ana-tustin-irvine' },
+  { label: 'Preschool Program', href: '/preschool-program-santa-ana-tustin-irvine' },
 ]
 
 const CONTACT_ITEMS = [
-  { label: 'Request Information', href: '/contact' },
-  { label: 'Join Our Mailing List', href: '/mailing-list' },
-  { label: 'Careers at Ohana', href: '/careers' },
+  { label: 'Request Information', href: '/request-information-daycare-santa-ana' },
+  { label: 'Join Our Mailing List', href: '/join-our-mailing-list-daycare-santa-ana' },
+  { label: 'Careers at Ohana', href: '/career-opportunities' },
 ]
 
 const MOBILE_NAV = [
@@ -56,9 +56,9 @@ const MOBILE_NAV = [
   { label: 'About', href: '#', children: ABOUT_ITEMS },
   { label: 'Info', href: '#', children: INFO_ITEMS },
   { label: 'Programs', href: '#', children: PROGRAMS_ITEMS },
-  { label: 'Enrollment', href: '/enrollment', children: null },
-  { label: 'Tuition & Hours', href: '/tuition', children: null },
-  { label: 'Schedule a Tour', href: '/schedule-a-tour', children: null },
+  { label: 'Enrollment', href: '/daycare-preschool-enrollment', children: null },
+  { label: 'Tuition & Hours', href: '/preschool-daycare-tuition-and-school-hours', children: null },
+  { label: 'Schedule a Tour', href: '/schedule-a-tour-santa-ana-daycare-preschool', children: null },
   { label: 'Contact', href: '#', children: CONTACT_ITEMS },
 ]
 
@@ -99,31 +99,39 @@ export default function Header() {
     if (closeTimer.current) clearTimeout(closeTimer.current)
   }
 
-  const Dropdown = ({ label }: { label: Exclude<DropdownKey, null> }) => (
+  const Dropdown = ({ label, href }: { label: Exclude<DropdownKey, null>; href?: string }) => (
     <div className="relative" onMouseEnter={() => open(label)} onMouseLeave={close}>
-      <button
-        className={`flex items-center gap-1 py-2 transition-opacity hover:opacity-70 ${navLinkClass}`}
-        style={navLinkStyle}
-        aria-expanded={openDropdown === label}
-        onClick={() => setOpenDropdown(openDropdown === label ? null : label)}
-      >
-        {label === 'Info' ? 'Info' : label}
-        <ChevronDown size={14} className={`transition-transform duration-200 ${openDropdown === label ? 'rotate-180' : ''}`} />
-      </button>
+      <div className={`flex items-center gap-1 py-2 ${navLinkClass}`} style={navLinkStyle}>
+        {href ? (
+          <Link href={href} className="transition-opacity hover:opacity-70">
+            {label === 'Info' ? 'Info' : label}
+          </Link>
+        ) : (
+          <span>{label === 'Info' ? 'Info' : label}</span>
+        )}
+        <button
+          aria-expanded={openDropdown === label}
+          aria-label={`Toggle ${label} menu`}
+          className="transition-opacity hover:opacity-70"
+          onClick={() => setOpenDropdown(openDropdown === label ? null : label)}
+        >
+          <ChevronDown size={14} className={`transition-transform duration-200 ${openDropdown === label ? 'rotate-180' : ''}`} />
+        </button>
+      </div>
       {openDropdown === label && (
         <div
-          className="absolute top-full left-1/2 -translate-x-1/2 w-60 rounded-lg shadow-xl py-2 z-50"
-          style={{ background: '#fff', border: '1px solid var(--border)', marginTop: '4px' }}
+          className="absolute top-full left-1/2 -translate-x-1/2 w-60 rounded-lg shadow-xl z-50 overflow-hidden"
+          style={{ background: '#fff', marginTop: '4px' }}
           onMouseEnter={cancelClose}
           onMouseLeave={close}
         >
-          {dropdownMap[label].items.map((item) => (
+          {dropdownMap[label].items.map((item, i) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setOpenDropdown(null)}
-              className="block px-4 py-2.5 text-sm transition-colors hover:bg-[var(--cream-dark)]"
-              style={{ color: 'var(--text)' }}
+              className="block px-4 py-3 text-sm font-bold transition-colors text-[var(--text)] hover:bg-[#355E54] hover:text-white"
+              style={{ borderBottom: i < dropdownMap[label].items.length - 1 ? '1px solid var(--border)' : 'none' }}
             >
               {item.label}
             </Link>
@@ -153,7 +161,7 @@ export default function Header() {
               Call Us
             </a>
             <Link
-              href="/contact"
+              href="/contact-daycare-preschool-santa-ana-tustin"
               className="flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] text-[15px] text-white transition-opacity hover:opacity-90"
               style={{ background: 'var(--brown)' }}
             >
@@ -186,8 +194,8 @@ export default function Header() {
           <Link href="/" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Home</Link>
           <Dropdown label="About" />
           <Dropdown label="Info" />
-          <Dropdown label="Programs" />
-          <Link href="/enrollment" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Enrollment</Link>
+          <Dropdown label="Programs" href="/daycare-toddler-preschool-programs-santa-ana-tustin-irvine" />
+          <Link href="/daycare-preschool-enrollment" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Enrollment</Link>
         </nav>
 
         {/* Logo */}
@@ -204,11 +212,11 @@ export default function Header() {
 
         {/* Right links */}
         <nav className="hidden xl:flex items-center gap-5 2xl:gap-6">
-          <Link href="/tuition" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Tuition &amp; Hours</Link>
-          <Link href="/schedule-a-tour" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Schedule a Tour</Link>
-          <Dropdown label="Contact" />
+          <Link href="/preschool-daycare-tuition-and-school-hours" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Tuition &amp; Hours</Link>
+          <Link href="/schedule-a-tour-santa-ana-daycare-preschool" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Schedule a Tour</Link>
+          <Dropdown label="Contact" href="/contact-daycare-preschool-santa-ana-tustin" />
           <Link
-            href="/contact"
+            href="/contact-daycare-preschool-santa-ana-tustin"
             className={`px-6 py-3.5 text-white rounded-full transition-opacity hover:opacity-90 ${navLinkClass}`}
             style={{ background: 'var(--brown)', fontWeight: 600, letterSpacing: '0.02em', textTransform: 'uppercase' }}
           >
@@ -293,7 +301,7 @@ export default function Header() {
         <div className="px-6 py-6 shrink-0 flex flex-col gap-3" style={{ borderTop: '1px solid var(--border)' }}>
           <a href="tel:+17149427135" className="text-sm text-center" style={{ color: 'var(--text-muted)' }}>(714) 942-7135</a>
           <Link
-            href="/contact"
+            href="/contact-daycare-preschool-santa-ana-tustin"
             onClick={() => setMobileOpen(false)}
             className="w-full py-3.5 text-white font-semibold text-sm text-center rounded-full uppercase tracking-wide transition-opacity hover:opacity-90"
             style={{ background: 'var(--brown)' }}

@@ -13,9 +13,9 @@ export default function CTABanner({
   heading = 'Ready to Begin Your Ohana Journey?',
   body = 'We know how meaningful these first months are. Let us partner with your family to provide a gentle, joyful start for your child.',
   primaryLabel = 'Schedule a Personal Tour',
-  primaryHref = '/schedule-a-tour',
+  primaryHref = '/schedule-a-tour-santa-ana-daycare-preschool',
   secondaryLabel = 'Contact Us',
-  secondaryHref = '/contact',
+  secondaryHref = '/contact-daycare-preschool-santa-ana-tustin',
 }: CTABannerProps) {
   return (
     <section className="py-20" style={{ background: 'var(--forest)' }}>

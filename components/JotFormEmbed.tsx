@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Script from 'next/script'
 
 interface Props {
   formId: string
@@ -30,14 +31,26 @@ export default function JotFormEmbed({ formId, title }: Props) {
   }, [iframeId])
 
   return (
-    <iframe
-      ref={iframeRef}
-      id={iframeId}
-      title={title}
-      src={`https://form.jotform.com/${formId}`}
-      allowTransparency={true}
-      allow="geolocation; microphone; camera; fullscreen; payment"
-      style={{ minWidth: '100%', maxWidth: '100%', height: '1000px', border: 'none' }}
-    />
+    <>
+      <iframe
+        ref={iframeRef}
+        id={iframeId}
+        title={title}
+        src={`https://form.jotform.com/${formId}`}
+        allowTransparency={true}
+        allow="geolocation; microphone; camera; fullscreen; payment"
+        style={{ minWidth: '100%', maxWidth: '100%', height: '1000px', border: 'none' }}
+      />
+      <Script
+        src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"
+        strategy="afterInteractive"
+        onReady={() => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        if (typeof (window as any).jotformEmbedHandler === 'function') {
+            ;(window as any).jotformEmbedHandler(`iframe[id='${iframeId}']`, 'https://form.jotform.com/')
+          }
+        }}
+      />
+    </>
   )
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import MailingListForm from '@/components/MailingListForm'
+import JotFormEmbed from '@/components/JotFormEmbed'
 import { Animate } from '@/components/Animate'
 
 export const metadata: Metadata = {
@@ -63,9 +63,9 @@ export default function CareersPage() {
             </div>
           </Animate>
 
-          <Animate className="mt-10 text-left">
-            <MailingListForm />
-          </Animate>
+          <div className="mt-10">
+            <JotFormEmbed />
+          </div>
         </div>
       </section>
     </>

@@ -12,30 +12,32 @@ export default function JotFormEmbed({ formId, title }: Props) {
   const iframeRef = useRef<HTMLIFrameElement>(null)
 
   useEffect(() => {
-    // Stub so JotForm's iframe JS doesn't throw when it calls window.parent.jotformEmbedHandler()
-    // We intentionally do NOT load the real embed handler — it injects the form into the parent
-    // DOM which causes Tailwind's CSS resets to break JotForm's custom dropdown styling.
+    const iframe = iframeRef.current
+    if (!iframe) return
+
+    // Add isIframeEmbed=1 + parentURL to the src so JotForm renders in
+    // iframe-compatible mode (proper dropdown, not expanded list).
+    const parentURL = encodeURIComponent(window.location.href)
+    const src = `https://form.jotform.com/${formId}?isIframeEmbed=1&parentURL=${parentURL}`
+    if (iframe.src !== src) iframe.src = src
+
+    // Stub so JotForm's postMessage to window.parent.jotformEmbedHandler doesn't throw
     if (typeof (window as any).jotformEmbedHandler === 'undefined') {
       ;(window as any).jotformEmbedHandler = () => {}
     }
 
     function handleMessage(e: MessageEvent) {
       if (typeof e.data !== 'string') return
-      const iframe = iframeRef.current
-      if (!iframe || !e.data.includes(iframeId)) return
-      try {
-        const data = JSON.parse(e.data)
-        if (data.action === 'setHeight' && data.value) {
-          iframe.style.height = `${data.value}px`
-        }
-      } catch {
-        // not JSON — ignore
+      const parts = e.data.split(':')
+      if (parts[0] === 'setHeight' && iframe) {
+        const h = parseInt(parts[1], 10)
+        if (!isNaN(h)) iframe.style.height = `${h}px`
       }
     }
 
     window.addEventListener('message', handleMessage)
     return () => window.removeEventListener('message', handleMessage)
-  }, [iframeId])
+  }, [formId])
 
   return (
     <iframe

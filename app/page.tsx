@@ -94,10 +94,10 @@ export default function Home() {
 
         {/* matches live site: bar tucks 10px under the hero, radius 0 0 100px 100px (10px on mobile) */}
         <div
-          className="-mt-[10px] rounded-b-[10px] lg:rounded-b-[100px] text-white text-center px-[30px] pt-[30px] pb-[10px]"
+          className="-mt-[10px] rounded-b-[10px] lg:rounded-b-[100px] text-white text-center px-[30px] py-[20px] flex items-center justify-center"
           style={{ background: 'var(--brown)' }}
         >
-          <p style={{ fontSize: '14px', lineHeight: 1.4 }}>
+          <p style={{ fontSize: '16px', lineHeight: 1.4 }}>
             <strong>Enrollment Now Open!</strong> Infant, Toddler, Preschool Programs |{' '}
             <Link href="/daycare-preschool-enrollment" className="underline-offset-4 hover:underline">Enroll Now &gt;</Link>
           </p>

@@ -94,7 +94,7 @@ export default function Home() {
 
         {/* matches live site: bar tucks 10px under the hero, radius 0 0 100px 100px (10px on mobile) */}
         <div
-          className="-mt-[10px] rounded-b-[10px] lg:rounded-b-[100px] text-white text-center px-[30px] py-[20px] flex items-center justify-center"
+          className="rounded-b-[10px] lg:rounded-b-[100px] text-white text-center px-[30px] py-[20px] flex items-center justify-center"
           style={{ background: 'var(--brown)' }}
         >
           <p style={{ fontSize: '16px', lineHeight: 1.4 }}>

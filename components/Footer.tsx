@@ -42,7 +42,7 @@ export default function Footer() {
 
         {/* About */}
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff' }}>About</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff' }}>About</h4>
           <ul className="space-y-2.5">
             {ABOUT_LINKS.map((l) => (
               <li key={l.href}>
@@ -54,7 +54,7 @@ export default function Footer() {
 
         {/* Programs */}
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff' }}>Programs</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff' }}>Programs</h4>
           <ul className="space-y-2.5">
             {PROGRAMS_LINKS.map((l) => (
               <li key={l.href}>
@@ -66,7 +66,7 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff' }}>Quick Links</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff' }}>Quick Links</h4>
           <ul className="space-y-2.5">
             {QUICK_LINKS.map((l) => (
               <li key={l.href}>
@@ -78,7 +78,7 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff' }}>Contact</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff' }}>Contact</h4>
           <ul className="space-y-3 text-sm" style={{ color: '#fff' }}>
             <li>2102 N. Tustin Avenue<br />Santa Ana, CA 92705</li>
             <li><a href="tel:+17149427135" className="hover:text-white transition-colors">(714) 942-7135</a></li>

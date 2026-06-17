@@ -52,7 +52,7 @@ export default function Home() {
       {/* Hero */}
       <section className="px-3 sm:px-6 lg:px-12">
         <div className="max-w-[1420px] mx-auto">
-        <div className="relative overflow-hidden rounded-[10px_10px_5px_5px] h-[70vh] min-h-[440px] max-h-[760px]">
+        <div className="relative overflow-hidden rounded-[10px_10px_0_0] h-[70vh] min-h-[440px] max-h-[760px]">
           <Image
             src="/ohana-homepage-hero.webp"
             alt="Children running through a sunlit meadow at Ohana Montessori"

@@ -230,7 +230,7 @@ export default function Home() {
       </section>
 
       {/* Quote */}
-      <section className="px-6" style={{ paddingTop: '50px', paddingBottom: '40px' }}>
+      <section className="px-6" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="relative max-w-[1100px] mx-auto text-center">
           <Image
             src="/quote.webp"

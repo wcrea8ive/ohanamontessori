@@ -75,10 +75,10 @@ export default function PhotoGalleryLightbox({ images, alt }: { images: string[]
               {activeIndex + 1} / {images.length}
             </span>
             <div className="flex items-center gap-4" onClick={(e) => e.stopPropagation()}>
-              <button type="button" onClick={toggleFullscreen} aria-label="Toggle fullscreen">
+              <button type="button" onClick={toggleFullscreen} aria-label="Toggle fullscreen" className="cursor-pointer">
                 {isFullscreen ? <Minimize size={22} /> : <Maximize size={22} />}
               </button>
-              <button type="button" onClick={close} aria-label="Close">
+              <button type="button" onClick={close} aria-label="Close" className="cursor-pointer">
                 <X size={24} />
               </button>
             </div>
@@ -92,7 +92,7 @@ export default function PhotoGalleryLightbox({ images, alt }: { images: string[]
                 showPrev()
               }}
               aria-label="Previous image"
-              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-white p-2"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-white p-2 cursor-pointer"
             >
               <ChevronLeft size={32} />
             </button>
@@ -118,7 +118,7 @@ export default function PhotoGalleryLightbox({ images, alt }: { images: string[]
                 showNext()
               }}
               aria-label="Next image"
-              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-white p-2"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-white p-2 cursor-pointer"
             >
               <ChevronRight size={32} />
             </button>

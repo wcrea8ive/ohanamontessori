@@ -456,7 +456,7 @@ export default function Home() {
       <section className="px-3 sm:px-6 lg:px-12" style={{ background: '#F0F5F4', paddingTop: '35px', paddingBottom: '35px' }}>
         <div className="max-w-[1426px] mx-auto text-center" style={{ padding: '30px 20px' }}>
           <Animate>
-            <h2 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: 'clamp(36px, 4.5vw, 48px)', color: '#4E5050' }}>
+            <h2 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: 'clamp(36px, 4.5vw, 48px)', lineHeight: 1, color: '#4E5050' }}>
               How to Join Ohana
             </h2>
           </Animate>

@@ -268,8 +268,8 @@ export default function Home() {
       </section>
 
       {/* Our Montessori Approach */}
-      <section className="px-3 sm:px-6 lg:px-12" style={{ paddingBottom: '40px' }}>
-        <div className="max-w-[1426px] mx-auto rounded-[10px] text-center" style={{ background: '#F0F5F4', padding: '60px 40px 0' }}>
+      <section className="px-3 sm:px-6 lg:px-12">
+        <div className="max-w-[1426px] mx-auto rounded-[10px] text-center" style={{ background: '#F0F5F4', padding: '60px 40px 80px' }}>
           <Animate>
             <h2 style={{ fontSize: 'clamp(36px, 5.5vw, 64px)', color: '#4E5050' }}>
               Our Montessori Approach

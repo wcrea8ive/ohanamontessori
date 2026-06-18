@@ -324,7 +324,7 @@ export default function Home() {
       </section>
 
       {/* Growing Together */}
-      <section className="px-3 sm:px-6 lg:px-12" style={{ paddingTop: '50px', paddingBottom: '60px' }}>
+      <section className="px-3 sm:px-6 lg:px-12" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <div className="max-w-[1426px] mx-auto text-center">
           <Animate>
             <h2 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: 'clamp(36px, 6.5vw, 68px)', color: '#4E5050' }}>

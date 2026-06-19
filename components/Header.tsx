@@ -257,7 +257,7 @@ export default function Header() {
       </div>
 
       {/* Main nav - mobile */}
-      <div className="xl:hidden px-6 py-3 grid grid-cols-3 items-center" style={{ borderBottom: '1px solid var(--border)' }}>
+      <div className="xl:hidden px-6 py-3 grid grid-cols-3 items-center">
         <div className="flex items-center gap-3 justify-self-start" style={{ color: '#000' }}>
           <a href="https://www.instagram.com/ohana.montessori" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-opacity hover:opacity-70">
             <InstagramIcon size={16} />

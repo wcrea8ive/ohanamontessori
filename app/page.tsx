@@ -1,11 +1,8 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRef, useState } from 'react'
-import { motion } from 'framer-motion'
-import { Play } from 'lucide-react'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
+import HomeHeroCaption from '@/components/HomeHeroCaption'
+import WelcomeVideo from '@/components/WelcomeVideo'
 
 const APPROACH_CARDS = [
   { title: 'Child-Led Learning', body: 'Your child chooses meaningful work that captures their interest.', icon: '/Child-Led-Learning.svg' },
@@ -44,9 +41,6 @@ const STEPS = [
 ]
 
 export default function Home() {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [videoPlaying, setVideoPlaying] = useState(false)
-
   return (
     <>
       {/* Hero */}
@@ -64,31 +58,7 @@ export default function Home() {
           {/* matches live site: Elementor slide overlay #00000073 */}
           <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.45)' }} />
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="absolute inset-x-0 bottom-0 text-center px-6 pb-12 sm:pb-20"
-          >
-            {/* sizes/weights from live Elementor hero: 22px/70px desktop, 18px/26px mobile, weight 400 */}
-            <p className="text-white" style={{
-              fontSize: 'clamp(18px, 1.6vw, 22px)',
-              fontWeight: 400,
-              lineHeight: 1.4,
-              marginBottom: '14px',
-              textShadow: '0 0 5px rgba(0,0,0,0.6)',
-            }}>
-              Welcome to Ohana Montessori
-            </p>
-            <h1 className="leading-[1.2] md:leading-[1.05] text-white" style={{
-              fontFamily: 'var(--font-nunito)',
-              fontWeight: 400,
-              fontSize: 'clamp(26px, 4.8vw, 70px)',
-              textShadow: '0 0 5px rgba(0,0,0,0.6)',
-            }}>
-              Where Nature Meets Nurture
-            </h1>
-          </motion.div>
+          <HomeHeroCaption />
 
         </div>
 
@@ -154,41 +124,7 @@ export default function Home() {
       {/* Welcome video */}
       <section className="px-3 sm:px-6 lg:px-12" style={{ paddingTop: '40px' }}>
         <div className="max-w-[1421px] mx-auto rounded-[16px] overflow-hidden flex flex-col-reverse md:flex-row">
-          <div className="relative w-full md:w-[51%]" style={{ minHeight: '250px' }}>
-            <video
-              ref={videoRef}
-              className="absolute inset-0 w-full h-full object-cover"
-              src="/Welcome to Ohana Montessori.mp4"
-              controls
-              preload="metadata"
-              playsInline
-              onPlay={() => setVideoPlaying(true)}
-              onPause={() => setVideoPlaying(false)}
-            />
-            {!videoPlaying && (
-              <button
-                type="button"
-                aria-label="Play video"
-                onClick={() => videoRef.current?.play()}
-                className="absolute inset-0 flex items-center justify-center transition-colors hover:bg-black/10"
-              >
-                <span
-                  className="flex items-center justify-center rounded-full"
-                  style={{ width: '64px', height: '64px', border: '2px solid #fff' }}
-                >
-                  <Play size={24} color="#fff" fill="#fff" style={{ marginLeft: '3px' }} />
-                </span>
-              </button>
-            )}
-            <div
-              className="absolute inset-x-0 bottom-0 px-6 py-6 pointer-events-none"
-              style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 60%)' }}
-            >
-              <p className="text-white" style={{ fontFamily: 'var(--font-nunito)', fontWeight: 400, fontSize: 'clamp(22px, 2.6vw, 32px)' }}>
-                Welcome to Ohana Montessori
-              </p>
-            </div>
-          </div>
+          <WelcomeVideo />
 
           <div className="w-full md:w-[49%] flex flex-col justify-center" style={{ background: '#663E19', padding: '60px 40px' }}>
             <Animate>

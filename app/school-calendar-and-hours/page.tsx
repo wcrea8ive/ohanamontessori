@@ -6,6 +6,7 @@ import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 export const metadata: Metadata = {
   title: 'School Calendar & Hours — Ohana Montessori',
   description: 'Ohana Montessori school hours, calendar, and schedule information for Santa Ana, CA. Open 7:00 am – 6:00 pm Monday through Friday.',
+  alternates: { canonical: 'https://ohanamontessori.com/school-calendar-and-hours' },
 }
 
 const HOLIDAYS = [

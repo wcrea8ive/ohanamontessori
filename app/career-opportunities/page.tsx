@@ -6,6 +6,7 @@ import { Animate } from '@/components/Animate'
 export const metadata: Metadata = {
   title: 'Careers at Ohana — Ohana Montessori',
   description: 'Explore career opportunities in early childhood education at Ohana Montessori in Santa Ana, CA. Join a team rooted in honoring children’s unique capabilities and strengths.',
+  alternates: { canonical: 'https://ohanamontessori.com/career-opportunities' },
 }
 
 const headingStyle = {

@@ -6,6 +6,7 @@ import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 export const metadata: Metadata = {
   title: 'Daily Experience — Ohana Montessori',
   description: 'Discover what a typical day looks like at Ohana Montessori, from our infant program through preschool, in Santa Ana, CA.',
+  alternates: { canonical: 'https://ohanamontessori.com/daily-experience' },
 }
 
 const headingStyle = {

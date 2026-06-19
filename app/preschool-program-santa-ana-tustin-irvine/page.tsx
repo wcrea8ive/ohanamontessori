@@ -6,6 +6,7 @@ import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 export const metadata: Metadata = {
   title: 'Preschool Program (3–6 years) — Ohana Montessori',
   description: 'Our preschool program builds academic readiness, social skills, and kindergarten preparation for children 3–6 years. 1:12 adult-to-child ratio in Santa Ana, CA.',
+  alternates: { canonical: 'https://ohanamontessori.com/preschool-program-santa-ana-tustin-irvine' },
 }
 
 const KINDERGARTEN_PREP = [

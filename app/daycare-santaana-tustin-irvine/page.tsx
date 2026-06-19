@@ -4,8 +4,9 @@ import Link from 'next/link'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 
 export const metadata: Metadata = {
-  title: 'Our Approach — Ohana Montessori',
+  title: 'Our Montessori Approach | Child-Led Learning in Santa Ana, CA',
   description: "Discover Ohana Montessori's authentic Montessori approach — child-led learning, prepared environments, and Montessori-certified educators in Santa Ana, CA.",
+  alternates: { canonical: 'https://ohanamontessori.com/daycare-santaana-tustin-irvine' },
 }
 
 const CHILD_LED = [

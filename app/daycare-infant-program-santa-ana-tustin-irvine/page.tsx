@@ -6,6 +6,7 @@ import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 export const metadata: Metadata = {
   title: 'Infant Program (3–24 months) — Ohana Montessori',
   description: 'Our infant program nurtures trust, security, and gentle independence for babies 3–24 months. 1:4 adult-to-child ratio in Santa Ana, CA.',
+  alternates: { canonical: 'https://ohanamontessori.com/daycare-infant-program-santa-ana-tustin-irvine' },
 }
 
 const MILESTONES = [

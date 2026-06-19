@@ -6,6 +6,7 @@ import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 export const metadata: Metadata = {
   title: 'Our Philosophy — Ohana Montessori',
   description: "Ohana Montessori's educational philosophy: honoring each child's spirit, fostering independence, and cultivating kindness, curiosity, and courage in Santa Ana, CA.",
+  alternates: { canonical: 'https://ohanamontessori.com/prechool-santa-ana-irvine-tustin-our-philosophy' },
 }
 
 const SCIENCE = [

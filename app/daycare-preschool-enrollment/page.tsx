@@ -6,6 +6,7 @@ import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 export const metadata: Metadata = {
   title: 'Enrollment — Ohana Montessori',
   description: 'Start your Montessori enrollment at Ohana Montessori. Learn how to join our preschool and childcare programs for Santa Ana, Tustin, and Irvine families.',
+  alternates: { canonical: 'https://ohanamontessori.com/daycare-preschool-enrollment' },
 }
 
 const STEPS = [

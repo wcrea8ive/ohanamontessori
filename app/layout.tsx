@@ -32,23 +32,45 @@ const workSans = Work_Sans({
   display: 'swap',
 })
 
+const SITE_URL = 'https://ohanamontessori.com'
+const OG_IMAGE = '/ohana-homepage-hero.jpg'
+const OG_ALT = 'Ohana Montessori — Nature-inspired infant, toddler & preschool in Santa Ana, CA'
+
 export const metadata: Metadata = {
-  title: 'Ohana Montessori — Infant, Toddler & Preschool in Santa Ana, CA',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'Ohana Montessori — Infant, Toddler & Preschool in Santa Ana, CA',
+    template: '%s — Ohana Montessori',
+  },
   description: 'A nature-inspired Montessori school in Santa Ana, CA serving infants through preschool. Where curiosity is invited, imagination is honored, and every child is nurtured.',
   openGraph: {
-    images: [{ url: 'https://ohanamontessori.com/og-image.jpg', width: 1200, height: 628, alt: 'Ohana Montessori — Santa Ana, CA' }],
+    type: 'website',
+    siteName: 'Ohana Montessori',
+    url: SITE_URL,
+    title: 'Ohana Montessori — Infant, Toddler & Preschool in Santa Ana, CA',
+    description: 'A nature-inspired Montessori school in Santa Ana, CA serving infants through preschool. Where curiosity is invited, imagination is honored, and every child is nurtured.',
+    images: [{ url: OG_IMAGE, width: 1920, height: 916, alt: OG_ALT }],
   },
-  twitter: { card: 'summary_large_image', images: ['https://ohanamontessori.com/og-image.jpg'] },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ohana Montessori — Infant, Toddler & Preschool in Santa Ana, CA',
+    description: 'A nature-inspired Montessori school in Santa Ana, CA serving infants through preschool. Where curiosity is invited, imagination is honored, and every child is nurtured.',
+    images: [OG_IMAGE],
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
 }
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ChildCare',
-  '@id': 'https://ohanamontessori.com/#business',
+  '@id': `${SITE_URL}/#business`,
   name: 'Ohana Montessori',
-  url: 'https://ohanamontessori.com',
+  url: SITE_URL,
   telephone: '+17149427135',
   email: 'info@ohanamontessori.com',
+  image: `${SITE_URL}${OG_IMAGE}`,
   description: 'A nature-inspired Montessori school in Santa Ana, CA serving infants through preschool-age children.',
   address: {
     '@type': 'PostalAddress',
@@ -58,6 +80,11 @@ const localBusinessSchema = {
     postalCode: '92705',
     addressCountry: 'US',
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 33.7784,
+    longitude: -117.8341,
+  },
   areaServed: [
     { '@type': 'City', name: 'Santa Ana' },
     { '@type': 'City', name: 'Irvine' },
@@ -65,6 +92,10 @@ const localBusinessSchema = {
     { '@type': 'City', name: 'Costa Mesa' },
   ],
   openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '07:00', closes: '18:00' }],
+  sameAs: [
+    'https://www.facebook.com/ohanamontessori',
+    'https://www.instagram.com/ohanamontessori',
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

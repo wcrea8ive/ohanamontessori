@@ -6,6 +6,7 @@ import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 export const metadata: Metadata = {
   title: 'Join Our Mailing List — Ohana Montessori',
   description: 'Join the Ohana Montessori mailing list for priority updates, sneak peeks, and enrollment information for our Santa Ana, CA programs.',
+  alternates: { canonical: 'https://ohanamontessori.com/join-our-mailing-list-daycare-santa-ana' },
 }
 
 const BENEFITS = [

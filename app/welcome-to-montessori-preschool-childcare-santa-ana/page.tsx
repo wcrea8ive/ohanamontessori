@@ -4,8 +4,9 @@ import Link from 'next/link'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 
 export const metadata: Metadata = {
-  title: 'Welcome — Ohana Montessori',
+  title: 'About Ohana Montessori | Santa Ana Preschool & Childcare',
   description: 'Learn about Ohana Montessori, our founding story, and why families across Orange County choose us for infant, toddler, and preschool care.',
+  alternates: { canonical: 'https://ohanamontessori.com/welcome-to-montessori-preschool-childcare-santa-ana' },
 }
 
 const FOUNDERS_POINTS = [

@@ -6,6 +6,7 @@ import { Animate } from '@/components/Animate'
 export const metadata: Metadata = {
   title: 'Request Information — Ohana Montessori',
   description: 'Request information about Ohana Montessori infant, toddler, and preschool programs in Santa Ana, CA. Get a personalized info packet and answers to your questions.',
+  alternates: { canonical: 'https://ohanamontessori.com/request-information-daycare-santa-ana' },
 }
 
 const headingStyle = {

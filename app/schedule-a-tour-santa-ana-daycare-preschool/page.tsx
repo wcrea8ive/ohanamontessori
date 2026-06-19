@@ -6,6 +6,7 @@ import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 export const metadata: Metadata = {
   title: 'Schedule a Tour — Ohana Montessori',
   description: 'Schedule a personal tour or group information session at Ohana Montessori in Santa Ana, CA. See our classrooms, meet our educators, and experience the Ohana difference.',
+  alternates: { canonical: 'https://ohanamontessori.com/schedule-a-tour-santa-ana-daycare-preschool' },
 }
 
 const TOUR_OPTIONS = [

@@ -6,6 +6,7 @@ import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 export const metadata: Metadata = {
   title: 'Safety and Care — Ohana Montessori',
   description: 'Learn about safety protocols, health practices, allergy policies, and emergency procedures at Ohana Montessori in Santa Ana, CA.',
+  alternates: { canonical: 'https://ohanamontessori.com/safety-and-care' },
 }
 
 const HEALTH_SAFETY = [

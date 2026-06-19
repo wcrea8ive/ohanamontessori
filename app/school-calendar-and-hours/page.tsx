@@ -52,7 +52,7 @@ export default function SchoolCalendarPage() {
               alt="Children running through a field"
               fill
               priority
-              sizes="100vw"
+              sizes="(min-width: 1420px) 1420px, 100vw"
               className="object-cover"
             />
             <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.25)' }} />

@@ -52,7 +52,7 @@ export default function Home() {
             alt="Children running through a sunlit meadow at Ohana Montessori"
             fill
             priority
-            sizes="100vw"
+            sizes="(min-width: 1420px) 1420px, 100vw"
             className="object-cover"
           />
           {/* matches live site: Elementor slide overlay #00000073 */}

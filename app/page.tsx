@@ -1,11 +1,8 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRef, useState } from 'react'
-import { motion } from 'framer-motion'
-import { Play } from 'lucide-react'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
+import HomeHeroCaption from '@/components/HomeHeroCaption'
+import WelcomeVideo from '@/components/WelcomeVideo'
 
 const APPROACH_CARDS = [
   { title: 'Child-Led Learning', body: 'Your child chooses meaningful work that captures their interest.', icon: '/Child-Led-Learning.svg' },
@@ -44,15 +41,12 @@ const STEPS = [
 ]
 
 export default function Home() {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [videoPlaying, setVideoPlaying] = useState(false)
-
   return (
     <>
       {/* Hero */}
       <section className="px-3 sm:px-6 lg:px-12">
         <div className="max-w-[1420px] mx-auto">
-        <div className="relative overflow-hidden rounded-[10px_10px_5px_5px] h-[70vh] min-h-[440px] max-h-[760px]">
+        <div className="relative overflow-hidden rounded-[10px_10px_0_0] h-[70vh] min-h-[440px] max-h-[760px]">
           <Image
             src="/ohana-homepage-hero.webp"
             alt="Children running through a sunlit meadow at Ohana Montessori"
@@ -64,40 +58,16 @@ export default function Home() {
           {/* matches live site: Elementor slide overlay #00000073 */}
           <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.45)' }} />
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="absolute inset-x-0 bottom-0 text-center px-6 pb-12 sm:pb-20"
-          >
-            {/* sizes/weights from live Elementor hero: 22px/70px desktop, 18px/26px mobile, weight 400 */}
-            <p className="text-white" style={{
-              fontSize: 'clamp(18px, 1.6vw, 22px)',
-              fontWeight: 400,
-              lineHeight: 1.4,
-              marginBottom: '14px',
-              textShadow: '0 0 5px rgba(0,0,0,0.6)',
-            }}>
-              Welcome to Ohana Montessori
-            </p>
-            <h1 className="leading-[1.2] md:leading-[1.05] text-white" style={{
-              fontFamily: 'var(--font-nunito)',
-              fontWeight: 400,
-              fontSize: 'clamp(26px, 4.8vw, 70px)',
-              textShadow: '0 0 5px rgba(0,0,0,0.6)',
-            }}>
-              Where Nature Meets Nurture
-            </h1>
-          </motion.div>
+          <HomeHeroCaption />
 
         </div>
 
         {/* matches live site: bar tucks 10px under the hero, radius 0 0 100px 100px (10px on mobile) */}
         <div
-          className="-mt-[10px] rounded-b-[10px] lg:rounded-b-[100px] text-white text-center px-[30px] pt-[30px] pb-[10px]"
+          className="rounded-b-[10px] lg:rounded-b-[100px] text-white text-center px-[30px] py-[20px] flex items-center justify-center"
           style={{ background: 'var(--brown)' }}
         >
-          <p style={{ fontSize: '14px', lineHeight: 1.4 }}>
+          <p style={{ fontSize: '16px', lineHeight: 1.4 }}>
             <strong>Enrollment Now Open!</strong> Infant, Toddler, Preschool Programs |{' '}
             <Link href="/daycare-preschool-enrollment" className="underline-offset-4 hover:underline">Enroll Now &gt;</Link>
           </p>
@@ -154,41 +124,7 @@ export default function Home() {
       {/* Welcome video */}
       <section className="px-3 sm:px-6 lg:px-12" style={{ paddingTop: '40px' }}>
         <div className="max-w-[1421px] mx-auto rounded-[16px] overflow-hidden flex flex-col-reverse md:flex-row">
-          <div className="relative w-full md:w-[51%]" style={{ minHeight: '250px' }}>
-            <video
-              ref={videoRef}
-              className="absolute inset-0 w-full h-full object-cover"
-              src="/Welcome to Ohana Montessori.mp4"
-              controls
-              preload="metadata"
-              playsInline
-              onPlay={() => setVideoPlaying(true)}
-              onPause={() => setVideoPlaying(false)}
-            />
-            {!videoPlaying && (
-              <button
-                type="button"
-                aria-label="Play video"
-                onClick={() => videoRef.current?.play()}
-                className="absolute inset-0 flex items-center justify-center transition-colors hover:bg-black/10"
-              >
-                <span
-                  className="flex items-center justify-center rounded-full"
-                  style={{ width: '64px', height: '64px', border: '2px solid #fff' }}
-                >
-                  <Play size={24} color="#fff" fill="#fff" style={{ marginLeft: '3px' }} />
-                </span>
-              </button>
-            )}
-            <div
-              className="absolute inset-x-0 bottom-0 px-6 py-6 pointer-events-none"
-              style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 60%)' }}
-            >
-              <p className="text-white" style={{ fontFamily: 'var(--font-nunito)', fontWeight: 400, fontSize: 'clamp(22px, 2.6vw, 32px)' }}>
-                Welcome to Ohana Montessori
-              </p>
-            </div>
-          </div>
+          <WelcomeVideo />
 
           <div className="w-full md:w-[49%] flex flex-col justify-center" style={{ background: '#663E19', padding: '60px 40px' }}>
             <Animate>
@@ -230,7 +166,7 @@ export default function Home() {
       </section>
 
       {/* Quote */}
-      <section className="px-6" style={{ paddingTop: '50px', paddingBottom: '40px' }}>
+      <section className="px-6" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="relative max-w-[1100px] mx-auto text-center">
           <Image
             src="/quote.webp"
@@ -268,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* Our Montessori Approach */}
-      <section className="px-3 sm:px-6 lg:px-12" style={{ paddingBottom: '40px' }}>
+      <section className="px-3 sm:px-6 lg:px-12">
         <div className="max-w-[1426px] mx-auto rounded-[10px] text-center" style={{ background: '#F0F5F4', padding: '60px 40px 80px' }}>
           <Animate>
             <h2 style={{ fontSize: 'clamp(36px, 5.5vw, 64px)', color: '#4E5050' }}>
@@ -324,7 +260,7 @@ export default function Home() {
       </section>
 
       {/* Growing Together */}
-      <section className="px-3 sm:px-6 lg:px-12" style={{ paddingTop: '50px', paddingBottom: '60px' }}>
+      <section className="px-3 sm:px-6 lg:px-12" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <div className="max-w-[1426px] mx-auto text-center">
           <Animate>
             <h2 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: 'clamp(36px, 6.5vw, 68px)', color: '#4E5050' }}>
@@ -453,10 +389,10 @@ export default function Home() {
       </section>
 
       {/* How to Join Ohana */}
-      <section className="px-3 sm:px-6 lg:px-12" style={{ background: '#F0F5F4', paddingTop: '50px', paddingBottom: '50px' }}>
-        <div className="max-w-[1426px] mx-auto text-center" style={{ padding: '40px 20px' }}>
+      <section className="px-3 sm:px-6 lg:px-12" style={{ background: '#F0F5F4', paddingTop: '35px', paddingBottom: '35px' }}>
+        <div className="max-w-[1426px] mx-auto text-center" style={{ padding: '30px 20px' }}>
           <Animate>
-            <h2 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: 'clamp(36px, 4.5vw, 48px)', color: '#4E5050' }}>
+            <h2 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: 'clamp(36px, 4.5vw, 48px)', lineHeight: 1, color: '#4E5050' }}>
               How to Join Ohana
             </h2>
           </Animate>

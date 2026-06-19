@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
+import PhotoGalleryLightbox from '@/components/PhotoGalleryLightbox'
 
 export const metadata: Metadata = {
   title: 'Our Facility — Ohana Montessori',
@@ -153,15 +154,9 @@ export default function OurFacilityPage() {
       {/* Photo gallery */}
       <section className="px-6" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <div className="max-w-[1000px] mx-auto">
-          <AnimateStagger className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {GALLERY.map((src) => (
-              <AnimateItem key={src}>
-                <div className="relative w-full aspect-[3/2] rounded-[8px] overflow-hidden">
-                  <Image src={src} alt="Ohana Montessori facility" fill className="object-cover" />
-                </div>
-              </AnimateItem>
-            ))}
-          </AnimateStagger>
+          <Animate>
+            <PhotoGalleryLightbox images={GALLERY} alt="Ohana Montessori facility" />
+          </Animate>
         </div>
       </section>
 

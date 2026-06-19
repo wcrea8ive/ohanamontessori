@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import ContactForm from '@/components/ContactForm'
+import JotFormEmbed from '@/components/JotFormEmbed'
 import { Animate } from '@/components/Animate'
 
 export const metadata: Metadata = {
@@ -91,7 +91,7 @@ export default function ContactPage() {
             <Animate delay={0.15}>
               <h2 style={headingStyle}>Contact Us</h2>
               <div className="mt-6">
-                <ContactForm />
+                <JotFormEmbed formId="261623972273158" title="Ohana Contact Us" />
               </div>
             </Animate>
           </div>

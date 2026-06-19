@@ -65,7 +65,7 @@ export default function CareersPage() {
           </Animate>
 
           <div className="mt-10">
-            <JotFormEmbed />
+            <JotFormEmbed formId="261624122302139" title="Job Application / Contact Form" />
           </div>
         </div>
       </section>

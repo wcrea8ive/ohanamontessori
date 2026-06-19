@@ -148,7 +148,6 @@ export default function Header() {
       <div className="md:hidden" style={{ background: 'var(--topbar)' }}>
         <div className="px-4 py-3 flex flex-col items-center gap-2 text-center">
           <span className="flex items-center gap-1.5 text-[13px]" style={{ color: '#000' }}>
-            <MapPin size={14} />
             License # 304371739
           </span>
           <span className="flex items-center gap-1.5 text-[13px]" style={{ color: '#000' }}>
@@ -278,7 +277,7 @@ export default function Header() {
             width={1000}
             height={963}
             priority
-            className="w-auto h-14"
+            className="w-auto h-20"
           />
         </Link>
 

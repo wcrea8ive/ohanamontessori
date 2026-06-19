@@ -144,7 +144,39 @@ export default function Header() {
   return (
     <header className="relative z-50" style={{ background: '#fff' }}>
 
-      {/* Top bar */}
+      {/* Top bar - mobile */}
+      <div className="md:hidden" style={{ background: 'var(--topbar)' }}>
+        <div className="px-4 py-3 flex flex-col items-center gap-2 text-center">
+          <span className="flex items-center gap-1.5 text-[13px]" style={{ color: '#000' }}>
+            <MapPin size={14} />
+            License # 304371739
+          </span>
+          <span className="flex items-center gap-1.5 text-[13px]" style={{ color: '#000' }}>
+            <MapPin size={14} />
+            2102 N. Tustin Avenue, Santa Ana, CA 92705
+          </span>
+          <div className="flex items-center gap-2 mt-1">
+            <a
+              href="tel:+17149427135"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-[13px] text-white transition-opacity hover:opacity-90"
+              style={{ background: 'var(--brown)' }}
+            >
+              <Phone size={13} fill="currentColor" strokeWidth={0} />
+              Call Us
+            </a>
+            <Link
+              href="/contact-daycare-preschool-santa-ana-tustin"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-[13px] text-white transition-opacity hover:opacity-90"
+              style={{ background: 'var(--brown)' }}
+            >
+              <MessageCircleMore size={13} />
+              Send Us a Message
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Top bar - desktop */}
       <div className="hidden md:block" style={{ background: 'var(--topbar)' }}>
         <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -186,11 +218,11 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main nav */}
-      <div className="max-w-[1340px] mx-auto px-6 flex items-center justify-between xl:justify-center py-3 xl:py-5">
+      {/* Main nav - desktop */}
+      <div className="hidden xl:flex max-w-[1340px] mx-auto px-6 items-center justify-center py-5">
 
         {/* Left links */}
-        <nav className="hidden xl:flex items-center gap-5 2xl:gap-6">
+        <nav className="flex items-center gap-5 2xl:gap-6">
           <Link href="/" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Home</Link>
           <Dropdown label="About" />
           <Dropdown label="Info" />
@@ -199,19 +231,19 @@ export default function Header() {
         </nav>
 
         {/* Logo */}
-        <Link href="/" className="shrink-0 xl:mx-7 2xl:mx-9">
+        <Link href="/" className="shrink-0 mx-7 2xl:mx-9">
           <Image
             src="/montessori-logo-1000px.png"
             alt="Ohana Montessori"
             width={1000}
             height={963}
             priority
-            className="w-auto h-16 xl:h-[104px]"
+            className="w-auto h-[104px]"
           />
         </Link>
 
         {/* Right links */}
-        <nav className="hidden xl:flex items-center gap-5 2xl:gap-6">
+        <nav className="flex items-center gap-5 2xl:gap-6">
           <Link href="/preschool-daycare-tuition-and-school-hours" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Tuition &amp; Hours</Link>
           <Link href="/schedule-a-tour-santa-ana-daycare-preschool" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Schedule a Tour</Link>
           <Dropdown label="Contact" href="/contact-daycare-preschool-santa-ana-tustin" />
@@ -223,10 +255,35 @@ export default function Header() {
             Request Information
           </Link>
         </nav>
+      </div>
 
-        {/* Mobile toggle */}
+      {/* Main nav - mobile */}
+      <div className="xl:hidden px-6 py-3 grid grid-cols-3 items-center" style={{ borderBottom: '1px solid var(--border)' }}>
+        <div className="flex items-center gap-3 justify-self-start" style={{ color: '#000' }}>
+          <a href="https://www.instagram.com/ohana.montessori" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-opacity hover:opacity-70">
+            <InstagramIcon size={16} />
+          </a>
+          <a href="https://www.facebook.com/ohana.montessori" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition-opacity hover:opacity-70">
+            <FacebookIcon size={16} />
+          </a>
+          <a href="https://www.linkedin.com/company/ohana-montessori" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-opacity hover:opacity-70">
+            <LinkedinIcon size={16} />
+          </a>
+        </div>
+
+        <Link href="/" className="justify-self-center shrink-0">
+          <Image
+            src="/montessori-logo-1000px.png"
+            alt="Ohana Montessori"
+            width={1000}
+            height={963}
+            priority
+            className="w-auto h-14"
+          />
+        </Link>
+
         <button
-          className="xl:hidden p-2 rounded-md"
+          className="justify-self-end p-2 rounded-md"
           style={{ color: 'var(--text)' }}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"

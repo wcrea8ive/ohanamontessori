@@ -49,67 +49,83 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Post list */}
-      <section className="px-6" style={{ paddingTop: '60px', paddingBottom: '80px' }}>
-        <div className="max-w-[800px] mx-auto">
-          <AnimateStagger className="space-y-0">
-            {sorted.map((post, i) => (
+      {/* Post grid — matches live site: 3 cols desktop / 2 tablet / 1 mobile, 35px gap, white cards with shadow */}
+      <section className="px-6 lg:px-12" style={{ paddingTop: '50px', paddingBottom: '60px' }}>
+        <div className="max-w-[1280px] mx-auto">
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[35px]">
+            {sorted.map((post) => (
               <AnimateItem key={post.slug}>
                 <article
+                  className="blog-card flex flex-col h-full"
                   style={{
-                    borderTop: '1px solid var(--border)',
-                    paddingTop: '36px',
-                    paddingBottom: '36px',
-                    ...(i === sorted.length - 1 ? { borderBottom: '1px solid var(--border)' } : {}),
+                    background: '#fff',
+                    borderRadius: '3px',
+                    overflow: 'hidden',
                   }}
                 >
-                  <time
-                    dateTime={post.date}
-                    style={{
-                      fontFamily: 'var(--font-work-sans)',
-                      fontSize: '12px',
-                      fontWeight: 500,
-                      letterSpacing: '0.08em',
-                      textTransform: 'uppercase',
-                      color: 'var(--text-muted)',
-                    }}
-                  >
-                    {formatDate(post.date)}
-                  </time>
-                  <h2
-                    className="mt-3"
-                    style={{
-                      fontFamily: 'var(--font-baskervville)',
-                      fontWeight: 400,
-                      fontSize: 'clamp(22px, 3vw, 28px)',
-                      lineHeight: 1.25,
-                      color: '#1E2820',
-                    }}
-                  >
+                  {/* Card text */}
+                  <div className="flex flex-col flex-1" style={{ padding: '20px 30px 0' }}>
+                    <h2
+                      className="mb-[25px]"
+                      style={{
+                        fontFamily: 'var(--font-baskervville)',
+                        fontWeight: 400,
+                        fontSize: '21px',
+                        lineHeight: 1.3,
+                        color: '#355E54',
+                        margin: 0,
+                        marginBottom: '25px',
+                      }}
+                    >
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="transition-colors hover:text-[var(--brown)]"
+                      >
+                        {post.title}
+                      </Link>
+                    </h2>
+                    <div className="flex-1" style={{ lineHeight: 1.7, marginBottom: '25px' }}>
+                      <p style={{ color: '#777', fontSize: '14px', lineHeight: '1.5em', margin: 0 }}>
+                        {post.excerpt}
+                      </p>
+                    </div>
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="transition-colors hover:text-[var(--brown)]"
+                      style={{
+                        display: 'inline-block',
+                        marginBottom: '20px',
+                        fontFamily: 'var(--font-work-sans)',
+                        fontSize: '12px',
+                        fontWeight: 700,
+                        textTransform: 'uppercase',
+                        color: '#2F1702',
+                        alignSelf: 'flex-start',
+                      }}
                     >
-                      {post.title}
+                      Read More
                     </Link>
-                  </h2>
-                  <p className="mt-3 leading-relaxed" style={{ color: 'var(--text-muted)', fontSize: '15px' }}>
-                    {post.excerpt}
-                  </p>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-2 mt-5 transition-colors hover:text-[var(--brown)]"
+                  </div>
+
+                  {/* Meta — border-top, pinned to bottom */}
+                  <div
                     style={{
-                      fontFamily: 'var(--font-work-sans)',
-                      fontSize: '13px',
-                      fontWeight: 500,
-                      letterSpacing: '0.06em',
-                      textTransform: 'uppercase',
-                      color: 'var(--brown)',
+                      borderTop: '1px solid #eaeaea',
+                      padding: '15px 30px',
+                      marginTop: 'auto',
                     }}
                   >
-                    Read article →
-                  </Link>
+                    <time
+                      dateTime={post.date}
+                      style={{
+                        fontFamily: 'var(--font-work-sans)',
+                        fontSize: '12px',
+                        color: '#adadad',
+                        lineHeight: '1.3em',
+                      }}
+                    >
+                      {formatDate(post.date)}
+                    </time>
+                  </div>
                 </article>
               </AnimateItem>
             ))}

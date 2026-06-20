@@ -55,7 +55,7 @@ export default function Footer() {
 
         {/* Programs */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)' }}>Programs</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-widest mb-5 font-work-sans" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)' }}>Programs</h4>
           <ul className="space-y-2.5">
             {PROGRAMS_LINKS.map((l) => (
               <li key={l.href}>

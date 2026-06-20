@@ -515,7 +515,7 @@ export default function Home() {
             </p>
             <p className="mt-4"><strong>Areas Served:</strong></p>
             <p className="mt-4">
-              We proudly serve families throughout Orange County, including Santa Ana, Tustin, Irvine, Orange, Costa Mesa, Newport Beach, Corona del Mar, Anaheim, Anaheim Hills, & Fountain Valley. Montessori Orange, CA, including Santa Ana, Tustin, Irvine, Orange, Costa Mesa, Newport Beach, Corona del Mar, Anaheim, Anaheim Hills, &amp; Fountain Valley.
+              We proudly serve families throughout Orange County, including Santa Ana, Tustin, Irvine, Orange, Costa Mesa, Newport Beach, Corona del Mar, Anaheim, Anaheim Hills, & Fountain Valley. Montessori Orange, CA
             </p>
             </div>
           </Animate>

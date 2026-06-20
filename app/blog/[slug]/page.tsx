@@ -36,124 +36,121 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
-      {/* Hero */}
-      <section style={{ background: '#F0ECE9', paddingTop: '80px', paddingBottom: '60px' }}>
-        <div className="max-w-[800px] mx-auto px-6">
+      {/* Article — white background, 970px max-width, matches live site single post layout */}
+      <div style={{ background: '#fff', minHeight: '60vh' }}>
+        <div
+          className="mx-auto px-[20px] py-[60px] md:py-[80px]"
+          style={{ maxWidth: '970px' }}
+        >
           <Animate>
+            {/* Back link */}
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 mb-8 transition-colors hover:text-[var(--brown)]"
               style={{
+                display: 'inline-block',
+                marginBottom: '30px',
                 fontFamily: 'var(--font-work-sans)',
-                fontSize: '12px',
+                fontSize: '13px',
                 fontWeight: 500,
-                letterSpacing: '0.08em',
+                letterSpacing: '0.06em',
                 textTransform: 'uppercase',
                 color: 'var(--text-muted)',
               }}
+              className="transition-colors hover:text-[var(--brown)]"
             >
               ← All articles
             </Link>
+
+            {/* Date */}
             <time
               dateTime={post.date}
               style={{
                 display: 'block',
                 fontFamily: 'var(--font-work-sans)',
-                fontSize: '12px',
-                fontWeight: 500,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: 'var(--text-muted)',
-                marginBottom: '16px',
+                fontSize: '13px',
+                color: '#adadad',
+                marginBottom: '18px',
               }}
             >
               {formatDate(post.date)}
             </time>
+
+            {/* Title — h1, Baskervville, matches live site */}
             <h1
               style={{
                 fontFamily: 'var(--font-baskervville)',
                 fontWeight: 400,
-                fontSize: 'clamp(28px, 4vw, 44px)',
+                fontSize: 'clamp(28px, 4vw, 42px)',
                 lineHeight: 1.2,
-                color: '#1E2820',
+                color: '#000',
+                margin: '0 0 30px 0',
               }}
             >
               {post.title}
             </h1>
-            <p
-              className="mt-5 leading-relaxed"
-              style={{ color: 'var(--text-muted)', fontSize: '17px', maxWidth: '600px' }}
-            >
-              {post.excerpt}
-            </p>
-          </Animate>
-        </div>
-      </section>
 
-      {/* Article body */}
-      <section className="px-6" style={{ paddingTop: '60px', paddingBottom: '80px' }}>
-        <div className="max-w-[720px] mx-auto">
+            {/* Divider */}
+            <hr style={{ border: 'none', borderTop: '1px solid #e8e8e8', marginBottom: '40px' }} />
+          </Animate>
+
+          {/* Body */}
           <Animate>
-            <div className="prose-ohana">
-              {post.body.map((section, i) => {
-                if (section.type === 'h2') {
-                  return (
-                    <h2
-                      key={i}
-                      style={{
-                        fontFamily: 'var(--font-baskervville)',
-                        fontWeight: 400,
-                        fontSize: 'clamp(22px, 3vw, 30px)',
-                        lineHeight: 1.25,
-                        color: 'var(--brown)',
-                        marginTop: '48px',
-                        marginBottom: '16px',
-                      }}
-                    >
-                      {section.text}
-                    </h2>
-                  )
-                }
-                if (section.type === 'h3') {
-                  return (
-                    <h3
-                      key={i}
-                      style={{
-                        fontFamily: 'var(--font-baskervville)',
-                        fontWeight: 400,
-                        fontSize: 'clamp(18px, 2.5vw, 24px)',
-                        lineHeight: 1.3,
-                        color: 'var(--brown)',
-                        marginTop: '36px',
-                        marginBottom: '12px',
-                      }}
-                    >
-                      {section.text}
-                    </h3>
-                  )
-                }
+            {post.body.map((section, i) => {
+              if (section.type === 'h2') {
                 return (
-                  <p
+                  <h2
                     key={i}
-                    className="leading-relaxed"
-                    style={{ color: 'var(--text)', fontSize: '16px', marginBottom: '20px' }}
+                    style={{
+                      fontFamily: 'var(--font-baskervville)',
+                      fontWeight: 400,
+                      fontSize: '24px',
+                      lineHeight: 1.3,
+                      color: '#000',
+                      margin: '40px 0 15px 0',
+                    }}
                   >
                     {section.text}
-                  </p>
+                  </h2>
                 )
-              })}
-            </div>
+              }
+              if (section.type === 'h3') {
+                return (
+                  <h3
+                    key={i}
+                    style={{
+                      fontFamily: 'var(--font-baskervville)',
+                      fontWeight: 400,
+                      fontSize: '20px',
+                      lineHeight: 1.3,
+                      color: '#000',
+                      margin: '30px 0 12px 0',
+                    }}
+                  >
+                    {section.text}
+                  </h3>
+                )
+              }
+              return (
+                <p
+                  key={i}
+                  style={{
+                    fontFamily: 'var(--font-work-sans)',
+                    fontSize: '17px',
+                    lineHeight: '1.6em',
+                    color: '#000',
+                    margin: '0 0 20px 0',
+                  }}
+                >
+                  {section.text}
+                </p>
+              )
+            })}
           </Animate>
-        </div>
-      </section>
 
-      {/* Back to blog */}
-      <section className="px-6 pb-16">
-        <div className="max-w-[720px] mx-auto">
-          <div style={{ borderTop: '1px solid var(--border)', paddingTop: '32px' }}>
+          {/* Back link bottom */}
+          <div style={{ borderTop: '1px solid #e8e8e8', marginTop: '60px', paddingTop: '30px' }}>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 transition-colors hover:text-[var(--brown)]"
               style={{
                 fontFamily: 'var(--font-work-sans)',
                 fontSize: '13px',
@@ -162,12 +159,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 textTransform: 'uppercase',
                 color: 'var(--text-muted)',
               }}
+              className="transition-colors hover:text-[var(--brown)]"
             >
               ← Back to all articles
             </Link>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* CTA */}
       <section style={{ background: '#F0F5F4', padding: '60px 10px 75px' }}>
@@ -176,7 +174,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <h2 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: 'clamp(28px, 4vw, 40px)', color: '#000' }}>
               Ready to Visit Ohana Montessori?
             </h2>
-            <p className="mt-5 leading-relaxed" style={{ color: 'var(--text)' }}>
+            <p
+              className="mt-5 leading-relaxed"
+              style={{ fontFamily: 'var(--font-work-sans)', fontSize: '17px', color: 'var(--text)' }}
+            >
               Located at 2102 N. Tustin Avenue, Santa Ana — serving families from Irvine, Tustin, Orange, and across Orange County.
             </p>
           </Animate>

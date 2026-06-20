@@ -79,7 +79,7 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff' }}>Contact</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)' }}>Contact</h4>
           <ul className="space-y-3" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '17px' }}>
             <li>2102 N. Tustin Avenue<br />Santa Ana, CA 92705</li>
             <li><a href="tel:+17149427135" className="hover:text-white transition-colors" style={{ fontFamily: 'var(--font-work-sans)', fontSize: '17px' }}>(714) 942-7135</a></li>

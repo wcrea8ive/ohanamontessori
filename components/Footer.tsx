@@ -43,7 +43,7 @@ export default function Footer() {
 
         {/* About */}
         <div>
-          <h4 className="text-base font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff' }}>About</h4>
+          <h4 className="text-base font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)' }}>About</h4>
           <ul className="space-y-2.5">
             {ABOUT_LINKS.map((l) => (
               <li key={l.href}>

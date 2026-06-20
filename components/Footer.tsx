@@ -37,7 +37,7 @@ export default function Footer() {
           <p className="text-sm leading-relaxed mb-4" style={{ color: '#fff' }}>
             Ohana is more than a name, it&apos;s our way of being. Here, children grow in a calm, beautiful environment while parents feel supported, connected, and understood.
           </p>
-          <p className="text-xs" style={{ color: '#fff' }}>License # 304371739</p>
+          <p className="text-xs" style={{ color: '#fff' }}>License #: 304371739</p>
         </div>
 
         {/* About */}

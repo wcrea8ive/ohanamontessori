@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 import { BLOG_POSTS } from '@/lib/blogPosts'
@@ -9,14 +10,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://ohanamontessori.com/blog' },
 }
 
-const headingStyle = {
-  fontFamily: 'var(--font-baskervville)',
-  fontWeight: 400,
-  fontSize: 'clamp(28px, 4vw, 40px)',
-  lineHeight: 1.2,
-  color: 'var(--brown)',
-} as const
-
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
 }
@@ -26,30 +19,33 @@ export default function BlogPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section style={{ background: '#F0ECE9', paddingTop: '80px', paddingBottom: '60px' }}>
-        <div className="max-w-[800px] mx-auto text-center px-6">
-          <Animate>
-            <p
-              style={{
-                fontFamily: 'var(--font-work-sans)',
-                fontSize: '12px',
-                fontWeight: 500,
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                color: 'var(--text-muted)',
-                marginBottom: '16px',
-              }}
-            >
-              Ohana Montessori Blog
-            </p>
-            <h1 style={{ ...headingStyle, fontSize: 'clamp(36px, 5vw, 52px)', color: '#1E2820' }}>
-              Resources for Orange County Families
-            </h1>
-            <p className="mt-6 leading-relaxed max-w-[560px] mx-auto" style={{ color: 'var(--text-muted)', fontSize: '16px' }}>
-              Guides and insights on Montessori education, preschool selection, and early childhood development.
-            </p>
-          </Animate>
+      {/* Hero — matches live site: DSCF6989-HDR.webp, 40% overlay, 140px padding, rounded 10px */}
+      <section className="px-3 sm:px-6 lg:px-12">
+        <div className="max-w-[1420px] mx-auto">
+          <div className="relative overflow-hidden rounded-[10px] flex items-end justify-center text-center px-3 sm:px-5 py-[80px] md:py-[140px]">
+            <Image
+              src="/blog-hero.webp"
+              alt="Ohana Montessori classroom"
+              fill
+              priority
+              sizes="(min-width: 1420px) 1420px, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.4)' }} />
+            <Animate>
+              <h1
+                className="relative text-white capitalize"
+                style={{
+                  fontFamily: 'var(--font-nunito)',
+                  fontWeight: 400,
+                  fontSize: '40px',
+                  textShadow: '0 0 10px #000',
+                }}
+              >
+                Ohana Blog
+              </h1>
+            </Animate>
+          </div>
         </div>
       </section>
 

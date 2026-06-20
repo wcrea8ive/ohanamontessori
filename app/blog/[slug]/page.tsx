@@ -2,7 +2,46 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Animate } from '@/components/Animate'
-import { BLOG_POSTS, getPost } from '@/lib/blogPosts'
+import { BLOG_POSTS, getPost, type InlineLink } from '@/lib/blogPosts'
+
+function renderText(text: string, links?: InlineLink[]) {
+  if (!links?.length) return <>{text}</>
+
+  type Part = string | InlineLink
+  let parts: Part[] = [text]
+
+  for (const link of links) {
+    const next: Part[] = []
+    for (const part of parts) {
+      if (typeof part !== 'string') { next.push(part); continue }
+      const idx = part.indexOf(link.text)
+      if (idx === -1) { next.push(part); continue }
+      if (idx > 0) next.push(part.slice(0, idx))
+      next.push(link)
+      const after = part.slice(idx + link.text.length)
+      if (after) next.push(after)
+    }
+    parts = next
+  }
+
+  return (
+    <>
+      {parts.map((part, i) =>
+        typeof part === 'string' ? (
+          <span key={i}>{part}</span>
+        ) : (
+          <Link
+            key={i}
+            href={part.href}
+            style={{ color: '#663D22', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+          >
+            {part.text}
+          </Link>
+        )
+      )}
+    </>
+  )
+}
 
 export function generateStaticParams() {
   return BLOG_POSTS.map(post => ({ slug: post.slug }))
@@ -141,7 +180,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     margin: '0 0 20px 0',
                   }}
                 >
-                  {section.text}
+                  {renderText(section.text, section.links)}
                 </p>
               )
             })}

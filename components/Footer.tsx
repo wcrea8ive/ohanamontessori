@@ -47,7 +47,7 @@ export default function Footer() {
           <ul className="space-y-2.5">
             {ABOUT_LINKS.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="text-sm transition-colors hover:text-white" style={{ color: '#fff' }}>{l.label}</Link>
+                <Link href={l.href} className="transition-colors hover:text-white" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '17px' }}>{l.label}</Link>
               </li>
             ))}
           </ul>
@@ -59,7 +59,7 @@ export default function Footer() {
           <ul className="space-y-2.5">
             {PROGRAMS_LINKS.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="text-sm transition-colors hover:text-white" style={{ color: '#fff' }}>{l.label}</Link>
+                <Link href={l.href} className="transition-colors hover:text-white" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '17px' }}>{l.label}</Link>
               </li>
             ))}
           </ul>
@@ -71,7 +71,7 @@ export default function Footer() {
           <ul className="space-y-2.5">
             {QUICK_LINKS.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="text-sm transition-colors hover:text-white" style={{ color: '#fff' }}>{l.label}</Link>
+                <Link href={l.href} className="transition-colors hover:text-white" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '17px' }}>{l.label}</Link>
               </li>
             ))}
           </ul>
@@ -80,10 +80,10 @@ export default function Footer() {
         {/* Contact */}
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff' }}>Contact</h4>
-          <ul className="space-y-3 text-sm" style={{ color: '#fff' }}>
+          <ul className="space-y-3" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '17px' }}>
             <li>2102 N. Tustin Avenue<br />Santa Ana, CA 92705</li>
-            <li><a href="tel:+17149427135" className="hover:text-white transition-colors">(714) 942-7135</a></li>
-            <li><a href="mailto:info@ohanamontessori.com" className="hover:text-white transition-colors">info@ohanamontessori.com</a></li>
+            <li><a href="tel:+17149427135" className="hover:text-white transition-colors" style={{ fontFamily: 'var(--font-work-sans)', fontSize: '17px' }}>(714) 942-7135</a></li>
+            <li><a href="mailto:info@ohanamontessori.com" className="hover:text-white transition-colors" style={{ fontFamily: 'var(--font-work-sans)', fontSize: '17px' }}>info@ohanamontessori.com</a></li>
           </ul>
           <div className="flex gap-3 mt-6">
             <a href="https://www.instagram.com/ohana.montessori" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold uppercase tracking-widest transition-colors hover:text-white" style={{ color: '#fff' }}>Instagram</a>

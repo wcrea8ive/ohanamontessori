@@ -22,6 +22,7 @@ const QUICK_LINKS = [
   { label: 'Our Facility', href: '/our-facility' },
   { label: 'Schedule a Tour', href: '/schedule-a-tour-santa-ana-daycare-preschool' },
   { label: 'Request Information', href: '/contact-daycare-preschool-santa-ana-tustin' },
+  { label: 'Blog', href: '/blog' },
 ]
 
 export default function Footer() {

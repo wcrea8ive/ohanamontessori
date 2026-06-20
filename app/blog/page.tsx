@@ -4,10 +4,26 @@ import Link from 'next/link'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 import { BLOG_POSTS } from '@/lib/blogPosts'
 
+const SITE_NAME = 'Preschool & Daycare in Santa Ana, Tustin, Irvine | Ohana Montessori'
+const OG_IMAGE = 'https://ohanamontessori.com/og-image.webp'
+
 export const metadata: Metadata = {
-  title: 'Blog — Ohana Montessori',
+  title: `Blog - ${SITE_NAME}`,
   description: 'Guides and insights for Orange County families navigating preschool, Montessori education, and early childhood development.',
   alternates: { canonical: 'https://ohanamontessori.com/blog' },
+  openGraph: {
+    title: `Blog - ${SITE_NAME}`,
+    description: 'Guides and insights for Orange County families navigating preschool, Montessori education, and early childhood development.',
+    type: 'website',
+    siteName: SITE_NAME,
+    images: [{ url: OG_IMAGE }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Blog - ${SITE_NAME}`,
+    description: 'Guides and insights for Orange County families navigating preschool, Montessori education, and early childhood development.',
+    images: [OG_IMAGE],
+  },
 }
 
 function formatDate(iso: string) {

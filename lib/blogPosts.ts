@@ -22,7 +22,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'how-to-choose-the-perfect-preschool-in-orange-ca-a-complete-parents-guide',
     title: "How to Choose the Perfect Preschool in Orange CA: A Complete Parent's Guide",
     excerpt: "Orange sits at the crossroads of several distinct communities. Here's how to find the right preschool fit for your family.",
-    date: '2026-01-15',
+    date: '2026-06-01',
     body: [
       { type: 'p', text: "Orange sits at the crossroads of several distinct communities. Families near Old Towne often have deep roots in the area and prioritize schools with a strong community feel. Those commuting to the Anaheim Resort corridor, UCI Medical Center, or Chapman University campus need preschools with flexible hours. Families on the eastern side of Orange, closer to Villa Park, often look for programs that blend academic rigor with outdoor time." },
       { type: 'p', text: "Understanding which category fits your family will shape everything from which hours work best to how much weight you place on a school's parent involvement culture. Before visiting any campus, write down your top three non-negotiable requirements — they'll keep you grounded when you fall in love with a beautiful facility that doesn't actually fit your schedule." },
@@ -61,7 +61,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'top-rated-daycare-in-irvine-ca-what-parents-need-to-know-before-choosing',
     title: 'Top Rated Daycare in Irvine CA: What Parents Need to Know Before Choosing',
     excerpt: 'Finding the right daycare Irvine CA families can trust is one of the most important decisions parents make. Here is what separates the best from the rest.',
-    date: '2026-02-03',
+    date: '2026-05-15',
     body: [
       { type: 'p', text: "Finding the right daycare Irvine CA families can trust is one of the most important decisions parents make. Top-rated daycare centers distinguish themselves through several key characteristics that ensure your child receives exceptional care and education. These facilities typically maintain low teacher-to-child ratios, employ qualified and experienced staff, and create nurturing environments that support both academic and social-emotional development." },
       { type: 'p', text: "When evaluating daycare options in Irvine, look for centers that hold proper licensing from the California Department of Social Services. Top-rated facilities often exceed minimum requirements, maintaining additional certifications and accreditations that demonstrate their commitment to quality care. These centers also prioritize ongoing staff training, ensuring caregivers stay current with best practices in early childhood education and development." },
@@ -92,7 +92,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'best-montessori-preschool-near-tustin-ca-expert-guide-for-toddlers-and-infants',
     title: 'Best Montessori Preschool Near Tustin CA: Expert Guide for Toddlers and Infants',
     excerpt: "Finding the right Montessori preschool near Tustin CA for your child is one of the most important decisions you'll make as a parent. Here's what to look for.",
-    date: '2026-02-20',
+    date: '2026-05-01',
     body: [
       { type: 'p', text: "Finding the right Montessori preschool near Tustin CA for your child is one of the most important decisions you'll make as a parent. With the growing popularity of Montessori education, many families in Tustin and surrounding Orange County communities are seeking authentic Montessori environments that nurture their children's natural development during these crucial early years." },
       { type: 'p', text: "The Montessori method, developed by Dr. Maria Montessori over a century ago, recognizes that children learn best in environments specifically prepared for their developmental needs. This child-centered approach emphasizes hands-on learning, self-directed activity, and collaborative play, making it particularly effective for toddlers and infants who are naturally curious explorers." },
@@ -127,7 +127,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: 'the-complete-guide-to-choosing-the-perfect-preschool-in-irvine-ca',
     title: 'The Complete Guide to Choosing the Perfect Preschool in Irvine, CA',
     excerpt: 'With numerous options available in Irvine, California, finding the perfect early childhood education program can feel overwhelming. This guide helps you navigate the process.',
-    date: '2026-03-10',
+    date: '2026-04-16',
     body: [
       { type: 'p', text: "Choosing the right preschool for your child is one of the most important decisions you'll make as a parent. With numerous options available in Irvine, California, finding the perfect early childhood education program can feel overwhelming. This comprehensive guide will help you navigate the selection process and ensure your child receives the best possible start to their educational journey." },
       { type: 'h2', text: "Understanding Your Child's Needs" },
@@ -164,9 +164,9 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: 'preschools-and-montessori-schools-in-orange-county-ca-test-2',
-    title: "Best Preschools and Montessori Schools in Orange County, CA: Complete Parent's Guide 2026",
+    title: 'Preschools and Montessori Schools in Orange County, CA',
     excerpt: "Orange County has established itself as a premier destination for families seeking excellent educational opportunities. Here's a complete guide to your options.",
-    date: '2026-04-05',
+    date: '2026-04-08',
     body: [
       { type: 'p', text: "Orange County has established itself as a premier destination for families seeking excellent educational opportunities. The region's commitment to early childhood development is evident in its numerous accredited preschools, innovative Montessori programs, and highly qualified educators. With a focus on preparing children for academic success and social-emotional growth, Orange County schools consistently rank among the top educational institutions in California.", links: [{ text: 'Montessori programs', href: '/daycare-toddler-preschool-programs-santa-ana-tustin-irvine' }] },
       { type: 'p', text: "The county's diverse communities, from coastal cities like Newport Beach and Huntington Beach to inland areas like Irvine and Anaheim, each offer unique educational environments that reflect their local character while maintaining high academic standards. This diversity ensures that families can find programs that align with their values, cultural backgrounds, and educational philosophies." },

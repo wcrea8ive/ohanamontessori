@@ -47,12 +47,15 @@ export function generateStaticParams() {
   return BLOG_POSTS.map(post => ({ slug: post.slug }))
 }
 
+const SITE_NAME = 'Preschool & Daycare in Santa Ana, Tustin, Irvine | Ohana Montessori'
+const OG_IMAGE = 'https://ohanamontessori.com/og-image.webp'
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const post = getPost(slug)
   if (!post) return {}
   return {
-    title: `${post.title} — Ohana Montessori`,
+    title: `${post.title} - ${SITE_NAME}`,
     description: post.excerpt,
     alternates: { canonical: `https://ohanamontessori.com/blog/${post.slug}` },
     openGraph: {
@@ -60,6 +63,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
+      siteName: SITE_NAME,
+      images: [{ url: OG_IMAGE }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [OG_IMAGE],
     },
   }
 }

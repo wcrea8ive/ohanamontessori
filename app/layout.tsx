@@ -48,6 +48,7 @@ export const metadata: Metadata = {
   description: 'A nature-inspired Montessori school in Santa Ana, CA serving infants through preschool. Where curiosity is invited, imagination is honored, and every child is nurtured.',
   openGraph: {
     type: 'website',
+    locale: 'en_US',
     siteName: 'Ohana Montessori',
     url: SITE_URL,
     title: 'Ohana Montessori — Infant, Toddler & Preschool in Santa Ana, CA',

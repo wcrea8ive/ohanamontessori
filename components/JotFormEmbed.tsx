@@ -23,7 +23,7 @@ export default function JotFormEmbed({ formId, title }: Props) {
         src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"
         strategy="afterInteractive"
         onLoad={() => {
-          ;(window as any).jotformEmbedHandler(`iframeId:JotFormIFrame-${formId}`, 'https://form.jotform.com/')
+          ;(window as any).jotformEmbedHandler(`#JotFormIFrame-${formId}`, 'https://form.jotform.com/')
         }}
       />
     </>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import MailingListForm from '@/components/MailingListForm'
+import JotFormEmbed from '@/components/JotFormEmbed'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 
 export const metadata: Metadata = {
@@ -101,7 +101,7 @@ export default function MailingListPage() {
             <h2 style={headingStyle}>Join Our Mailing List</h2>
           </Animate>
           <Animate className="mt-10">
-            <MailingListForm />
+            <JotFormEmbed formId="261744162867162" title="Join Our Mailing List" />
           </Animate>
         </div>
       </section>

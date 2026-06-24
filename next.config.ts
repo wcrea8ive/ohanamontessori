@@ -27,7 +27,7 @@ const nextConfig: NextConfig = {
               "media-src 'self'",
               "frame-src https://form.jotform.com https://www.googletagmanager.com",
               "frame-ancestors 'self'",
-              "connect-src 'self' https://form.jotform.com https://api.jotform.com https://cdn.jotfor.ms https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com",
+              "connect-src 'self' https://form.jotform.com https://api.jotform.com https://cdn.jotfor.ms https://submit.jotform.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com",
               "form-action 'self' https://form.jotform.com",
             ].join('; '),
           },

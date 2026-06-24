@@ -94,11 +94,11 @@ export default function MailingListPage() {
         </div>
       </section>
 
-      {/* Join Interest List */}
+      {/* Join Our Mailing List */}
       <section className="px-6" style={{ background: '#F0F5F4', paddingTop: '60px', paddingBottom: '60px' }}>
         <div className="max-w-[1000px] mx-auto">
           <Animate className="text-center">
-            <h2 style={headingStyle}>Join Interest List</h2>
+            <h2 style={headingStyle}>Join Our Mailing List</h2>
           </Animate>
           <Animate className="mt-10">
             <MailingListForm />

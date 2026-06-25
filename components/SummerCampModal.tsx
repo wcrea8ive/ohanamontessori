@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function SummerCampModal() {
@@ -65,13 +64,11 @@ export default function SummerCampModal() {
 
         {/* Image links to the summer camp page */}
         <Link href="/montessori-tustin-irvine-summer-camp-2026" onClick={close}>
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/summer-camp-2026.webp"
             alt="Ohana Montessori Summer Camp 2026"
-            width={500}
-            height={538}
             style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '6px' }}
-            priority
           />
         </Link>
       </div>

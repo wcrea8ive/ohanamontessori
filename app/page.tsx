@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 import HomeHeroCaption from '@/components/HomeHeroCaption'
 import WelcomeVideo from '@/components/WelcomeVideo'
+import SummerCampModal from '@/components/SummerCampModal'
 
 const APPROACH_CARDS = [
   { title: 'Child-Led Learning', body: 'Your child chooses meaningful work that captures their interest.', icon: '/Child-Led-Learning.svg' },
@@ -43,6 +44,7 @@ const STEPS = [
 export default function Home() {
   return (
     <>
+      <SummerCampModal />
       {/* Hero */}
       <section className="px-3 sm:px-6 lg:px-12">
         <div className="max-w-[1420px] mx-auto">

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 
@@ -127,17 +126,17 @@ export default function SummerCampPage() {
             </div>
           </Animate>
 
-          {/* Flyer image */}
-          <Animate className="flex-shrink-0">
-            <Image
+          {/* Flyer image — no animation wrapper to avoid opacity:0 on initial load */}
+          <div className="flex-shrink-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/summer-camp-2026.webp"
               alt="Ohana Montessori Summer Camp 2026 Flyer"
-              width={400}
-              height={430}
+              width={500}
+              height={538}
               style={{ width: '100%', maxWidth: '400px', height: 'auto', borderRadius: '8px', boxShadow: '0 8px 40px rgba(0,0,0,0.12)' }}
-              priority
             />
-          </Animate>
+          </div>
         </div>
       </section>
 

@@ -130,11 +130,11 @@ export default function SummerCampPage() {
           <div className="flex-shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/summer-camp-2026.webp"
+              src="/summer_camp_page.webp"
               alt="Ohana Montessori Summer Camp 2026 Flyer"
-              width={500}
-              height={538}
-              style={{ width: '100%', maxWidth: '400px', height: 'auto', borderRadius: '8px', boxShadow: '0 8px 40px rgba(0,0,0,0.12)' }}
+              width={1350}
+              height={1688}
+              style={{ width: '100%', maxWidth: '500px', height: 'auto', borderRadius: '8px', boxShadow: '0 8px 40px rgba(0,0,0,0.12)' }}
             />
           </div>
         </div>

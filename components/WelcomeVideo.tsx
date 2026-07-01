@@ -13,6 +13,7 @@ export default function WelcomeVideo() {
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
         src="https://ik.imagekit.io/ka7399/ka-ohana-project-cut.mp4"
+        poster="/ka-homepage-video-cover.webp"
         controls
         preload="metadata"
         playsInline

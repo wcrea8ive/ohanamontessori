@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jotfor.ms https://form.jotform.com",
               "font-src 'self' https://fonts.gstatic.com https://cdn.jotfor.ms",
               "img-src 'self' data: blob: https:",
-              "media-src 'self' https://ik.imagekit.io",
+              "media-src 'self'",
               "frame-src https://form.jotform.com https://submit.jotform.com https://www.googletagmanager.com",
               "frame-ancestors 'self'",
               "connect-src 'self' https://form.jotform.com https://api.jotform.com https://cdn.jotfor.ms https://submit.jotform.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com",

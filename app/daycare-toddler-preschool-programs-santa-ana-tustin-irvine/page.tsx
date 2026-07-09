@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Check } from 'lucide-react'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 
 export const metadata: Metadata = {
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 const PROGRAMS = [
   {
     title: 'Infant Program',
-    ages: '3-24 months',
+    ages: '3–24 months',
     focus: 'Trust, security, sensory exploration, and gentle independence',
     highlights: [
       'Calm, responsive care',
@@ -20,7 +21,8 @@ const PROGRAMS = [
       'Individualized feeding and sleep routines',
       'First social experiences with peers',
     ],
-    ratio: '1:4 adult-to-child',
+    ratio: '1:4',
+    href: '/daycare-infant-program-santa-ana-tustin-irvine',
   },
   {
     title: 'Toddler Program',
@@ -32,7 +34,8 @@ const PROGRAMS = [
       'Guided movement and outdoor play',
       'Gentle support with toilet learning',
     ],
-    ratio: '1:6 adult-to-child',
+    ratio: '1:6',
+    href: '/toddler-program-santa-ana-tustin-irvine',
   },
   {
     title: 'Preschool Program',
@@ -44,7 +47,8 @@ const PROGRAMS = [
       'Social-emotional lessons and community activities',
       'Outdoor learning and creative expression',
     ],
-    ratio: '1:12 adult-to-child',
+    ratio: '1:12',
+    href: '/preschool-program-santa-ana-tustin-irvine',
   },
 ]
 
@@ -134,26 +138,55 @@ export default function ProgramsPage() {
       {/* Program comparison */}
       <section className="px-6" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <div className="max-w-[1000px] mx-auto">
-          <AnimateStagger className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <AnimateStagger className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {PROGRAMS.map((p) => (
               <AnimateItem key={p.title}>
-                <h3 style={columnTitleStyle}>{p.title}</h3>
+                <div className="flex flex-col h-full" style={{ background: '#EBF1EE', border: '1px solid #D2E3DC', borderRadius: '12px', padding: '28px 24px' }}>
 
-                <h4 className="mt-6" style={subHeadingStyle}>Ages</h4>
-                <p className="mt-2" style={{ color: 'var(--text)' }}>{p.ages}</p>
+                  {/* Age badge */}
+                  <span style={{ display: 'inline-block', alignSelf: 'flex-start', background: 'var(--sage)', color: '#fff', borderRadius: '100px', padding: '4px 14px', fontSize: '12px', fontFamily: 'var(--font-nunito)', fontWeight: 700, letterSpacing: '0.04em' }}>
+                    {p.ages}
+                  </span>
 
-                <h4 className="mt-6" style={subHeadingStyle}>Focus</h4>
-                <p className="mt-2 leading-relaxed" style={{ color: 'var(--text)' }}>{p.focus}</p>
+                  {/* Program title */}
+                  <h3 className="mt-4" style={columnTitleStyle}>{p.title}</h3>
 
-                <h4 className="mt-6" style={subHeadingStyle}>Typical Day Highlights:</h4>
-                <ul className="list-disc pl-5 mt-2 space-y-1 leading-relaxed" style={{ color: 'var(--text)' }}>
-                  {p.highlights.map((h) => (
-                    <li key={h}>{h}</li>
-                  ))}
-                </ul>
+                  {/* Focus callout */}
+                  <p className="mt-4 leading-relaxed" style={{ color: 'var(--text-muted)', fontSize: '16px', lineHeight: 1.65 }}>
+                    {p.focus}
+                  </p>
 
-                <h4 className="mt-6" style={subHeadingStyle}>Class Size and Ratio:</h4>
-                <p className="mt-2" style={{ color: 'var(--text)' }}>{p.ratio}</p>
+                  {/* Divider */}
+                  <hr className="my-5" style={{ border: 'none', borderTop: '1px solid var(--border)' }} />
+
+                  {/* Highlights */}
+                  <div>
+                    <p style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', fontFamily: 'var(--font-nunito)', fontWeight: 700, marginBottom: '10px' }}>Typical Day</p>
+                    <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      {p.highlights.map((h) => (
+                        <li key={h} style={{ display: 'flex', gap: '9px', alignItems: 'flex-start', color: 'var(--text)', fontSize: '14px', lineHeight: 1.55 }}>
+                          <Check size={15} style={{ color: 'var(--sage)', flexShrink: 0, marginTop: '2px' }} />
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Ratio + CTA */}
+                  <div className="flex items-center justify-between mt-auto pt-5" style={{ borderTop: '1px solid var(--border)', marginTop: '24px' }}>
+                    <div>
+                      <p style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', fontFamily: 'var(--font-nunito)', fontWeight: 700 }}>Class Ratio</p>
+                      <p style={{ fontFamily: 'var(--font-baskervville)', fontSize: '22px', color: 'var(--brown)', marginTop: '2px', lineHeight: 1 }}>{p.ratio} <span style={{ fontSize: '13px', color: 'var(--text-muted)', fontFamily: 'var(--font-nunito)', fontWeight: 400 }}>adult-to-child</span></p>
+                    </div>
+                    <Link
+                      href={p.href}
+                      style={{ fontSize: '13px', fontFamily: 'var(--font-nunito)', fontWeight: 700, color: 'var(--sage)', textDecoration: 'underline', textUnderlineOffset: '3px', flexShrink: 0 }}
+                    >
+                      Explore →
+                    </Link>
+                  </div>
+
+                </div>
               </AnimateItem>
             ))}
           </AnimateStagger>

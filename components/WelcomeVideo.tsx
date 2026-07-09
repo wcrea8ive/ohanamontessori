@@ -12,7 +12,8 @@ export default function WelcomeVideo() {
       <video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
-        src="/Welcome to Ohana Montessori.mp4"
+        src="https://ik.imagekit.io/ka7399/ka-ohana-project-cut.mp4"
+        poster="/ka-homepage-video-cover.webp"
         controls
         preload="metadata"
         playsInline
@@ -34,14 +35,6 @@ export default function WelcomeVideo() {
           </span>
         </button>
       )}
-      <div
-        className="absolute inset-x-0 bottom-0 px-6 py-6 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 60%)' }}
-      >
-        <p className="text-white" style={{ fontFamily: 'var(--font-nunito)', fontWeight: 400, fontSize: 'clamp(22px, 2.6vw, 32px)' }}>
-          Welcome to Ohana Montessori
-        </p>
-      </div>
     </div>
   )
 }

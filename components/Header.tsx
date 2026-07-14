@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useRef } from 'react'
-import { Menu, X, ChevronDown, Plus, Minus, MapPin, Phone, MessageCircleMore } from 'lucide-react'
+import { Menu, X, ChevronDown, Plus, Minus, MapPin, Phone } from 'lucide-react'
 
 // lucide-react dropped brand icons; inline SVGs instead
 const InstagramIcon = ({ size = 18 }: { size?: number }) => (
@@ -163,14 +163,6 @@ export default function Header() {
               <Phone size={13} fill="currentColor" strokeWidth={0} />
               Call Us
             </a>
-            <Link
-              href="/contact-daycare-preschool-santa-ana-tustin"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-[13px] text-white transition-opacity hover:opacity-90"
-              style={{ background: 'var(--brown)' }}
-            >
-              <MessageCircleMore size={13} />
-              Send Us a Message
-            </Link>
           </div>
         </div>
       </div>
@@ -191,14 +183,6 @@ export default function Header() {
               <Phone size={15} fill="currentColor" strokeWidth={0} />
               Call Us
             </a>
-            <Link
-              href="/contact-daycare-preschool-santa-ana-tustin"
-              className="flex items-center gap-1.5 px-2.5 py-1 rounded-[5px] text-[15px] text-white transition-opacity hover:opacity-90"
-              style={{ background: 'var(--brown)' }}
-            >
-              <MessageCircleMore size={15} />
-              Send Us a Message
-            </Link>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-[15px]" style={{ color: '#000' }}>License # 304371739</span>

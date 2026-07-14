@@ -12,7 +12,7 @@ export default function WelcomeVideo() {
       <video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
-        src="/Welcome to Ohana Montessori.mp4"
+        src="/ohana-reel.mp4"
         controls
         preload="metadata"
         playsInline

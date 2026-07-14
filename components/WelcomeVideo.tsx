@@ -13,6 +13,7 @@ export default function WelcomeVideo() {
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
         src="/ohana-reel.mp4"
+        poster="/ohana-reel-poster.jpg"
         controls
         preload="metadata"
         playsInline

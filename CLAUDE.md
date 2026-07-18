@@ -21,11 +21,11 @@ Nature-inspired Montessori school website in Santa Ana, CA. Next.js 16 App Route
 
 | Service | URL / Location |
 |---|---|
-| Live site | https://ohanamontessori.com (still on WordPress — domain NOT yet pointed at Vercel) |
+| Live site | https://ohanamontessori.com (pointed at Vercel — Next.js is live) |
 | GitHub repo | https://github.com/wcrea8ive/ohanamontessori (private) |
 | Vercel project | `ohanamontessori-com` under `info-23661568s-projects` — auto-deploys from GitHub `main` |
 
-The Vercel project is intentionally separate from the other W Creative projects (`wcreativestudio-nextjs`, `wcreativestudio.com`, `wcreative-dashboard`). Cutting over the real domain to Vercel is a separate, explicit step — do not attach it without being asked.
+The Vercel project is intentionally separate from the other W Creative projects (`wcreativestudio-nextjs`, `wcreativestudio.com`, `wcreative-dashboard`).
 
 ---
 

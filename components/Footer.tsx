@@ -21,7 +21,7 @@ const QUICK_LINKS = [
   { label: 'FAQs', href: '/daycare-santa-ana-faqs' },
   { label: 'Our Facility', href: '/our-facility' },
   { label: 'Schedule a Tour', href: '/schedule-a-tour-santa-ana-daycare-preschool' },
-  { label: 'Request Information', href: '/contact-daycare-preschool-santa-ana-tustin' },
+  { label: 'Request Information', href: '/request-information-daycare-santa-ana' },
   { label: 'Blog', href: '/blog' },
 ]
 

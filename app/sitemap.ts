@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/welcome-to-montessori-preschool-childcare-santa-ana',               priority: 0.7,  changeFrequency: 'monthly' },
     { url: '/safety-and-care',                                                   priority: 0.7,  changeFrequency: 'monthly' },
     { url: '/school-calendar-and-hours',                                         priority: 0.7,  changeFrequency: 'monthly' },
-    { url: '/contact-daycare-preschool-santa-ana-tustin',                        priority: 0.7,  changeFrequency: 'monthly' },
+    { url: '/request-information-daycare-santa-ana',                        priority: 0.7,  changeFrequency: 'monthly' },
     { url: '/request-information-daycare-santa-ana',                             priority: 0.7,  changeFrequency: 'monthly' },
     { url: '/daycare-santa-ana-faqs',                                            priority: 0.65, changeFrequency: 'monthly' },
     { url: '/join-our-mailing-list-daycare-santa-ana',                           priority: 0.6,  changeFrequency: 'monthly' },

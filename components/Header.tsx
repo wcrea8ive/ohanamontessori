@@ -229,9 +229,9 @@ export default function Header() {
         <nav className="flex items-center gap-5 2xl:gap-6">
           <Link href="/preschool-daycare-tuition-and-school-hours" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Tuition &amp; Hours</Link>
           <Link href="/schedule-a-tour-santa-ana-daycare-preschool" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Schedule a Tour</Link>
-          <Dropdown label="Contact" href="/contact-daycare-preschool-santa-ana-tustin" />
+          <Dropdown label="Contact" href="/request-information-daycare-santa-ana" />
           <Link
-            href="/contact-daycare-preschool-santa-ana-tustin"
+            href="/request-information-daycare-santa-ana"
             className={`px-6 py-3.5 text-white rounded-full transition-opacity hover:opacity-90 ${navLinkClass}`}
             style={{ background: 'var(--brown)', fontWeight: 600, letterSpacing: '0.02em', textTransform: 'uppercase' }}
           >
@@ -341,7 +341,7 @@ export default function Header() {
         <div className="px-6 py-6 shrink-0 flex flex-col gap-3" style={{ borderTop: '1px solid var(--border)' }}>
           <a href="tel:+17149427135" className="text-sm text-center" style={{ color: 'var(--text-muted)' }}>(714) 942-7135</a>
           <Link
-            href="/contact-daycare-preschool-santa-ana-tustin"
+            href="/request-information-daycare-santa-ana"
             onClick={() => setMobileOpen(false)}
             className="w-full py-3.5 text-white font-semibold text-sm text-center rounded-full uppercase tracking-wide transition-opacity hover:opacity-90"
             style={{ background: 'var(--brown)' }}

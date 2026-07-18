@@ -534,7 +534,7 @@ export default function Home() {
           </Animate>
           <Animate className="mt-6">
             <Link
-              href="/contact-daycare-preschool-santa-ana-tustin"
+              href="/request-information-daycare-santa-ana"
               className="inline-block transition-colors hover:bg-[var(--brown)] hover:text-[#FEFAF4]"
               style={{
                 fontFamily: 'var(--font-work-sans)',

@@ -119,7 +119,7 @@ export default function FAQsPage() {
         heading="Still Have Questions?"
         body="We're happy to chat. Reach out and a member of our team will get back to you within 1 business day."
         primaryLabel="Contact Us"
-        primaryHref="/contact-daycare-preschool-santa-ana-tustin"
+        primaryHref="/request-information-daycare-santa-ana"
         secondaryLabel="Schedule a Tour"
         secondaryHref="/schedule-a-tour-santa-ana-daycare-preschool"
       />

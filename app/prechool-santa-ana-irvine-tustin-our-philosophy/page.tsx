@@ -212,7 +212,7 @@ export default function OurPhilosophyPage() {
               Schedule a Personal Tour
             </Link>
             <Link
-              href="/contact-daycare-preschool-santa-ana-tustin"
+              href="/request-information-daycare-santa-ana"
               className="inline-block transition-colors hover:bg-[var(--brown)] hover:text-[#FEFAF4]"
               style={{
                 fontFamily: 'var(--font-work-sans)',

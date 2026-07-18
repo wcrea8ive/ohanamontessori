@@ -73,7 +73,7 @@ export default function ScheduleTourPage() {
               We&apos;d love to welcome your family to our school! Touring Ohana Montessori is the best way to experience our peaceful classrooms, meet our educators, and see how Montessori comes to life for every child.
             </p>
             <Link
-              href="/contact-daycare-preschool-santa-ana-tustin"
+              href="/request-information-daycare-santa-ana"
               className="inline-block mt-8 transition-colors hover:bg-transparent hover:text-[var(--brown)]"
               style={{
                 fontFamily: 'var(--font-work-sans)',
@@ -173,7 +173,7 @@ export default function ScheduleTourPage() {
               Schedule a Personal Tour
             </Link>
             <Link
-              href="/contact-daycare-preschool-santa-ana-tustin"
+              href="/request-information-daycare-santa-ana"
               className="inline-block transition-colors hover:bg-[var(--brown)] hover:text-[#FEFAF4]"
               style={{
                 fontFamily: 'var(--font-work-sans)',

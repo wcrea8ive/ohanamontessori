@@ -15,7 +15,7 @@ export default function CTABanner({
   primaryLabel = 'Schedule a Personal Tour',
   primaryHref = '/schedule-a-tour-santa-ana-daycare-preschool',
   secondaryLabel = 'Contact Us',
-  secondaryHref = '/contact-daycare-preschool-santa-ana-tustin',
+  secondaryHref = '/request-information-daycare-santa-ana',
 }: CTABannerProps) {
   return (
     <section className="py-20" style={{ background: 'var(--forest)' }}>

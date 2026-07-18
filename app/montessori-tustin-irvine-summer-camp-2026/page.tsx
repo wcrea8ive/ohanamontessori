@@ -88,7 +88,7 @@ export default function SummerCampPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
-                href="/contact-daycare-preschool-santa-ana-tustin"
+                href="/request-information-daycare-santa-ana"
                 style={{
                   fontFamily: 'var(--font-work-sans)',
                   fontWeight: 500,
@@ -230,7 +230,7 @@ export default function SummerCampPage() {
           </Animate>
           <Animate className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/contact-daycare-preschool-santa-ana-tustin"
+              href="/request-information-daycare-santa-ana"
               style={{
                 fontFamily: 'var(--font-work-sans)',
                 fontWeight: 500,

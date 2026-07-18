@@ -1,5 +1,7 @@
 'use client'
 
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import Script from 'next/script'
 
 interface Props {
@@ -8,6 +10,22 @@ interface Props {
 }
 
 export default function JotFormEmbed({ formId, title }: Props) {
+  const router = useRouter()
+
+  useEffect(() => {
+    function handleMessage(e: MessageEvent) {
+      if (typeof e.data === 'string' && e.data.includes('submissionCompleted')) {
+        router.push('/thank-you')
+        return
+      }
+      if (e.data?.action === 'submission-completed') {
+        router.push('/thank-you')
+      }
+    }
+    window.addEventListener('message', handleMessage)
+    return () => window.removeEventListener('message', handleMessage)
+  }, [router])
+
   return (
     <>
       <iframe

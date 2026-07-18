@@ -55,6 +55,10 @@ export const metadata: Metadata = {
     description: 'A nature-inspired Montessori school in Santa Ana, CA serving infants through preschool. Where curiosity is invited, imagination is honored, and every child is nurtured.',
     images: [{ url: OG_IMAGE, width: 1920, height: 916, alt: OG_ALT }],
   },
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Ohana Montessori — Infant, Toddler & Preschool in Santa Ana, CA',

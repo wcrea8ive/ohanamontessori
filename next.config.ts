@@ -29,6 +29,76 @@ const nextConfig: NextConfig = {
         destination: '/request-information-daycare-santa-ana',
         permanent: true,
       },
+      {
+        source: '/how-to-choose-the-perfect-preschool-in-orange-ca-a-complete-parents-guide',
+        destination: '/blog/how-to-choose-the-perfect-preschool-in-orange-ca-a-complete-parents-guide',
+        permanent: true,
+      },
+      {
+        source: '/how-to-choose-the-perfect-preschool-in-orange-ca-a-complete-parents-guide/',
+        destination: '/blog/how-to-choose-the-perfect-preschool-in-orange-ca-a-complete-parents-guide',
+        permanent: true,
+      },
+      {
+        source: '/top-rated-daycare-in-irvine-ca-what-parents-need-to-know-before-choosing',
+        destination: '/blog/top-rated-daycare-in-irvine-ca-what-parents-need-to-know-before-choosing',
+        permanent: true,
+      },
+      {
+        source: '/top-rated-daycare-in-irvine-ca-what-parents-need-to-know-before-choosing/',
+        destination: '/blog/top-rated-daycare-in-irvine-ca-what-parents-need-to-know-before-choosing',
+        permanent: true,
+      },
+      {
+        source: '/best-montessori-preschool-near-tustin-ca-expert-guide-for-toddlers-and-infants',
+        destination: '/blog/best-montessori-preschool-near-tustin-ca-expert-guide-for-toddlers-and-infants',
+        permanent: true,
+      },
+      {
+        source: '/best-montessori-preschool-near-tustin-ca-expert-guide-for-toddlers-and-infants/',
+        destination: '/blog/best-montessori-preschool-near-tustin-ca-expert-guide-for-toddlers-and-infants',
+        permanent: true,
+      },
+      {
+        source: '/the-complete-guide-to-choosing-the-perfect-preschool-in-irvine-ca',
+        destination: '/blog/the-complete-guide-to-choosing-the-perfect-preschool-in-irvine-ca',
+        permanent: true,
+      },
+      {
+        source: '/the-complete-guide-to-choosing-the-perfect-preschool-in-irvine-ca/',
+        destination: '/blog/the-complete-guide-to-choosing-the-perfect-preschool-in-irvine-ca',
+        permanent: true,
+      },
+      {
+        source: '/preschools-and-montessori-schools-in-orange-county-ca-test-2',
+        destination: '/blog/preschools-and-montessori-schools-in-orange-county-ca-test-2',
+        permanent: true,
+      },
+      {
+        source: '/preschools-and-montessori-schools-in-orange-county-ca-test-2/',
+        destination: '/blog/preschools-and-montessori-schools-in-orange-county-ca-test-2',
+        permanent: true,
+      },
+      {
+        source: '/montessori-vs-traditional-daycare-in-costa-mesa-which-is-right-for-your-child',
+        destination: '/blog/montessori-vs-traditional-daycare-in-costa-mesa-which-is-right-for-your-child',
+        permanent: true,
+      },
+      {
+        source: '/montessori-vs-traditional-daycare-in-costa-mesa-which-is-right-for-your-child/',
+        destination: '/blog/montessori-vs-traditional-daycare-in-costa-mesa-which-is-right-for-your-child',
+        permanent: true,
+      },
+      {
+        source: '/best-infant-care-near-newport-beach-ca-what-to-look-for',
+        destination: '/blog/best-infant-care-near-newport-beach-ca-what-to-look-for',
+        permanent: true,
+      },
+      {
+        source: '/best-infant-care-near-newport-beach-ca-what-to-look-for/',
+        destination: '/blog/best-infant-care-near-newport-beach-ca-what-to-look-for',
+        permanent: true,
+      },
     ]
   },
   async headers() {

@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
         destination: '/schedule-a-tour-santa-ana-daycare-preschool',
         permanent: true,
       },
+      {
+        source: '/preschool-program',
+        destination: '/preschool-program-santa-ana-tustin-irvine',
+        permanent: true,
+      },
     ]
   },
   async headers() {

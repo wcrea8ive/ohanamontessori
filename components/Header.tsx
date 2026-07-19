@@ -229,7 +229,7 @@ export default function Header() {
         <nav className="flex items-center gap-5 2xl:gap-6">
           <Link href="/preschool-daycare-tuition-and-school-hours" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Tuition &amp; Hours</Link>
           <Link href="/schedule-a-tour-santa-ana-daycare-preschool" className={`py-2 transition-opacity hover:opacity-70 ${navLinkClass}`} style={navLinkStyle}>Schedule a Tour</Link>
-          <Dropdown label="Contact" href="/request-information-daycare-santa-ana" />
+          <Dropdown label="Contact" href="/contact-daycare-preschool-santa-ana-tustin" />
           <Link
             href="/request-information-daycare-santa-ana"
             className={`px-6 py-3.5 text-white rounded-full transition-opacity hover:opacity-90 ${navLinkClass}`}

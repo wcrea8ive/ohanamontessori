@@ -2,6 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   compress: true,
+  async redirects() {
+    return [
+      {
+        source: '/request-information',
+        destination: '/request-information-daycare-santa-ana',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {

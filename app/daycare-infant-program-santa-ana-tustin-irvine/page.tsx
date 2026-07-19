@@ -85,7 +85,7 @@ export default function InfantProgramPage() {
           <div className="grid md:grid-cols-2 gap-10 items-center mt-10">
             <Animate variant="slideLeft">
               <div className="relative w-full h-[260px] md:h-[320px] rounded-[20px] overflow-hidden">
-                <Image src="/infant-nurturing.jpg" alt="Baby exploring a sensory rug" fill className="object-cover" />
+                <Image src="/infant-nurturing.webp" alt="Baby exploring a sensory rug" fill className="object-cover" />
               </div>
             </Animate>
             <Animate variant="slideRight" delay={0.15}>

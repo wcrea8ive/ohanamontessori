@@ -12,12 +12,12 @@ const APPROACH_CARDS = [
 ]
 
 const CLASSROOMS = [
-  { name: 'Willow', image: '/growing-together-icons-willow-1.png', description: 'For our youngest learners, like the tree that bends and grows, this room is a place of gentle beginnings, stability, and early exploration.' },
-  { name: 'Sky', image: '/growing-together-icons-sky-1.png', description: 'Sky the Bird - Infant B. Still in the infant stage, just more expansive. Sky is gentle and calm, representing openness and possibility. Babies begin to look outward and explore beyond immediate needs.' },
-  { name: 'River', image: '/growing-together-icons-river-1.png', description: 'River the Fish - Toddler. Toddlers are natural explorers. River is playful, fast, and curious, splashing out of bounds as they learn to test limits and discover the world.' },
-  { name: 'Koa', image: '/growing-together-icons-koa-1.png', description: 'Preschoolers are ready for guidance and courage. Here, they finally meet Koa directly. He is steady, brave, and wise, modeling how to try new things slowly and surely. This will be a very special classroom that every child will look forward to enter.' },
-  { name: 'Ember', image: '/growing-together-icons-ember-1.png', description: 'For our oldest children preparing for the next stage, this room glows with curiosity and resilience. Like a flame, it nurtures focus, creativity, and a sense of responsibility.' },
-  { name: 'The Cove', image: '/growing-together-icons-cove-1.png', description: 'Our private lactation room. A space created for families, like a sheltered inlet along Koa’s journey, it is a place of nurture and renewal, where children are fed and parents find comfort.' },
+  { name: 'Willow', image: '/growing-together-icons-willow-1.webp', description: 'For our youngest learners, like the tree that bends and grows, this room is a place of gentle beginnings, stability, and early exploration.' },
+  { name: 'Sky', image: '/growing-together-icons-sky-1.webp', description: 'Sky the Bird - Infant B. Still in the infant stage, just more expansive. Sky is gentle and calm, representing openness and possibility. Babies begin to look outward and explore beyond immediate needs.' },
+  { name: 'River', image: '/growing-together-icons-river-1.webp', description: 'River the Fish - Toddler. Toddlers are natural explorers. River is playful, fast, and curious, splashing out of bounds as they learn to test limits and discover the world.' },
+  { name: 'Koa', image: '/growing-together-icons-koa-1.webp', description: 'Preschoolers are ready for guidance and courage. Here, they finally meet Koa directly. He is steady, brave, and wise, modeling how to try new things slowly and surely. This will be a very special classroom that every child will look forward to enter.' },
+  { name: 'Ember', image: '/growing-together-icons-ember-1.webp', description: 'For our oldest children preparing for the next stage, this room glows with curiosity and resilience. Like a flame, it nurtures focus, creativity, and a sense of responsibility.' },
+  { name: 'The Cove', image: '/growing-together-icons-cove-1.webp', description: 'Our private lactation room. A space created for families, like a sheltered inlet along Koa’s journey, it is a place of nurture and renewal, where children are fed and parents find comfort.' },
 ]
 
 const DAY_SCHEDULE = [

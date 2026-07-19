@@ -85,7 +85,7 @@ export default function ToddlerProgramPage() {
           <div className="grid md:grid-cols-2 gap-10 items-center mt-10">
             <Animate variant="slideLeft">
               <div className="relative w-full h-[260px] md:h-[320px] rounded-[20px] overflow-hidden">
-                <Image src="/toddler-wonder.jpg" alt="Toddlers exploring practical life activities" fill className="object-cover" />
+                <Image src="/toddler-wonder.webp" alt="Toddlers exploring practical life activities" fill className="object-cover" />
               </div>
             </Animate>
             <Animate variant="slideRight" delay={0.15}>

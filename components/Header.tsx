@@ -216,7 +216,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="shrink-0 mx-7 2xl:mx-9">
           <Image
-            src="/montessori-logo-1000px.png"
+            src="/montessori-logo-1000px.webp"
             alt="Ohana Montessori"
             width={1000}
             height={963}
@@ -256,7 +256,7 @@ export default function Header() {
 
         <Link href="/" className="justify-self-center shrink-0">
           <Image
-            src="/montessori-logo-1000px.png"
+            src="/montessori-logo-1000px.webp"
             alt="Ohana Montessori"
             width={1000}
             height={963}
@@ -283,7 +283,7 @@ export default function Header() {
         <div className="flex items-center justify-between px-6 py-3 shrink-0" style={{ borderBottom: '1px solid var(--border)' }}>
           <Link href="/" onClick={() => setMobileOpen(false)}>
             <Image
-              src="/montessori-logo-1000px.png"
+              src="/montessori-logo-1000px.webp"
               alt="Ohana Montessori"
               width={1000}
               height={963}

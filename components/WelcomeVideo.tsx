@@ -23,7 +23,7 @@ export default function WelcomeVideo() {
       ) : (
         <>
           <Image
-            src="/ohana-reel-poster.jpg"
+            src="/ohana-reel-poster.webp"
             alt="Ohana Montessori school"
             fill
             priority

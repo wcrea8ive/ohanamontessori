@@ -39,7 +39,7 @@ export default function OurPhilosophyPage() {
         <div className="max-w-[1420px] mx-auto">
           <div className="relative overflow-hidden rounded-[10px] flex items-center justify-center text-center px-3 sm:px-5 py-[50px] md:py-[60px] lg:py-[140px]">
             <Image
-              src="/philosophy-hero.jpg"
+              src="/philosophy-hero.webp"
               alt="Child watering plants in the garden at Ohana"
               fill
               priority

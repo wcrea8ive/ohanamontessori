@@ -61,7 +61,7 @@ export default function OurApproachPage() {
         <div className="max-w-[1420px] mx-auto">
           <div className="relative overflow-hidden rounded-[10px] flex items-center justify-center text-center px-3 sm:px-5 py-[50px] md:py-[60px] lg:py-[140px]">
             <Image
-              src="/our-approach-hero.jpg"
+              src="/our-approach-hero.webp"
               alt="Child engaged in Montessori work at Ohana"
               fill
               priority

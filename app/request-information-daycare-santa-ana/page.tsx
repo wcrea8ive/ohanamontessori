@@ -36,7 +36,7 @@ export default function RequestInformationPage() {
         <div className="max-w-[1420px] mx-auto">
           <div className="relative overflow-hidden rounded-[10px] flex items-center justify-center text-center px-3 sm:px-5 py-[50px] md:py-[60px] lg:py-[140px]">
             <Image
-              src="/request-info-hero.jpg"
+              src="/request-info-hero.webp"
               alt="Preschool classroom with woodland mural at Ohana Montessori"
               fill
               priority

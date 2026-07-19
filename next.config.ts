@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
           { key: 'X-DNS-Prefetch-Control', value: 'on' },
           { key: 'X-XSS-Protection', value: '1; mode=block' },
           { key: 'X-Permitted-Cross-Domain-Policies', value: 'none' },
-          { key: 'Cross-Origin-Opener-Policy', value: 'same-origin-allow-popups' },
+          { key: 'Cross-Origin-Opener-Policy', value: 'unsafe-none' },
           {
             key: 'Content-Security-Policy',
             value: [

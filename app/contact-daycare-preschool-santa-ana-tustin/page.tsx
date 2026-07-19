@@ -170,6 +170,35 @@ export default function ContactPage() {
           </AnimateStagger>
         </div>
       </section>
+
+      {/* Contact Us CTA */}
+      <section style={{ background: '#F0F5F4', padding: '80px 24px' }}>
+        <div className="max-w-[1000px] mx-auto text-center">
+          <Animate>
+            <h2 style={headingStyle}>Contact Us</h2>
+            <div className="mt-8">
+              <Link
+                href="/request-information-daycare-santa-ana"
+                className="inline-block transition-colors hover:bg-[var(--brown)] hover:text-white"
+                style={{
+                  fontFamily: 'var(--font-work-sans)',
+                  fontWeight: 500,
+                  textTransform: 'uppercase',
+                  fontSize: '14px',
+                  letterSpacing: '0.05em',
+                  color: 'var(--brown)',
+                  background: 'transparent',
+                  border: '1px solid var(--brown)',
+                  borderRadius: '100px',
+                  padding: '13px 60px',
+                }}
+              >
+                Request Information
+              </Link>
+            </div>
+          </Animate>
+        </div>
+      </section>
     </>
   )
 }

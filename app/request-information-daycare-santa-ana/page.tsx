@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import Image from 'next/image'
 import JotFormEmbed from '@/components/JotFormEmbed'
 import { Animate } from '@/components/Animate'
@@ -28,6 +29,8 @@ const subHeadingStyle = {
 export default function RequestInformationPage() {
   return (
     <>
+      <Script id="google-ads" strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=AW-18229400009" />
+      <Script id="google-ads-config" strategy="afterInteractive">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18229400009');`}</Script>
       {/* Hero */}
       <section className="px-3 sm:px-6 lg:px-12">
         <div className="max-w-[1420px] mx-auto">

@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         destination: '/request-information-daycare-santa-ana',
         permanent: true,
       },
+      {
+        source: '/schedule-a-tour',
+        destination: '/schedule-a-tour-santa-ana-daycare-preschool',
+        permanent: true,
+      },
     ]
   },
   async headers() {

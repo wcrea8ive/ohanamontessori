@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
+import JotFormEmbed from '@/components/JotFormEmbed'
 
 export const metadata: Metadata = {
   title: 'Schedule a Tour — Ohana Montessori',
@@ -72,23 +73,6 @@ export default function ScheduleTourPage() {
             <p className="mt-6 leading-relaxed" style={{ color: 'var(--text)' }}>
               We&apos;d love to welcome your family to our school! Touring Ohana Montessori is the best way to experience our peaceful classrooms, meet our educators, and see how Montessori comes to life for every child.
             </p>
-            <Link
-              href="/request-information-daycare-santa-ana"
-              className="inline-block mt-8 transition-colors hover:bg-transparent hover:text-[var(--brown)]"
-              style={{
-                fontFamily: 'var(--font-work-sans)',
-                fontWeight: 500,
-                textTransform: 'uppercase',
-                fontSize: '14px',
-                color: '#fff',
-                background: 'var(--brown)',
-                border: '1px solid var(--brown)',
-                borderRadius: '100px',
-                padding: '13px 60px',
-              }}
-            >
-              Request Information
-            </Link>
           </Animate>
         </div>
       </section>
@@ -109,6 +93,9 @@ export default function ScheduleTourPage() {
               </AnimateItem>
             ))}
           </AnimateStagger>
+          <div className="mt-12">
+            <JotFormEmbed formId="261995225310153" title="Schedule a Tour" />
+          </div>
         </div>
       </section>
 

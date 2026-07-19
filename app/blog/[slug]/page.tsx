@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Animate } from '@/components/Animate'
 import { BLOG_POSTS, getPost, type InlineLink } from '@/lib/blogPosts'
+import { getAllMdxPosts, getMdxPostBySlug } from '@/lib/mdx'
 
 function renderText(text: string, links?: InlineLink[]) {
   if (!links?.length) return <>{text}</>
@@ -44,7 +45,11 @@ function renderText(text: string, links?: InlineLink[]) {
 }
 
 export function generateStaticParams() {
-  return BLOG_POSTS.map(post => ({ slug: post.slug }))
+  const mdxSlugs = getAllMdxPosts().map(p => ({ slug: p.slug }))
+  const legacySlugs = BLOG_POSTS
+    .filter(p => !mdxSlugs.some(m => m.slug === p.slug))
+    .map(p => ({ slug: p.slug }))
+  return [...mdxSlugs, ...legacySlugs]
 }
 
 const SITE_NAME = 'Preschool & Daycare in Santa Ana, Tustin, Irvine | Ohana Montessori'
@@ -52,7 +57,10 @@ const OG_IMAGE = 'https://ohanamontessori.com/og-image.webp'
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  const post = getPost(slug)
+  const mdx = getMdxPostBySlug(slug)
+  const post = mdx
+    ? { title: mdx.title, excerpt: mdx.description, date: mdx.date, slug: mdx.slug }
+    : (() => { const p = getPost(slug); return p ? { title: p.title, excerpt: p.excerpt, date: p.date, slug: p.slug } : null })()
   if (!post) return {}
   return {
     title: `${post.title} - ${SITE_NAME}`,
@@ -81,8 +89,12 @@ function formatDate(iso: string) {
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const post = getPost(slug)
-  if (!post) notFound()
+  const mdxPost = getMdxPostBySlug(slug)
+  const legacyPost = mdxPost ? null : getPost(slug)
+  if (!mdxPost && !legacyPost) notFound()
+
+  const title = mdxPost ? mdxPost.title : legacyPost!.title
+  const date = mdxPost ? mdxPost.date : legacyPost!.date
 
   return (
     <>
@@ -113,7 +125,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
             {/* Date */}
             <time
-              dateTime={post.date}
+              dateTime={date}
               style={{
                 display: 'block',
                 fontFamily: 'var(--font-work-sans)',
@@ -122,7 +134,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 marginBottom: '18px',
               }}
             >
-              {formatDate(post.date)}
+              {formatDate(date)}
             </time>
 
             {/* Title — h1, Baskervville, matches live site */}
@@ -136,7 +148,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 margin: '0 0 30px 0',
               }}
             >
-              {post.title}
+              {title}
             </h1>
 
             {/* Divider */}
@@ -145,56 +157,63 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* Body */}
           <Animate>
-            {post.body.map((section, i) => {
-              if (section.type === 'h2') {
+            {mdxPost ? (
+              <div
+                className="blog-content"
+                dangerouslySetInnerHTML={{ __html: mdxPost.content }}
+              />
+            ) : (
+              legacyPost!.body.map((section, i) => {
+                if (section.type === 'h2') {
+                  return (
+                    <h2
+                      key={i}
+                      style={{
+                        fontFamily: 'var(--font-baskervville)',
+                        fontWeight: 400,
+                        fontSize: '24px',
+                        lineHeight: 1.3,
+                        color: '#000',
+                        margin: '40px 0 15px 0',
+                      }}
+                    >
+                      {section.text}
+                    </h2>
+                  )
+                }
+                if (section.type === 'h3') {
+                  return (
+                    <h3
+                      key={i}
+                      style={{
+                        fontFamily: 'var(--font-baskervville)',
+                        fontWeight: 400,
+                        fontSize: '20px',
+                        lineHeight: 1.3,
+                        color: '#000',
+                        margin: '30px 0 12px 0',
+                      }}
+                    >
+                      {section.text}
+                    </h3>
+                  )
+                }
                 return (
-                  <h2
+                  <p
                     key={i}
                     style={{
-                      fontFamily: 'var(--font-baskervville)',
-                      fontWeight: 400,
-                      fontSize: '24px',
-                      lineHeight: 1.3,
+                      fontFamily: 'var(--font-work-sans)',
+                      fontSize: '17px',
+                      lineHeight: '1.6em',
                       color: '#000',
-                      margin: '40px 0 15px 0',
+                      margin: '0 0 20px 0',
                     }}
                   >
-                    {section.text}
-                  </h2>
+                    {renderText(section.text, section.links)}
+                  </p>
                 )
-              }
-              if (section.type === 'h3') {
-                return (
-                  <h3
-                    key={i}
-                    style={{
-                      fontFamily: 'var(--font-baskervville)',
-                      fontWeight: 400,
-                      fontSize: '20px',
-                      lineHeight: 1.3,
-                      color: '#000',
-                      margin: '30px 0 12px 0',
-                    }}
-                  >
-                    {section.text}
-                  </h3>
-                )
-              }
-              return (
-                <p
-                  key={i}
-                  style={{
-                    fontFamily: 'var(--font-work-sans)',
-                    fontSize: '17px',
-                    lineHeight: '1.6em',
-                    color: '#000',
-                    margin: '0 0 20px 0',
-                  }}
-                >
-                  {renderText(section.text, section.links)}
-                </p>
-              )
-            })}
+              })
+            )}
           </Animate>
 
           {/* Back link bottom */}

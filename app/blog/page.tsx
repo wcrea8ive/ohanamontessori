@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 import { BLOG_POSTS } from '@/lib/blogPosts'
+import { getAllMdxPosts } from '@/lib/mdx'
 
 const SITE_NAME = 'Preschool & Daycare in Santa Ana, Tustin, Irvine | Ohana Montessori'
 const OG_IMAGE = 'https://ohanamontessori.com/og-image.webp'
@@ -31,7 +32,19 @@ function formatDate(iso: string) {
 }
 
 export default function BlogPage() {
-  const sorted = [...BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date))
+  const mdxPosts = getAllMdxPosts()
+  const mdxSlugs = new Set(mdxPosts.map(p => p.slug))
+
+  // MDX posts take precedence; fall back to hardcoded posts not yet in MDX
+  const legacyPosts = BLOG_POSTS
+    .filter(p => !mdxSlugs.has(p.slug))
+    .map(p => ({ slug: p.slug, title: p.title, date: p.date, excerpt: p.excerpt }))
+
+  const allPosts = [
+    ...mdxPosts.map(p => ({ slug: p.slug, title: p.title, date: p.date, excerpt: p.description })),
+    ...legacyPosts,
+  ]
+  const sorted = allPosts.sort((a, b) => b.date.localeCompare(a.date))
 
   return (
     <>

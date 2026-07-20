@@ -26,6 +26,18 @@ export default function JotFormEmbed({ formId }: Props) {
     }
     window.addEventListener('message', handleMessage)
 
+    // Watch for the iframe JotForm creates and enforce a minimum height so
+    // the submit button is never clipped if JotForm underestimates height
+    const observer = new MutationObserver(() => {
+      const iframe = containerRef.current?.querySelector('iframe')
+      if (iframe) {
+        iframe.style.minHeight = '900px'
+      }
+    })
+    if (containerRef.current) {
+      observer.observe(containerRef.current, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] })
+    }
+
     // Inject once per mount — JotForm's jsform script renders the form
     // at the location of the script tag inside the container div
     if (containerRef.current && !injected.current) {
@@ -36,7 +48,10 @@ export default function JotFormEmbed({ formId }: Props) {
       containerRef.current.appendChild(script)
     }
 
-    return () => window.removeEventListener('message', handleMessage)
+    return () => {
+      window.removeEventListener('message', handleMessage)
+      observer.disconnect()
+    }
   }, [formId, router])
 
   // min-height prevents the container from collapsing to 0 while the script loads,

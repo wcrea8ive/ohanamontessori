@@ -223,7 +223,7 @@ export default function Home() {
                 <div className="rounded-[10px] h-full flex flex-col items-center" style={{ background: '#fff', padding: '40px' }}>
                   <div
                     className="flex items-center justify-center shrink-0"
-                    style={{ width: '100px', height: '100px', borderRadius: '100px', border: '1px solid rgba(0,0,0,0.48)' }}
+                    style={{ width: '100px', height: '100px', borderRadius: '100px', border: '2px solid rgba(0,0,0,0.48)' }}
                   >
                     <Image src={card.icon} alt="" width={66} height={66} aria-hidden="true" />
                   </div>

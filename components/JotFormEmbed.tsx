@@ -39,5 +39,7 @@ export default function JotFormEmbed({ formId }: Props) {
     return () => window.removeEventListener('message', handleMessage)
   }, [formId, router])
 
-  return <div ref={containerRef} />
+  // min-height prevents the container from collapsing to 0 while the script loads,
+  // and gives the iframe room if JotForm underestimates height after reCAPTCHA loads
+  return <div ref={containerRef} style={{ minHeight: '900px' }} />
 }

@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/tuition-and-school-hours',
+        destination: '/preschool-daycare-tuition-and-school-hours',
+        permanent: true,
+      },
+      {
         source: '/request-information-short-form',
         destination: '/request-information-daycare-santa-ana',
         permanent: true,

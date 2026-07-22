@@ -53,9 +53,9 @@ export default function Footer() {
 
         {/* Brand */}
         <div className="col-span-2 md:max-w-[260px]">
-          <div className="mb-4">
+          <Link href="/" className="mb-4 inline-block">
             <Image src="/ohana-montessori-logo-white.png" alt="Ohana Montessori" width={360} height={120} className="h-auto w-auto max-h-24" />
-          </div>
+          </Link>
           <p className="leading-relaxed mb-4" style={{ color: '#fff', fontSize: '16px' }}>
             Ohana is more than a name, it&apos;s our way of being. Here, children grow in a calm, beautiful environment while parents feel supported, connected, and understood.
           </p>

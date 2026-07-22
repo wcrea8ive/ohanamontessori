@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useRef } from 'react'
-import { Menu, X, ChevronDown, Plus, Minus, MapPin, Phone } from 'lucide-react'
+import { Menu, X, ChevronDown, Plus, Minus, MapPin, Phone, Mail, Calendar } from 'lucide-react'
 
 // lucide-react dropped brand icons; inline SVGs instead
 const InstagramIcon = ({ size = 18 }: { size?: number }) => (
@@ -154,7 +154,7 @@ export default function Header() {
             <MapPin size={14} />
             2102 N. Tustin Avenue, Santa Ana, CA 92705
           </span>
-          <div className="flex items-center gap-2 mt-1">
+          <div className="flex items-center justify-center flex-wrap gap-2 mt-1">
             <a
               href="tel:+17149427135"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-[13px] text-white transition-opacity hover:opacity-90"
@@ -163,6 +163,22 @@ export default function Header() {
               <Phone size={13} fill="currentColor" strokeWidth={0} />
               Call Us
             </a>
+            <Link
+              href="/request-information-daycare-santa-ana"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-[13px] text-white transition-opacity hover:opacity-90"
+              style={{ background: 'var(--brown)' }}
+            >
+              <Mail size={13} />
+              Request Info
+            </Link>
+            <Link
+              href="/schedule-a-tour-santa-ana-daycare-preschool"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-[5px] text-[13px] text-white transition-opacity hover:opacity-90"
+              style={{ background: 'var(--brown)' }}
+            >
+              <Calendar size={13} />
+              Schedule a Tour
+            </Link>
           </div>
         </div>
       </div>

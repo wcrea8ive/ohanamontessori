@@ -96,7 +96,7 @@ export default function Home() {
               className="px-10 py-[15px] text-sm rounded-full transition-colors hover:opacity-90"
               style={{
                 fontFamily: 'var(--font-work-sans)',
-                fontWeight: 500,
+                fontWeight: 600,
                 textTransform: 'uppercase',
                 color: '#fff',
                 background: 'var(--brown)',
@@ -110,7 +110,7 @@ export default function Home() {
               className="px-[60px] py-[15px] text-sm rounded-full transition-colors hover:bg-[var(--brown)] hover:text-white"
               style={{
                 fontFamily: 'var(--font-work-sans)',
-                fontWeight: 500,
+                fontWeight: 600,
                 textTransform: 'uppercase',
                 color: 'var(--brown)',
                 background: 'transparent',
@@ -538,7 +538,7 @@ export default function Home() {
               className="inline-block transition-colors hover:bg-[var(--brown)] hover:text-[#FEFAF4]"
               style={{
                 fontFamily: 'var(--font-work-sans)',
-                fontWeight: 500,
+                fontWeight: 600,
                 textTransform: 'uppercase',
                 fontSize: '14px',
                 color: 'var(--brown)',

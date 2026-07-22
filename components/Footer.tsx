@@ -56,10 +56,10 @@ export default function Footer() {
           <div className="mb-4">
             <Image src="/ohana-montessori-logo-white.png" alt="Ohana Montessori" width={360} height={120} className="h-auto w-auto max-h-24" />
           </div>
-          <p className="text-sm leading-relaxed mb-4" style={{ color: '#fff' }}>
+          <p className="leading-relaxed mb-4" style={{ color: '#fff', fontSize: '16px' }}>
             Ohana is more than a name, it&apos;s our way of being. Here, children grow in a calm, beautiful environment while parents feel supported, connected, and understood.
           </p>
-          <p className="text-xs" style={{ color: '#fff' }}>License # 304371739</p>
+          <p style={{ color: '#fff', fontSize: '16px' }}>License # 304371739</p>
         </div>
 
         {/* About */}
@@ -68,7 +68,7 @@ export default function Footer() {
           <ul className="space-y-2.5">
             {ABOUT_LINKS.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="transition-colors hover:text-white" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '14px' }}>{l.label}</Link>
+                <Link href={l.href} className="transition-colors hover:text-white" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '16px' }}>{l.label}</Link>
               </li>
             ))}
           </ul>
@@ -80,7 +80,7 @@ export default function Footer() {
           <ul className="space-y-2.5">
             {PROGRAMS_LINKS.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="transition-colors hover:text-white" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '14px' }}>{l.label}</Link>
+                <Link href={l.href} className="transition-colors hover:text-white" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '16px' }}>{l.label}</Link>
               </li>
             ))}
           </ul>
@@ -92,7 +92,7 @@ export default function Footer() {
           <ul className="space-y-2.5">
             {QUICK_LINKS.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="transition-colors hover:text-white" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '14px' }}>{l.label}</Link>
+                <Link href={l.href} className="transition-colors hover:text-white" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '16px' }}>{l.label}</Link>
               </li>
             ))}
           </ul>
@@ -101,18 +101,18 @@ export default function Footer() {
         {/* Contact */}
         <div>
           <h4 className="font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '18px' }}>Contact</h4>
-          <ul className="space-y-3" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '14px' }}>
+          <ul className="space-y-3" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '16px' }}>
             <li className="flex items-start gap-3">
               <MapPin size={16} className="shrink-0 mt-0.5" />
               <span>2102 N. Tustin Avenue<br />Santa Ana, CA 92705</span>
             </li>
             <li className="flex items-center gap-3">
               <Phone size={16} className="shrink-0" />
-              <a href="tel:+17149427135" className="hover:text-white transition-colors" style={{ fontFamily: 'var(--font-work-sans)', fontSize: '14px' }}>(714) 942-7135</a>
+              <a href="tel:+17149427135" className="hover:text-white transition-colors" style={{ fontFamily: 'var(--font-work-sans)', fontSize: '16px' }}>(714) 942-7135</a>
             </li>
             <li className="flex items-center gap-3">
               <Mail size={16} className="shrink-0" />
-              <a href="mailto:info@ohanamontessori.com" className="hover:text-white transition-colors" style={{ fontFamily: 'var(--font-work-sans)', fontSize: '14px' }}>info@ohanamontessori.com</a>
+              <a href="mailto:info@ohanamontessori.com" className="hover:text-white transition-colors" style={{ fontFamily: 'var(--font-work-sans)', fontSize: '16px' }}>info@ohanamontessori.com</a>
             </li>
           </ul>
           <div className="flex gap-3 mt-6">
@@ -130,7 +130,7 @@ export default function Footer() {
       </div>
 
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col items-center justify-center gap-2 text-sm text-center" style={{ color: '#fff' }}>
+        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col items-center justify-center gap-2 text-center" style={{ color: '#fff', fontSize: '16px' }}>
           <span>© Copyright {new Date().getFullYear()} Ohana Montessori – All Rights Reserved. Do not duplicate or redistribute the contents of this website for commercial use.</span>
           <div className="flex gap-2">
             <Link href="/privacy-policy-2" className="hover:text-white transition-colors">Privacy Policy</Link>

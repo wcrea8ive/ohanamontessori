@@ -193,7 +193,7 @@ export default function Header() {
               <a href="https://www.facebook.com/ohana.montessori" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition-opacity hover:opacity-70">
                 <FacebookIcon />
               </a>
-              <a href="https://www.linkedin.com/company/ohana-montessori" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-opacity hover:opacity-70">
+              <a href="https://www.linkedin.com/company/ohanamontessori/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-opacity hover:opacity-70">
                 <LinkedinIcon />
               </a>
             </div>
@@ -249,7 +249,7 @@ export default function Header() {
           <a href="https://www.facebook.com/ohana.montessori" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition-opacity hover:opacity-70">
             <FacebookIcon size={16} />
           </a>
-          <a href="https://www.linkedin.com/company/ohana-montessori" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-opacity hover:opacity-70">
+          <a href="https://www.linkedin.com/company/ohanamontessori/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-opacity hover:opacity-70">
             <LinkedinIcon size={16} />
           </a>
         </div>

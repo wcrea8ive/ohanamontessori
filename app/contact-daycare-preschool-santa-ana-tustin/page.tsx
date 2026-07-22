@@ -155,7 +155,7 @@ export default function ContactPage() {
                     <span className="text-sm">Facebook</span>
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/ohana-montessori"
+                    href="https://www.linkedin.com/company/ohanamontessori/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 hover:opacity-70 transition-opacity"

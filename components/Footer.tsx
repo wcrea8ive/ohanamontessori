@@ -1,6 +1,27 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { MapPin, Phone, Mail } from 'lucide-react'
 import ScrollToTop from './ScrollToTop'
+
+const InstagramIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+)
+
+const FacebookIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path fillRule="evenodd" clipRule="evenodd" d="M3 0h18a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3h-7.4v-9.1h2.5l.5-3.2h-3V9.6c0-.9.3-1.6 1.6-1.6h1.6V5.2c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4v2.6H7.4v3.2H10V24H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3z" />
+  </svg>
+)
+
+const LinkedinIcon = ({ size = 18 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+  </svg>
+)
 
 const ABOUT_LINKS = [
   { label: 'Welcome', href: '/welcome-to-montessori-preschool-childcare-santa-ana' },
@@ -81,14 +102,29 @@ export default function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)' }}>Contact</h4>
           <ul className="space-y-3" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '14px' }}>
-            <li>2102 N. Tustin Avenue<br />Santa Ana, CA 92705</li>
-            <li><a href="tel:+17149427135" className="hover:text-white transition-colors" style={{ fontFamily: 'var(--font-work-sans)', fontSize: '14px' }}>(714) 942-7135</a></li>
-            <li><a href="mailto:info@ohanamontessori.com" className="hover:text-white transition-colors" style={{ fontFamily: 'var(--font-work-sans)', fontSize: '14px' }}>info@ohanamontessori.com</a></li>
+            <li className="flex items-start gap-3">
+              <MapPin size={16} className="shrink-0 mt-0.5" />
+              <span>2102 N. Tustin Avenue<br />Santa Ana, CA 92705</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Phone size={16} className="shrink-0" />
+              <a href="tel:+17149427135" className="hover:text-white transition-colors" style={{ fontFamily: 'var(--font-work-sans)', fontSize: '14px' }}>(714) 942-7135</a>
+            </li>
+            <li className="flex items-center gap-3">
+              <Mail size={16} className="shrink-0" />
+              <a href="mailto:info@ohanamontessori.com" className="hover:text-white transition-colors" style={{ fontFamily: 'var(--font-work-sans)', fontSize: '14px' }}>info@ohanamontessori.com</a>
+            </li>
           </ul>
           <div className="flex gap-3 mt-6">
-            <a href="https://www.instagram.com/ohana.montessori" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold uppercase tracking-widest transition-colors hover:text-white" style={{ color: '#fff' }}>Instagram</a>
-            <span style={{ color: '#fff' }}>·</span>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold uppercase tracking-widest transition-colors hover:text-white" style={{ color: '#fff' }}>Facebook</a>
+            <a href="https://www.instagram.com/ohana.montessori" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-opacity hover:opacity-70" style={{ color: '#fff' }}>
+              <InstagramIcon />
+            </a>
+            <a href="https://www.facebook.com/ohana.montessori" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition-opacity hover:opacity-70" style={{ color: '#fff' }}>
+              <FacebookIcon />
+            </a>
+            <a href="https://www.linkedin.com/company/ohanamontessori/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-opacity hover:opacity-70" style={{ color: '#fff' }}>
+              <LinkedinIcon />
+            </a>
           </div>
         </div>
       </div>

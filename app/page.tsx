@@ -543,7 +543,7 @@ export default function Home() {
                 fontSize: '14px',
                 color: 'var(--brown)',
                 background: 'transparent',
-                border: '1px solid var(--brown)',
+                border: '3px solid var(--brown)',
                 borderRadius: '100px',
                 padding: '13px 60px',
               }}

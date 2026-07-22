@@ -64,7 +64,7 @@ export default function Footer() {
 
         {/* About */}
         <div>
-          <h4 className="text-base font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)' }}>About</h4>
+          <h4 className="font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '18px' }}>About</h4>
           <ul className="space-y-2.5">
             {ABOUT_LINKS.map((l) => (
               <li key={l.href}>
@@ -76,7 +76,7 @@ export default function Footer() {
 
         {/* Programs */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-widest mb-5 font-work-sans" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)' }}>Programs</h4>
+          <h4 className="font-semibold uppercase tracking-widest mb-5 font-work-sans" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '18px' }}>Programs</h4>
           <ul className="space-y-2.5">
             {PROGRAMS_LINKS.map((l) => (
               <li key={l.href}>
@@ -88,7 +88,7 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)' }}>Quick Links</h4>
+          <h4 className="font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '18px' }}>Quick Links</h4>
           <ul className="space-y-2.5">
             {QUICK_LINKS.map((l) => (
               <li key={l.href}>
@@ -100,7 +100,7 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)' }}>Contact</h4>
+          <h4 className="font-semibold uppercase tracking-widest mb-5" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '18px' }}>Contact</h4>
           <ul className="space-y-3" style={{ color: '#fff', fontFamily: 'var(--font-work-sans)', fontSize: '14px' }}>
             <li className="flex items-start gap-3">
               <MapPin size={16} className="shrink-0 mt-0.5" />

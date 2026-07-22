@@ -354,17 +354,6 @@ export default function Header() {
           )}
         </nav>
 
-        <div className="px-6 py-6 shrink-0 flex flex-col gap-3" style={{ borderTop: '1px solid var(--border)' }}>
-          <a href="tel:+17149427135" className="text-sm text-center" style={{ color: 'var(--text-muted)' }}>(714) 942-7135</a>
-          <Link
-            href="/request-information-daycare-santa-ana"
-            onClick={() => setMobileOpen(false)}
-            className="w-full py-3.5 text-white font-semibold text-sm text-center rounded-full uppercase tracking-wide transition-opacity hover:opacity-90"
-            style={{ background: 'var(--brown)' }}
-          >
-            Request Information
-          </Link>
-        </div>
       </div>
     </header>
   )

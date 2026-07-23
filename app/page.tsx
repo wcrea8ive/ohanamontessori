@@ -210,7 +210,7 @@ export default function Home() {
       <section className="px-3 sm:px-6 lg:px-12">
         <div className="max-w-[1426px] mx-auto rounded-[10px] text-center" style={{ background: '#F0F5F4', padding: '60px 40px 80px' }}>
           <Animate>
-            <h2 style={{ fontSize: 'clamp(36px, 5.5vw, 64px)', color: '#4E5050' }}>
+            <h2 className="leading-[36px] md:leading-normal" style={{ fontSize: 'clamp(36px, 5.5vw, 64px)', color: '#4E5050' }}>
               Our Montessori Approach
             </h2>
             <p className="max-w-[80%] mx-auto mt-4" style={{ color: 'var(--text-muted)' }}>

@@ -217,7 +217,7 @@ export default function Home() {
             </p>
           </Animate>
 
-          <AnimateStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] mt-12">
+          <AnimateStagger className="grid grid-cols-1 lg:grid-cols-3 gap-[30px] mt-12">
             {APPROACH_CARDS.map((card) => (
               <AnimateItem key={card.title}>
                 <div className="rounded-[10px] h-full flex flex-col items-center" style={{ background: '#fff', padding: '40px' }}>

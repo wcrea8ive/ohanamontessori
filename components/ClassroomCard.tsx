@@ -24,7 +24,7 @@ export default function ClassroomCard({ room }: { room: { name: string; image: s
         className={`absolute inset-0 flex flex-col items-center justify-center text-center transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0 ${active ? '!translate-y-0' : ''}`}
         style={{ background: 'var(--brown)', padding: '15px' }}
       >
-        <p style={{ fontFamily: 'var(--font-work-sans)', fontWeight: 400, fontSize: '14px', lineHeight: '1.4em', color: '#fff', marginBottom: '10px' }}>
+        <p className="text-[11px] md:text-[14px]" style={{ fontFamily: 'var(--font-work-sans)', fontWeight: 400, lineHeight: '1.4em', color: '#fff', marginBottom: '10px' }}>
           {room.description}
         </p>
         <Link

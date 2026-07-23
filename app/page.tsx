@@ -4,6 +4,7 @@ import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 import HomeHeroCaption from '@/components/HomeHeroCaption'
 import WelcomeVideo from '@/components/WelcomeVideo'
 import SummerCampModal from '@/components/SummerCampModal'
+import ClassroomCard from '@/components/ClassroomCard'
 
 const APPROACH_CARDS = [
   { title: 'Child-Led Learning', body: 'Your child chooses meaningful work that captures their interest.', icon: '/Child-Led-Learning.svg' },
@@ -276,40 +277,7 @@ export default function Home() {
           <AnimateStagger className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-[10px]">
             {CLASSROOMS.map((room) => (
               <AnimateItem key={room.name}>
-                <div className="group relative overflow-hidden rounded-[20px]" style={{ border: '1px solid #fff', aspectRatio: '500 / 599' }}>
-                  <Image
-                    src={room.image}
-                    alt={room.name}
-                    fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div
-                    className="absolute inset-0 flex flex-col items-center justify-center text-center transition-transform duration-500 ease-out translate-y-full group-hover:translate-y-0"
-                    style={{ background: 'var(--brown)', padding: '15px' }}
-                  >
-                    <p style={{ fontFamily: 'var(--font-work-sans)', fontWeight: 400, fontSize: '14px', lineHeight: '1.4em', color: '#fff', marginBottom: '10px' }}>
-                      {room.description}
-                    </p>
-                    <Link
-                      href="/our-facility#classrooms"
-                      className="transition-colors hover:bg-transparent hover:text-white"
-                      style={{
-                        fontFamily: 'var(--font-work-sans)',
-                        fontWeight: 500,
-                        textTransform: 'uppercase',
-                        fontSize: '12px',
-                        color: 'var(--brown)',
-                        background: '#fff',
-                        border: '1px solid #fff',
-                        borderRadius: '100px',
-                        padding: '8px 22px',
-                      }}
-                    >
-                      Learn More
-                    </Link>
-                  </div>
-                </div>
+                <ClassroomCard room={room} />
               </AnimateItem>
             ))}
           </AnimateStagger>

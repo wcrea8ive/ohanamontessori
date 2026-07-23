@@ -406,7 +406,7 @@ export default function Home() {
                   className="flex items-center justify-center shrink-0"
                   style={{ width: '100px', height: '100px', borderRadius: '100px', background: '#355E54' }}
                 >
-                  <h3 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: '39px', color: '#fff' }}>{s.num}</h3>
+                  <h3 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: '39px', lineHeight: 1, color: '#fff' }}>{s.num}</h3>
                 </div>
                 <p className="mt-4" style={{ color: 'var(--text)' }}>{s.desc}</p>
               </AnimateItem>

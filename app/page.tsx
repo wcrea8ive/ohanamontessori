@@ -124,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* Welcome video */}
-      <section className="px-3 sm:px-6 lg:px-12" style={{ paddingTop: '40px' }}>
+      <section className="px-3 sm:px-6 lg:px-12" style={{ paddingTop: '5px' }}>
         <div className="max-w-[1421px] mx-auto rounded-[16px] overflow-hidden flex flex-col-reverse md:flex-row">
           <WelcomeVideo />
 

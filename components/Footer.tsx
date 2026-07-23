@@ -49,10 +49,10 @@ const QUICK_LINKS = [
 export default function Footer() {
   return (
     <footer style={{ background: '#355E54', color: '#fff' }}>
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 gap-10 lg:flex lg:flex-wrap lg:justify-between lg:gap-x-10 lg:gap-y-10">
+      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 lg:flex lg:flex-wrap lg:justify-between lg:gap-x-10 lg:gap-y-10">
 
         {/* Brand */}
-        <div className="col-span-2 lg:max-w-[260px]">
+        <div className="md:col-span-2 lg:max-w-[260px]">
           <Link href="/" className="mb-4 inline-block">
             <Image src="/ohana-montessori-logo-white.png" alt="Ohana Montessori" width={360} height={120} className="h-auto w-auto max-h-24" />
           </Link>

@@ -331,7 +331,7 @@ export default function Header() {
                         key={child.href}
                         href={child.href}
                         onClick={() => setMobileOpen(false)}
-                        className="py-2 pl-4 text-sm transition-colors"
+                        className="py-1 pl-4 text-sm transition-colors"
                         style={{ color: 'var(--text-muted)' }}
                       >
                         {child.label}

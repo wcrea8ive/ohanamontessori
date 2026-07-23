@@ -412,7 +412,7 @@ export default function Home() {
             </h2>
           </Animate>
 
-          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[30px] mt-12">
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[10px] sm:gap-[30px] mt-12">
             {SPACES.map((space) => (
               <AnimateItem key={space.title}>
                 <div

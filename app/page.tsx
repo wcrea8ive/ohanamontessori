@@ -130,7 +130,7 @@ export default function Home() {
 
           <div className="w-full md:w-[49%] flex flex-col justify-center p-[60px_40px] md:p-[30px] lg:p-[60px_40px]" style={{ background: '#663E19' }}>
             <Animate>
-              <h2 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: '35px', color: '#fff', marginBottom: '18px', lineHeight: 1.1 }}>
+              <h2 className="text-[35px] md:text-[30px] lg:text-[35px]" style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, color: '#fff', marginBottom: '18px', lineHeight: 1.1 }}>
                 Your Child&apos;s Home Away From Home
               </h2>
               <p style={{ fontFamily: 'var(--font-work-sans)', fontWeight: 500, fontSize: '18px', lineHeight: 1.2, color: '#fff', marginBottom: '18px' }}>

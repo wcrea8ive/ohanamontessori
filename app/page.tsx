@@ -293,8 +293,8 @@ export default function Home() {
       {/* A Peaceful Day of Discovery */}
       <section className="px-3 sm:px-6 lg:px-12" style={{ paddingBottom: '40px' }}>
         <div
-          className="max-w-[1426px] mx-auto rounded-[10px] text-center"
-          style={{ background: '#355E54', padding: '60px 50px' }}
+          className="max-w-[1426px] mx-auto rounded-[10px] text-center p-[60px_30px] md:p-[60px_50px]"
+          style={{ background: '#355E54' }}
         >
           <Animate>
             <h2
@@ -317,7 +317,7 @@ export default function Home() {
                 alt="A peaceful sunrise over a meadow"
                 width={1000}
                 height={944}
-                className="w-full rounded-[10px] object-cover h-[400px] lg:h-[600px]"
+                className="w-full rounded-[10px] object-cover h-[300px] md:h-[400px] lg:h-[600px]"
               />
             </Animate>
 

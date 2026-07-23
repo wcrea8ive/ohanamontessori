@@ -36,9 +36,9 @@ const SPACES = [
 ]
 
 const STEPS = [
-  { num: '1', desc: 'Add your family to our interest list so we can keep you close.' },
-  { num: '2', desc: 'Come visit — we’d love to show you the classrooms.' },
-  { num: '3', desc: 'Submit your application.' },
+  { num: '1', nudge: -1.5, desc: 'Add your family to our interest list so we can keep you close.' },
+  { num: '2', nudge: -2, desc: 'Come visit — we’d love to show you the classrooms.' },
+  { num: '3', nudge: -5, desc: 'Submit your application.' },
 ]
 
 export default function Home() {
@@ -406,7 +406,7 @@ export default function Home() {
                   className="flex items-center justify-center shrink-0"
                   style={{ width: '100px', height: '100px', borderRadius: '100px', background: '#355E54' }}
                 >
-                  <h3 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: '39px', lineHeight: 1, color: '#fff' }}>{s.num}</h3>
+                  <h3 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: '39px', lineHeight: 1, color: '#fff', transform: `translateY(${s.nudge}px)` }}>{s.num}</h3>
                 </div>
                 <p className="mt-4" style={{ color: 'var(--text)' }}>{s.desc}</p>
               </AnimateItem>

@@ -78,7 +78,7 @@ export default function Home() {
       </section>
 
       {/* Intro */}
-      <section className="px-6" style={{ paddingTop: '50px', paddingBottom: '10px' }}>
+      <section className="px-6" style={{ paddingTop: '50px', paddingBottom: '50px' }}>
         <div className="max-w-[1100px] mx-auto text-center">
           <Animate>
             <p style={{
@@ -90,7 +90,7 @@ export default function Home() {
               Childhood is an adventure. Here, curiosity is invited, imagination is honored, and teachers nurture each child&apos;s unique spirit. Our classrooms are named from the adventure of Koa, the gentle wooden turtle who guides our school-wide story, a journey where children grow with courage, care, and joy.
             </p>
           </Animate>
-          <Animate className="flex flex-wrap items-center justify-center gap-[10px] mt-10 pb-5">
+          <Animate className="flex flex-wrap items-center justify-center gap-[10px] mt-10">
             <Link
               href="/daycare-infant-program-santa-ana-tustin-irvine"
               className="px-10 py-[15px] text-sm rounded-full transition-colors hover:opacity-90"

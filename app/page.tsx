@@ -129,7 +129,7 @@ export default function Home() {
         <div className="max-w-[1421px] mx-auto rounded-[16px] overflow-hidden flex flex-col-reverse md:flex-row">
           <WelcomeVideo />
 
-          <div className="w-full md:w-[49%] flex flex-col justify-center p-[60px_40px] md:p-[30px] lg:p-[60px_40px]" style={{ background: '#663E19' }}>
+          <div className="w-full md:w-[49%] flex flex-col justify-center p-[40px] md:p-[30px] lg:p-[60px_40px]" style={{ background: '#663E19' }}>
             <Animate>
               <h2 className="text-[35px] md:text-[30px] lg:text-[35px]" style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, color: '#fff', marginBottom: '18px', lineHeight: 1.1 }}>
                 Your Child&apos;s Home Away From Home

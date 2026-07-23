@@ -168,8 +168,8 @@ export default function Home() {
       </section>
 
       {/* Quote */}
-      <section className="px-6" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
-        <div className="relative max-w-[1100px] mx-auto text-center">
+      <section className="px-6 pt-[80px] pb-[80px] md:pt-[60px] md:pb-[60px] lg:pt-[80px] lg:pb-[80px]">
+        <div className="relative max-w-[1100px] md:max-w-[580px] lg:max-w-[1100px] mx-auto text-center">
           <Image
             src="/quote.webp"
             alt=""

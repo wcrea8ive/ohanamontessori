@@ -77,7 +77,7 @@ export default function FAQsPage() {
       {/* Hero */}
       <section className="px-3 sm:px-6 lg:px-12">
         <div className="max-w-[1420px] mx-auto">
-          <div className="relative overflow-hidden rounded-[10px] flex items-center justify-center text-center px-6 sm:px-12 py-[50px] md:py-[70px]">
+          <div className="relative overflow-hidden rounded-[10px] flex items-center justify-center text-center px-6 sm:px-12 py-[50px] md:py-[60px] lg:py-[140px]">
             <Image
               src="/page-header-6.webp"
               alt="Wildflower field"

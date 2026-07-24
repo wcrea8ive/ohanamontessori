@@ -134,7 +134,7 @@ export default function WelcomePage() {
       </section>
 
       {/* Our Mission */}
-      <section className="px-6" style={{ background: 'var(--brown)', paddingTop: '80px', paddingBottom: '80px' }}>
+      <section className="px-6" style={{ background: 'var(--brown)', paddingTop: '60px', paddingBottom: '60px' }}>
         <div className="max-w-[1000px] mx-auto">
           <Animate>
             <h2 style={{ ...headingStyle, color: '#FEFAF4' }}>Our Mission</h2>
@@ -163,7 +163,7 @@ export default function WelcomePage() {
       </section>
 
       {/* Child-Led Learning */}
-      <section className="px-6" style={{ background: '#F0ECE9', paddingTop: '80px', paddingBottom: '80px' }}>
+      <section className="px-6" style={{ background: '#F0ECE9', paddingTop: '60px', paddingBottom: '60px' }}>
         <div className="max-w-[1000px] mx-auto">
           <Animate>
             <h2 style={headingStyle}>Child-Led Learning: Every Child, Every Moment</h2>

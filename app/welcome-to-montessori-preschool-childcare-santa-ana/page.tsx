@@ -83,7 +83,7 @@ export default function WelcomePage() {
 
       {/* Our Founders' Vision */}
       <section className="px-6" style={{ background: '#F0ECE9', paddingTop: '60px', paddingBottom: '60px' }}>
-        <div className="max-w-[1000px] mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div className="max-w-[1000px] mx-auto grid lg:grid-cols-2 gap-10 items-center">
           <Animate variant="slideLeft">
             <div className="relative w-full h-[450px] rounded-[20px] overflow-hidden">
               <Image src="/founders-vision.webp" alt="Hands holding seedlings" fill className="object-cover" />

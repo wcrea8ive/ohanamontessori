@@ -139,7 +139,7 @@ export default function WelcomePage() {
       </section>
 
       {/* Our Mission */}
-      <section className="px-6" style={{ background: 'var(--brown)', paddingTop: '60px', paddingBottom: '60px' }}>
+      <section className="px-6 py-[50px] md:py-[60px]" style={{ background: 'var(--brown)' }}>
         <div className="max-w-[1000px] mx-auto">
           <Animate>
             <h2 style={{ ...headingStyle, color: '#FEFAF4' }}>Our Mission</h2>

@@ -49,7 +49,7 @@ export default function OurFacilityPage() {
       {/* Hero */}
       <section className="px-3 sm:px-6 lg:px-12">
         <div className="max-w-[1420px] mx-auto">
-          <div className="relative overflow-hidden rounded-[10px] flex items-center justify-center text-center px-3 sm:px-5 py-[50px] md:py-[60px] lg:py-[100px]">
+          <div className="relative overflow-hidden rounded-[10px] flex items-center justify-center text-center px-3 sm:px-5 py-[50px] md:py-[60px] lg:py-[140px]">
             <Image
               src="/facility-hero.webp"
               alt="Ohana Montessori lobby"
@@ -61,7 +61,7 @@ export default function OurFacilityPage() {
             <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.4)' }} />
             <Animate>
               <h1
-                className="relative text-white capitalize text-[24px] md:text-[30px] max-w-2xl mx-auto"
+                className="relative text-white capitalize text-[24px] md:text-[30px] lg:text-[40px] max-w-[300px] md:max-w-full mx-auto"
                 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 400, lineHeight: 1.4, textShadow: '0 0 10px #000' }}
               >
                 Home Is Where Love Begins.

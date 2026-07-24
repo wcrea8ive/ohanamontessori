@@ -65,7 +65,7 @@ export default function WelcomePage() {
       </section>
 
       {/* Welcome to Ohana Montessori */}
-      <section className="px-6" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
+      <section className="px-6 py-[50px] md:py-[60px]">
         <div className="max-w-[1000px] mx-auto text-center">
           <Animate>
             <h2

@@ -68,7 +68,12 @@ export default function WelcomePage() {
       <section className="px-6" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <div className="max-w-[1000px] mx-auto text-center">
           <Animate>
-            <h2 style={headingStyle}>Welcome to Ohana Montessori</h2>
+            <h2
+              className="text-[35px] leading-[40px] md:text-[length:clamp(28px,4vw,40px)] md:leading-[44px]"
+              style={{ fontFamily: headingStyle.fontFamily, fontWeight: headingStyle.fontWeight, color: headingStyle.color }}
+            >
+              Welcome to Ohana Montessori
+            </h2>
             <div className="mt-6 space-y-4 leading-relaxed" style={{ color: 'var(--text)' }}>
               <p>
                 At Ohana Montessori, early childhood is honored, not hurried. Our school was founded on a simple idea: every child deserves to feel safe, seen, and celebrated for exactly who they are.

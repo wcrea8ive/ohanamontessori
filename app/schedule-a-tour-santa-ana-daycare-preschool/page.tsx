@@ -55,7 +55,7 @@ export default function ScheduleTourPage() {
             <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.4)' }} />
             <Animate>
               <h1
-                className="relative text-white capitalize text-[20px] sm:text-[28px] md:text-[30px] whitespace-nowrap"
+                className="relative text-white capitalize text-[24px] sm:text-[24px] md:text-[30px] whitespace-nowrap"
                 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 400, lineHeight: 1.4, textShadow: '0 0 10px #000' }}
               >
                 See the Ohana Difference—In Person or Online

@@ -58,7 +58,7 @@ export default function SchoolCalendarPage() {
             <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.25)' }} />
             <Animate>
               <h1
-                className="relative text-white capitalize text-[28px] md:text-[30px] max-w-2xl mx-auto"
+                className="relative text-white capitalize text-[24px] md:text-[30px] max-w-2xl mx-auto"
                 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 400, lineHeight: 1.4, textShadow: '0 0 10px #000' }}
               >
                 Clear Schedules For Busy Families

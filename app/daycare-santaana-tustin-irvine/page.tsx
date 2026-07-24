@@ -72,7 +72,7 @@ export default function OurApproachPage() {
             <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.4)' }} />
             <Animate>
               <h1
-                className="relative text-white capitalize text-[32px] md:text-[40px] max-w-[300px] md:max-w-2xl mx-auto"
+                className="relative text-white capitalize text-[32px] md:text-[30px] max-w-[300px] md:max-w-2xl mx-auto"
                 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 400, lineHeight: 1.4, textShadow: '0 0 10px #000' }}
               >
                 A Journey Of Discovery, Independence, And Confidence

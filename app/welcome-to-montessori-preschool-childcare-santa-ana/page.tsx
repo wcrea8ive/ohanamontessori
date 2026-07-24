@@ -117,7 +117,7 @@ export default function WelcomePage() {
       </section>
 
       {/* The Ohana Village */}
-      <section className="px-6" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
+      <section className="px-6 py-[50px] md:py-[60px]">
         <div className="max-w-[1000px] mx-auto">
           <Animate>
             <h2 style={headingStyle}>The Ohana Village</h2>

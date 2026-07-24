@@ -46,7 +46,7 @@ export default function RequestInformationPage() {
             <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.4)' }} />
             <Animate>
               <h1
-                className="relative text-white capitalize text-[24px] sm:text-[24px] md:text-[30px]"
+                className="relative text-white capitalize text-[24px] sm:text-[24px] md:text-[30px] lg:text-[40px]"
                 style={{ fontFamily: 'var(--font-nunito)', fontWeight: 400, lineHeight: 1.4, textShadow: '0 0 10px #000' }}
               >
                 Let&apos;s Start Your Ohana Journey—Your Way

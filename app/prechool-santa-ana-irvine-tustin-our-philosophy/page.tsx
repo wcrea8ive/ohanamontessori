@@ -123,7 +123,7 @@ export default function OurPhilosophyPage() {
       <section className="px-6" style={{ background: '#F0ECE9', paddingTop: '60px', paddingBottom: '60px' }}>
         <div className="max-w-[1000px] mx-auto grid md:grid-cols-2 gap-10 items-center">
           <Animate variant="slideLeft">
-            <div className="relative w-full aspect-[500/599] rounded-[20px] overflow-hidden">
+            <div className="relative w-full h-[610px] rounded-[20px] overflow-hidden">
               <Image src="/koa.webp" alt="Koa, the wooden turtle" fill className="object-cover" />
             </div>
           </Animate>

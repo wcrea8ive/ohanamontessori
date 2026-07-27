@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
@@ -111,6 +112,56 @@ export default function FAQsPage() {
               </AnimateItem>
             ))}
           </AnimateStagger>
+        </div>
+      </section>
+
+      {/* Ready to Begin Your Ohana Journey? */}
+      <section style={{ background: '#F0F5F4', padding: '60px 10px 75px' }}>
+        <div className="max-w-[1000px] mx-auto text-center px-6">
+          <Animate>
+            <h2 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: 'clamp(28px, 4vw, 40px)', color: '#000' }}>
+              Ready to Begin Your Ohana Journey?
+            </h2>
+            <p className="mt-6 leading-relaxed max-w-2xl mx-auto" style={{ color: 'var(--text)' }}>
+              We know how meaningful these first months are. Let us partner with your family to provide a gentle, joyful start for your baby.
+            </p>
+          </Animate>
+          <Animate className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/schedule-a-tour-santa-ana-daycare-preschool"
+              className="inline-block transition-colors hover:bg-transparent hover:text-[var(--brown)]"
+              style={{
+                fontFamily: 'var(--font-work-sans)',
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                fontSize: '14px',
+                color: '#fff',
+                background: 'var(--brown)',
+                border: '1px solid var(--brown)',
+                borderRadius: '100px',
+                padding: '13px 60px',
+              }}
+            >
+              Schedule a Personal Tour
+            </Link>
+            <Link
+              href="/request-information-daycare-santa-ana"
+              className="inline-block transition-colors hover:bg-[var(--brown)] hover:text-[#FEFAF4]"
+              style={{
+                fontFamily: 'var(--font-work-sans)',
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                fontSize: '14px',
+                color: 'var(--brown)',
+                background: 'transparent',
+                border: '3px solid var(--brown)',
+                borderRadius: '100px',
+                padding: '13px 60px',
+              }}
+            >
+              Contact Us
+            </Link>
+          </Animate>
         </div>
       </section>
     </>

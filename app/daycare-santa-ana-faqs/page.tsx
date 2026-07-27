@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import CTABanner from '@/components/CTABanner'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 
 const FAQS = [
@@ -114,15 +113,6 @@ export default function FAQsPage() {
           </AnimateStagger>
         </div>
       </section>
-
-      <CTABanner
-        heading="Still Have Questions?"
-        body="We're happy to chat. Reach out and a member of our team will get back to you within 1 business day."
-        primaryLabel="Contact Us"
-        primaryHref="/request-information-daycare-santa-ana"
-        secondaryLabel="Schedule a Tour"
-        secondaryHref="/schedule-a-tour-santa-ana-daycare-preschool"
-      />
     </>
   )
 }

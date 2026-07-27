@@ -103,12 +103,12 @@ export default function OurPhilosophyPage() {
               Today, extensive research continues to validate Dr. Montessori&apos;s discoveries.
             </p>
           </Animate>
-          <AnimateStagger className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+          <AnimateStagger className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-[10px] lg:gap-6 mt-10">
             {SCIENCE.map((s) => (
               <AnimateItem key={s.title}>
                 <div
-                  className="h-full text-center"
-                  style={{ background: '#355E54', border: '1px solid #fff', borderRadius: '10px', padding: '40px' }}
+                  className="h-full text-center p-[40px] md:p-[20px] lg:p-[40px]"
+                  style={{ background: '#355E54', border: '1px solid #fff', borderRadius: '10px' }}
                 >
                   <h3 style={{ fontFamily: 'var(--font-baskervville)', fontWeight: 400, fontSize: '24px', lineHeight: 1.2, color: '#FEFAF4' }}>{s.title}</h3>
                   <p className="mt-4 leading-relaxed" style={{ color: '#FEFAF4' }}>{s.body}</p>

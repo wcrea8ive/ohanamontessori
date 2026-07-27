@@ -121,7 +121,7 @@ export default function OurPhilosophyPage() {
 
       {/* Koa's Story */}
       <section className="px-6" style={{ background: '#F0ECE9', paddingTop: '60px', paddingBottom: '60px' }}>
-        <div className="max-w-[1000px] mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div className="max-w-[1000px] mx-auto grid lg:grid-cols-2 gap-10 items-center">
           <Animate variant="slideLeft">
             <div className="relative w-full aspect-[500/599] lg:aspect-auto lg:h-[610px] rounded-[20px] overflow-hidden">
               <Image src="/koa.webp" alt="Koa, the wooden turtle" fill className="object-cover" />

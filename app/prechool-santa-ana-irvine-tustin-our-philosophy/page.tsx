@@ -74,9 +74,9 @@ export default function OurPhilosophyPage() {
 
       {/* The Visionary: Dr. Maria Montessori */}
       <section className="px-6" style={{ background: '#F0ECE9', paddingTop: '60px', paddingBottom: '60px' }}>
-        <div className="max-w-[1000px] mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div className="max-w-[1000px] mx-auto grid lg:grid-cols-2 gap-10 items-center">
           <Animate variant="slideLeft">
-            <div className="relative w-full h-[260px] md:h-[320px] lg:h-[370px] rounded-[20px] overflow-hidden">
+            <div className="relative w-full h-[260px] lg:h-[370px] rounded-[20px] overflow-hidden">
               <Image src="/philosophy-01.webp" alt="Planting a seedling" fill className="object-cover" />
             </div>
           </Animate>

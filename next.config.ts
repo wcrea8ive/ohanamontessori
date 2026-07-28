@@ -109,6 +109,30 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        // Sanity Studio — open CSP so the studio can connect to Sanity APIs
+        source: '/studio/:path*',
+        headers: [
+          { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Cross-Origin-Opener-Policy', value: 'unsafe-none' },
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self' https://*.sanity.io https://cdn.sanity.io",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.sanity.io",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.sanity.io",
+              "font-src 'self' https://fonts.gstatic.com https://*.sanity.io",
+              "img-src 'self' data: blob: https:",
+              "connect-src 'self' https://*.sanity.io wss://*.sanity.io https://api.sanity.io",
+              "frame-src https://*.sanity.io",
+              "frame-ancestors 'self'",
+              "worker-src 'self' blob:",
+            ].join('; '),
+          },
+        ],
+      },
+      {
         source: '/:path*',
         headers: [
           { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },

@@ -2,8 +2,7 @@ import type { Metadata } from 'next'
 import { Cormorant_Garamond, Nunito, Baskervville, Work_Sans } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import SiteShell from '@/app/components/SiteShell'
 
 const GTM_ID = 'GTM-T6JK8WHD'
 
@@ -124,9 +123,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   )

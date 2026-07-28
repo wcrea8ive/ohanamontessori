@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { Animate } from '@/components/Animate'
 import { BLOG_POSTS, getPost, type InlineLink } from '@/lib/blogPosts'
 import { getAllMdxPosts, getMdxPostBySlug } from '@/lib/mdx'
+import { getSanityPostBySlug, getAllSanityPosts } from '@/sanity/lib/queries'
 
 function renderText(text: string, links?: InlineLink[]) {
   if (!links?.length) return <>{text}</>
@@ -44,12 +45,17 @@ function renderText(text: string, links?: InlineLink[]) {
   )
 }
 
-export function generateStaticParams() {
-  const mdxSlugs = getAllMdxPosts().map(p => ({ slug: p.slug }))
+export async function generateStaticParams() {
+  const [mdxPosts, sanityPosts] = await Promise.all([
+    Promise.resolve(getAllMdxPosts()),
+    getAllSanityPosts(),
+  ])
+  const mdxSlugs = mdxPosts.map(p => ({ slug: p.slug }))
+  const sanitySlugs = sanityPosts.map(p => ({ slug: p.slug }))
   const legacySlugs = BLOG_POSTS
-    .filter(p => !mdxSlugs.some(m => m.slug === p.slug))
+    .filter(p => !mdxSlugs.some(m => m.slug === p.slug) && !sanitySlugs.some(s => s.slug === p.slug))
     .map(p => ({ slug: p.slug }))
-  return [...mdxSlugs, ...legacySlugs]
+  return [...sanitySlugs, ...mdxSlugs, ...legacySlugs]
 }
 
 const SITE_NAME = 'Preschool & Daycare in Santa Ana, Tustin, Irvine | Ohana Montessori'
@@ -57,10 +63,13 @@ const OG_IMAGE = 'https://ohanamontessori.com/og-image.webp'
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  const mdx = getMdxPostBySlug(slug)
-  const post = mdx
-    ? { title: mdx.title, excerpt: mdx.description, date: mdx.date, slug: mdx.slug }
-    : (() => { const p = getPost(slug); return p ? { title: p.title, excerpt: p.excerpt, date: p.date, slug: p.slug } : null })()
+  const sanity = await getSanityPostBySlug(slug)
+  const mdx = sanity ? null : getMdxPostBySlug(slug)
+  const post = sanity
+    ? { title: sanity.title, excerpt: sanity.excerpt, date: sanity.publishedAt, slug: sanity.slug }
+    : mdx
+      ? { title: mdx.title, excerpt: mdx.description, date: mdx.date, slug: mdx.slug }
+      : (() => { const p = getPost(slug); return p ? { title: p.title, excerpt: p.excerpt, date: p.date, slug: p.slug } : null })()
   if (!post) return {}
   return {
     title: `${post.title} - ${SITE_NAME}`,
@@ -89,12 +98,13 @@ function formatDate(iso: string) {
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const mdxPost = getMdxPostBySlug(slug)
-  const legacyPost = mdxPost ? null : getPost(slug)
-  if (!mdxPost && !legacyPost) notFound()
+  const sanityPost = await getSanityPostBySlug(slug)
+  const mdxPost = sanityPost ? null : getMdxPostBySlug(slug)
+  const legacyPost = sanityPost || mdxPost ? null : getPost(slug)
+  if (!sanityPost && !mdxPost && !legacyPost) notFound()
 
-  const title = mdxPost ? mdxPost.title : legacyPost!.title
-  const date = mdxPost ? mdxPost.date : legacyPost!.date
+  const title = sanityPost ? sanityPost.title : mdxPost ? mdxPost.title : legacyPost!.title
+  const date = sanityPost ? sanityPost.publishedAt : mdxPost ? mdxPost.date : legacyPost!.date
 
   return (
     <>
@@ -157,7 +167,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* Body */}
           <Animate>
-            {mdxPost ? (
+            {sanityPost ? (
+              <div
+                className="blog-content"
+                dangerouslySetInnerHTML={{ __html: sanityPost.body }}
+              />
+            ) : mdxPost ? (
               <div
                 className="blog-content"
                 dangerouslySetInnerHTML={{ __html: mdxPost.content }}

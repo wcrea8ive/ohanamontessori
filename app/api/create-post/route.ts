@@ -1,10 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { createClient } from '@sanity/client'
+
+const sanity = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  apiVersion: '2024-01-01',
+  token: process.env.SANITY_API_TOKEN,
+  useCdn: false,
+})
+
+function toSlug(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+}
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
     const { title, description, content, secret } = body
-    let { slug, date } = body
 
     if (!secret || secret !== process.env.API_SECRET) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
@@ -14,81 +30,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields: title, content' }, { status: 400 })
     }
 
-    // Auto-generate slug from title if missing or invalid
-    if (!slug || slug.includes(' ')) {
-      slug = title
-        .toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, '')
-        .trim()
-        .replace(/\s+/g, '-')
-    }
+    const slug = toSlug(title)
 
-    // Always use YYYY-MM-DD format regardless of what Make.com sends
-    const postDate = new Date().toISOString().split('T')[0]
+    // Create as draft in Sanity (no publishedAt = draft)
+    const doc = await sanity.create({
+      _type: 'post',
+      title,
+      slug: { _type: 'slug', current: slug },
+      excerpt: description || '',
+      body: content,
+      // publishedAt intentionally omitted — stays as draft until you publish in Studio
+    })
 
-    const mdxContent = `---
-title: "${title.replace(/"/g, '\\"')}"
-date: "${postDate}"
-description: "${(description || '').replace(/"/g, '\\"')}"
-slug: "${slug}"
-keywords: "montessori, preschool, daycare, santa ana, orange county"
----
-
-${content}
-`
-
-    const encoded = Buffer.from(mdxContent).toString('base64')
-    const filePath = `content/blog/${slug}.mdx`
-    const repo = process.env.GITHUB_REPO
-    const branch = process.env.GITHUB_BRANCH || 'main'
-    const token = process.env.GITHUB_TOKEN
-
-    if (!repo || !token) {
-      return NextResponse.json({ error: 'GitHub env vars not configured' }, { status: 500 })
-    }
-
-    // Check if file exists to get SHA (needed for updates)
-    let sha: string | undefined
-    const checkRes = await fetch(
-      `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branch}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          Accept: 'application/vnd.github+json',
-          'X-GitHub-Api-Version': '2022-11-28',
-        },
-      }
-    )
-    if (checkRes.ok) {
-      const existing = await checkRes.json() as { sha: string }
-      sha = existing.sha
-    }
-
-    const putRes = await fetch(
-      `https://api.github.com/repos/${repo}/contents/${filePath}`,
-      {
-        method: 'PUT',
-        headers: {
-          Authorization: `Bearer ${token}`,
-          Accept: 'application/vnd.github+json',
-          'X-GitHub-Api-Version': '2022-11-28',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: `blog: add ${slug}`,
-          content: encoded,
-          branch,
-          ...(sha ? { sha } : {}),
-        }),
-      }
-    )
-
-    if (!putRes.ok) {
-      const err = await putRes.text()
-      return NextResponse.json({ error: 'GitHub API error', details: err }, { status: 500 })
-    }
-
-    return NextResponse.json({ success: true, slug, path: filePath })
+    return NextResponse.json({ success: true, id: doc._id, slug })
   } catch (err) {
     return NextResponse.json({ error: 'Internal server error', details: String(err) }, { status: 500 })
   }

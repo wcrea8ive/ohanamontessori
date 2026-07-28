@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 import { BLOG_POSTS } from '@/lib/blogPosts'
 import { getAllMdxPosts } from '@/lib/mdx'
+import { getAllSanityPosts } from '@/sanity/lib/queries'
 
 const SITE_NAME = 'Preschool & Daycare in Santa Ana, Tustin, Irvine | Ohana Montessori'
 const OG_IMAGE = 'https://ohanamontessori.com/og-image.webp'
@@ -31,16 +32,21 @@ function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
 }
 
-export default function BlogPage() {
-  const mdxPosts = getAllMdxPosts()
-  const mdxSlugs = new Set(mdxPosts.map(p => p.slug))
+export default async function BlogPage() {
+  const [mdxPosts, sanityPosts] = await Promise.all([
+    Promise.resolve(getAllMdxPosts()),
+    getAllSanityPosts(),
+  ])
 
-  // MDX posts take precedence; fall back to hardcoded posts not yet in MDX
+  const mdxSlugs = new Set(mdxPosts.map(p => p.slug))
+  const sanitySlugs = new Set(sanityPosts.map(p => p.slug))
+
   const legacyPosts = BLOG_POSTS
-    .filter(p => !mdxSlugs.has(p.slug))
+    .filter(p => !mdxSlugs.has(p.slug) && !sanitySlugs.has(p.slug))
     .map(p => ({ slug: p.slug, title: p.title, date: p.date, excerpt: p.excerpt }))
 
   const allPosts = [
+    ...sanityPosts.map(p => ({ slug: p.slug, title: p.title, date: p.publishedAt, excerpt: p.excerpt })),
     ...mdxPosts.map(p => ({ slug: p.slug, title: p.title, date: p.date, excerpt: p.description })),
     ...legacyPosts,
   ]

@@ -3,17 +3,28 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { title, slug, description, content, date, secret } = body
+    const { title, description, content, secret } = body
+    let { slug, date } = body
 
     if (!secret || secret !== process.env.API_SECRET) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    if (!title || !slug || !content) {
-      return NextResponse.json({ error: 'Missing required fields: title, slug, content' }, { status: 400 })
+    if (!title || !content) {
+      return NextResponse.json({ error: 'Missing required fields: title, content' }, { status: 400 })
     }
 
-    const postDate = date || new Date().toISOString().split('T')[0]
+    // Auto-generate slug from title if missing or invalid
+    if (!slug || slug.includes(' ')) {
+      slug = title
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .trim()
+        .replace(/\s+/g, '-')
+    }
+
+    // Always use YYYY-MM-DD format regardless of what Make.com sends
+    const postDate = new Date().toISOString().split('T')[0]
 
     const mdxContent = `---
 title: "${title.replace(/"/g, '\\"')}"

@@ -10,7 +10,7 @@ import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 const FAQS = [
   { q: 'What ages do you accept at Ohana Montessori?', a: 'We welcome children ages 3 months through 5 years old, offering care that evolves with each stage of development.' },
   { q: 'Where are you located?', a: 'We\'re conveniently located at 2102 N. Tustin Avenue, Santa Ana, CA 92705 — tucked in a quiet neighborhood with easy access for busy families.' },
-  { q: 'What are your operating hours?', a: 'Our facility is open 7:00 a.m. to 6:00 p.m., Monday through Friday. The Montessori school day runs from 8:30 a.m. to 3:30 p.m.' },
+  { q: 'What are your operating hours?', a: 'Our facility is open 7:00 a.m. to 5:30 p.m., Monday through Friday. The Montessori school day runs from 8:30 a.m. to 3:30 p.m.' },
   { q: 'What makes Ohana Montessori different from other preschools?', a: 'We blend the proven philosophy of Dr. Montessori with an elevated, nature-inspired environment and a team that truly loves being here.' },
   { q: 'Do you follow a traditional Montessori curriculum?', a: 'Yes — with a modern twist. We follow authentic Montessori principles while incorporating elements of beauty, nature, and gentle structure.' },
   { q: 'Is your program play-based or academic?', a: 'Montessori bridges both. Children learn through hands-on exploration, which builds independence, curiosity, and foundational skills naturally.' },

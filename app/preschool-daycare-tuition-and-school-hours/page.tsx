@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const TUITION_HOURS = [
   "All the care they need and all the time you need, with before and after school care and enrichment programs like yoga, music, gardening, creative expression, and dance.",
   'One simple tuition covers it all, giving every child the same full experience and every parent peace of mind.',
-  'We welcome children from 7:00 a.m. to 6:00 p.m., with the Montessori school day running from 8:30 to 3:30.',
+  'We welcome children from 7:00 a.m. to 5:30 p.m., with the Montessori school day running from 8:30 to 3:30.',
   "Research shows that high-quality early learning builds stronger academics, emotional intelligence, and confidence that lasts for life. At Ohana Montessori, your investment goes further: one tuition includes enrichment, before- and after-school care, and a calm, beautiful environment that supports both children and the parents building their futures.",
 ]
 

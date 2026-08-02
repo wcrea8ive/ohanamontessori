@@ -5,7 +5,7 @@ import { Animate, AnimateStagger, AnimateItem } from '@/components/Animate'
 
 export const metadata: Metadata = {
   title: 'School Calendar & Hours — Ohana Montessori',
-  description: 'Ohana Montessori school hours, calendar, and schedule information for Santa Ana, CA. Open 7:00 am – 6:00 pm Monday through Friday.',
+  description: 'Ohana Montessori school hours, calendar, and schedule information for Santa Ana, CA. Open 7:00 am – 5:30 pm Monday through Friday.',
   alternates: { canonical: 'https://ohanamontessori.com/school-calendar-and-hours' },
 }
 
@@ -93,7 +93,7 @@ export default function SchoolCalendarPage() {
             <p className="mt-3" style={subHeadingStyle}>All-inclusive care. One tuition. No surprises.</p>
             <div className="mt-6 space-y-4 leading-relaxed" style={{ color: 'var(--text)' }}>
               <p>
-                We welcome children from 7:00 a.m. to 6:00 p.m., with the Montessori school day running from 9:00am to 3:30pm.
+                We welcome children from 7:00 a.m. to 5:30 p.m., with the Montessori school day running from 9:00am to 3:30pm.
               </p>
               <p>
                 Before- and after-school care and enrichment are always included, yoga, music, nature exploration, and creative expression. One tuition covers it all, so your family can count on simplicity, transparency, and no surprises. Your child enjoys a full, balanced experience without extra fees.

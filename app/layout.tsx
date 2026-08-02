@@ -98,7 +98,7 @@ const localBusinessSchema = {
     { '@type': 'City', name: 'Tustin' },
     { '@type': 'City', name: 'Costa Mesa' },
   ],
-  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '07:00', closes: '18:00' }],
+  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '07:00', closes: '17:30' }],
   sameAs: [
     'https://www.facebook.com/ohanamontessori',
     'https://www.instagram.com/ohanamontessori',

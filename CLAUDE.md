@@ -151,7 +151,7 @@ All pages end with `<CTABanner>` component (dark forest, sage button).
 - **Phone**: (714) 942-7135
 - **Email**: info@ohanamontessori.com
 - **License**: #304371739
-- **Hours**: 7:00 am – 6:00 pm, Mon–Fri (Montessori day: 8:30 am – 3:30 pm)
+- **Hours**: 7:00 am – 5:30 pm, Mon–Fri (Montessori day: 8:30 am – 3:30 pm)
 - **Social**: @ohana.montessori (Instagram), Facebook, LinkedIn
 
 ## Programs & Tuition (2026)

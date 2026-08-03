@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const sanity = await getSanityPostBySlug(slug)
   const mdx = sanity ? null : getMdxPostBySlug(slug)
   const post = sanity
-    ? { title: sanity.title, excerpt: sanity.excerpt, date: sanity.publishedAt, slug: sanity.slug }
+    ? { title: sanity.title, excerpt: sanity.excerpt, date: sanity.publishedAt ?? null, slug: sanity.slug }
     : mdx
       ? { title: mdx.title, excerpt: mdx.description, date: mdx.date, slug: mdx.slug }
       : (() => { const p = getPost(slug); return p ? { title: p.title, excerpt: p.excerpt, date: p.date, slug: p.slug } : null })()
@@ -79,7 +79,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: post.title,
       description: post.excerpt,
       type: 'article',
-      publishedTime: post.date,
+      publishedTime: post.date ?? undefined,
       siteName: SITE_NAME,
       images: [{ url: OG_IMAGE }],
     },

@@ -104,7 +104,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!sanityPost && !mdxPost && !legacyPost) notFound()
 
   const title = sanityPost ? sanityPost.title : mdxPost ? mdxPost.title : legacyPost!.title
-  const date = sanityPost ? sanityPost.publishedAt : mdxPost ? mdxPost.date : legacyPost!.date
+  const date = sanityPost ? (sanityPost.publishedAt || sanityPost._createdAt) : mdxPost ? mdxPost.date : legacyPost!.date
 
   return (
     <>

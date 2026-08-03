@@ -46,7 +46,7 @@ export default async function BlogPage() {
     .map(p => ({ slug: p.slug, title: p.title, date: p.date, excerpt: p.excerpt }))
 
   const allPosts = [
-    ...sanityPosts.map(p => ({ slug: p.slug, title: p.title, date: p.publishedAt, excerpt: p.excerpt })),
+    ...sanityPosts.map(p => ({ slug: p.slug, title: p.title, date: p.publishedAt || p._createdAt, excerpt: p.excerpt })),
     ...mdxPosts.map(p => ({ slug: p.slug, title: p.title, date: p.date, excerpt: p.description })),
     ...legacyPosts,
   ]
